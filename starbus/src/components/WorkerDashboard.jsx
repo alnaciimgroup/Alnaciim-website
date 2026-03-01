@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import ReceiveShipmentForm from './ReceiveShipmentForm';
 import ShipmentList from './ShipmentList';
 import { supabase } from '../lib/supabase';
@@ -11,6 +11,8 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
         pending: 0,
         taken: 0
     });
+
+    const [loadingStats, setLoadingStats] = useState(false);
 
     // Date Filtering State
     const [selectedDateFilter, setSelectedDateFilter] = useState('all'); // 'all', 'today', 'yesterday'
@@ -28,23 +30,23 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
         return date.toISOString().split('T')[0];
     }, [selectedDateFilter, customDate]);
 
-    // Memoize filter filter for ShipmentList (Always show ALL shipments list, unless we want to filter list too?)
-    // Note: User asked for Stats "on the side" to show data for the date. 
-    // The list can remain "Inventory" focused (current active items) or filtered.
-    // For now, let's keep the LIST as "Active Inventory" (no date filter) but STATS as Date Filtered.
-    // Memoize filter filter for ShipmentList
-    const branchFilter = useMemo(() => {
-        // We pass empty filter here because ShipmentList now handles the OR logic 
-        // using currentBranchId when isWorker is true
-        return {};
-    }, []);
+    // Memoized branch filter
+    const branchFilter = useMemo(() => ({}), []);
 
-    useEffect(() => {
-        const fetchStats = async () => {
-            if (!profile?.branch_id) return;
+    // Stable function for changing view
+    const handleNewReception = useCallback(() => {
+        onViewChange('receive');
+    }, [onViewChange]);
 
-            console.log(`[WorkerDash] Fetching stats for Branch: ${profile.branch_id}`);
+    const handleSuccess = useCallback(() => {
+        onViewChange('worker_overview');
+    }, [onViewChange]);
 
+    const fetchStats = useCallback(async () => {
+        if (!profile?.branch_id) return;
+
+        setLoadingStats(true);
+        try {
             const { data, error } = await supabase
                 .rpc('get_branch_stats', {
                     target_branch_id: profile.branch_id,
@@ -52,25 +54,33 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                 });
 
             if (data) {
-                console.log(`[WorkerDash] Stats received:`, data);
                 setStats({
-                    received: data.received,
-                    pending: data.not_taken,
-                    taken: data.taken
+                    received: data.received || 0,
+                    pending: data.not_taken || 0,
+                    taken: data.taken || 0
                 });
             }
-            if (error) {
-                console.error('[WorkerDash] Error fetching branch stats:', error);
-                // Don't leak fake data if there's an error
-                setStats({ received: 0, pending: 0, taken: 0 });
-            }
-        };
+            if (error) throw error;
+        } catch (error) {
+            console.error('[WorkerDash] Error fetching branch stats:', error);
+        } finally {
+            setLoadingStats(false);
+        }
+    }, [profile?.branch_id, queryDate]);
 
+    // Update stats on initial load and meaningful changes
+    useEffect(() => {
         fetchStats();
+    }, [fetchStats]);
 
-        // Realtime Subscription (More robust: listen to all changes and filter in callback)
-        const subscription = supabase
-            .channel(`dashboard-stats-${profile.branch_id}`)
+    // Consolidated Realtime Subscription at the Dashboard level
+    // SHIPMENT LIST handles its own refined Realtime refresh silently.
+    // This dashboard listener ONLY handles the stats counter.
+    useEffect(() => {
+        if (!profile?.branch_id) return;
+
+        const channel = supabase
+            .channel(`branch-stats-refresh-${profile.branch_id}`)
             .on(
                 'postgres_changes',
                 {
@@ -84,6 +94,7 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                         oldRow?.destination_branch_id || oldRow?.origin_branch_id;
 
                     if (affectedBranchId === profile.branch_id) {
+                        // Silent stats refresh
                         fetchStats();
                     }
                 }
@@ -91,18 +102,28 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
             .subscribe();
 
         return () => {
-            subscription.unsubscribe();
+            supabase.removeChannel(channel);
         };
-    }, [profile?.branch_id, queryDate, activeView]);
+    }, [profile?.branch_id, fetchStats]);
 
     if (!profile) return <div className="p-8 text-center text-gray-500">Loading worker profile...</div>;
 
     if (activeView === 'receive') {
-        return <ReceiveShipmentForm staffProfile={profile} onSuccess={() => onViewChange('worker_overview')} />;
+        return <ReceiveShipmentForm staffProfile={profile} onSuccess={handleSuccess} />;
     }
 
     if (activeView === 'inventory') {
-        return <ShipmentList filter={branchFilter} title="Branch Inventory" isWorker={true} currentBranchId={profile?.branch_id} onNewReception={() => onViewChange('receive')} />;
+        return (
+            <div className="min-h-[600px] animate-in fade-in duration-500">
+                <ShipmentList
+                    filter={branchFilter}
+                    title="Branch Inventory"
+                    isWorker={true}
+                    currentBranchId={profile?.branch_id}
+                    onNewReception={handleNewReception}
+                />
+            </div>
+        );
     }
 
     // Guard: Branch not assigned
@@ -114,13 +135,11 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                 </div>
                 <h3 className="text-2xl font-black text-gray-900 mb-2">Branch Not Assigned</h3>
                 <p className="text-sm font-bold text-gray-500 max-w-sm mb-8 leading-relaxed">
-                    Your account has been created, but it hasn't been linked to a specific branch yet.
+                    Account identified as {profile?.email}.
                     Please contact a Super Admin to assign you to a branch.
                 </p>
-                <div className="flex flex-col gap-3 w-full max-w-xs">
-                    <div className="p-4 bg-gray-50 rounded-xl border border-gray-100 text-[10px] text-gray-400 font-mono break-all font-bold">
-                        User ID: {profile?.id}
-                    </div>
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100 text-[10px] text-gray-400 font-mono break-all font-bold">
+                    Profile ID: {profile?.id}
                 </div>
             </div>
         );
@@ -128,7 +147,7 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
 
     // Default: Worker Overview
     return (
-        <div className="space-y-8 font-sans">
+        <div className="space-y-8 font-sans animate-in fade-in duration-500">
 
             {/* Date Filter & Stats Header */}
             <div className="flex flex-col sm:flex-row justify-between items-end sm:items-center gap-4 border-b border-gray-100 pb-6">
@@ -161,7 +180,6 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                     >
                         Yesterday
                     </button>
-                    {/* Simple Custom Date Trigger */}
                     <div className="relative">
                         <input
                             type="date"
@@ -177,9 +195,9 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-300 ${loadingStats ? 'opacity-60' : 'opacity-100'}`}>
                 {/* Total Received */}
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow">
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
                         <Package size={24} />
                     </div>
@@ -187,21 +205,23 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                         <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Total Received</p>
                         <p className="text-3xl font-bold text-gray-900">{stats.received.toLocaleString()}</p>
                     </div>
+                    {loadingStats && <div className="absolute top-0 right-0 p-1"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping"></div></div>}
                 </div>
 
                 {/* Total Not Taken (Pending) */}
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow">
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div className="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center">
                         <Clock size={24} />
                     </div>
                     <div>
                         <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Total Not Taken</p>
-                        <p className="text-3xl font-bold text-gray-900">{stats.pending}</p>
+                        <p className="text-3xl font-bold text-gray-900">{stats.pending.toLocaleString()}</p>
                     </div>
+                    {loadingStats && <div className="absolute top-0 right-0 p-1"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-ping"></div></div>}
                 </div>
 
                 {/* Total Taken */}
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow">
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5 hover:shadow-md transition-shadow relative overflow-hidden group">
                     <div className="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center">
                         <CheckCircle size={24} />
                     </div>
@@ -209,19 +229,21 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                         <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Total Taken</p>
                         <p className="text-3xl font-bold text-gray-900">{stats.taken.toLocaleString()}</p>
                     </div>
+                    {loadingStats && <div className="absolute top-0 right-0 p-1"><div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></div></div>}
                 </div>
             </div>
 
             {/* Main Shipment List */}
-            {/* The "New Reception" button is passed here to be rendered in the header of the list */}
-            <ShipmentList
-                filter={branchFilter}
-                title="Search & View Deliveries"
-                isWorker={true}
-                currentBranchId={profile?.branch_id}
-                limit={10}
-                onNewReception={() => onViewChange('receive')}
-            />
+            <div className="min-h-[500px] border-t border-gray-50 pt-8">
+                <ShipmentList
+                    filter={branchFilter}
+                    title="Search & View Deliveries"
+                    isWorker={true}
+                    currentBranchId={profile?.branch_id}
+                    limit={10}
+                    onNewReception={handleNewReception}
+                />
+            </div>
         </div>
     );
 }
