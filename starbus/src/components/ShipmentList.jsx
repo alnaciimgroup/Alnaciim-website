@@ -90,17 +90,15 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
         }
     }, [filter, isWorker, currentBranchId, statusFilter, debouncedSearch, page, pageSize]); // shipments.length removed
 
-    // Structural changes (Search, Filter, Page) should NOT be silent
+    // Unified Fetch Effect
     useEffect(() => {
-        fetchShipments(false);
-    }, [fetchShipments]);
+        // Structural changes (Search, Filter, Page) trigger non-silent load
+        // Initial load is non-silent
+        // refreshTrigger (Realtime) triggers silent refresh
 
-    // Background updates (Realtime) SHOULD be silent
-    useEffect(() => {
-        if (!isInitialLoad.current) {
-            fetchShipments(true);
-        }
-    }, [refreshTrigger, fetchShipments]);
+        const isBgRefresh = !isInitialLoad.current && refreshTrigger > 0;
+        fetchShipments(isBgRefresh);
+    }, [fetchShipments, refreshTrigger]);
 
     // Realtime Subscription
     useEffect(() => {
