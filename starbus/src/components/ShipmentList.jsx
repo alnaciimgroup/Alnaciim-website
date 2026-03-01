@@ -18,21 +18,26 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
     const [refreshTrigger, setRefreshTrigger] = useState(0);
     const [selectedShipment, setSelectedShipment] = useState(null);
 
-    // To track if this is the first load
+    // Performance Optimization: Cache the full list for instant "Back"
+    const fullListCache = useRef([]);
     const isInitialLoad = useRef(true);
 
     // Search Debounce Logic
     useEffect(() => {
+        // Only debounce if there is a term, clearing search should be instant
+        if (!searchTerm) return;
+
         const timer = setTimeout(() => {
             setDebouncedSearch(searchTerm);
             setPage(1);
-        }, 400); // Slightly faster debounce
+        }, 400);
         return () => clearTimeout(timer);
     }, [searchTerm]);
 
     const fetchShipments = useCallback(async (isSilent = false) => {
-        // Show loading if it's NOT a silent refresh (e.g. search, page change, initial load)
-        if (!isSilent) setLoading(true);
+        // Show loading if it's NOT a silent refresh and NO current data
+        // If we have data, we keep it visible for zero-flicker
+        if (!isSilent && shipments.length === 0) setLoading(true);
 
         try {
             let query = supabase
@@ -80,7 +85,14 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
 
             if (error) throw error;
 
-            setShipments(data || []);
+            const finalData = data || [];
+            setShipments(finalData);
+
+            // Update cache if this is the "default" view
+            if (!debouncedSearch && statusFilter === 'all' && page === 1) {
+                fullListCache.current = finalData;
+            }
+
             if (count) setTotalPages(Math.ceil(count / pageSize));
         } catch (error) {
             console.error('Error fetching shipments:', error);
@@ -88,14 +100,10 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
             setLoading(false);
             isInitialLoad.current = false;
         }
-    }, [filter, isWorker, currentBranchId, statusFilter, debouncedSearch, page, pageSize]); // shipments.length removed
+    }, [filter, isWorker, currentBranchId, statusFilter, debouncedSearch, page, pageSize, shipments.length]);
 
     // Unified Fetch Effect
     useEffect(() => {
-        // Structural changes (Search, Filter, Page) trigger non-silent load
-        // Initial load is non-silent
-        // refreshTrigger (Realtime) triggers silent refresh
-
         const isBgRefresh = !isInitialLoad.current && refreshTrigger > 0;
         fetchShipments(isBgRefresh);
     }, [fetchShipments, refreshTrigger]);
@@ -130,6 +138,26 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
         };
     }, [currentBranchId, isWorker]);
 
+    const handleSearchChange = (e) => {
+        const val = e.target.value;
+        setSearchTerm(val);
+
+        // INSTANT BACK: If search is cleared, restore data immediately
+        if (!val) {
+            setDebouncedSearch('');
+            setShipments(fullListCache.current);
+            setPage(1);
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        // INSTANT SEARCH: Trigger immediately on Enter
+        if (e.key === 'Enter') {
+            setDebouncedSearch(searchTerm);
+            setPage(1);
+        }
+    };
+
     const [takenError, setTakenError] = useState(null);
 
     const handleMarkAsTaken = async (id) => {
@@ -144,10 +172,7 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
                 .eq('id', id);
 
             if (error) throw error;
-
-            // Trigger list refresh silenty
             fetchShipments(true);
-
             return true;
         } catch (error) {
             console.error('Error updating shipment:', error);
@@ -191,7 +216,8 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
                             type="text"
                             placeholder="Search receiver, phone, bus # or item..."
                             value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onChange={handleSearchChange}
+                            onKeyDown={handleKeyDown}
                             className="w-full pl-12 pr-4 py-3.5 bg-gray-50/50 border border-gray-100 hover:border-gray-200 focus:bg-white focus:border-green-500 focus:ring-4 focus:ring-green-500/5 rounded-2xl text-sm font-medium transition-all outline-none placeholder-gray-300"
                         />
                     </div>
@@ -344,7 +370,7 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
 
             {/* Background Sync Indicator */}
             {loading && shipments.length > 0 && (
-                <div className="absolute top-4 right-6 pointer-events-none animate-in fade-in slide-in-from-top-2">
+                <div className="absolute top-4 right-6 pointer-events-none">
                     <div className="px-3 py-1 bg-green-500 text-white text-[8px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-white rounded-full animate-ping"></div>
                         Syncing
