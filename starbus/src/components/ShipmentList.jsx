@@ -54,7 +54,8 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
 
             // Search
             if (searchTerm) {
-                query = query.or(`tracking_number.ilike.%${searchTerm}%,receiver_name.ilike.%${searchTerm}%,receiver_phone.ilike.%${searchTerm}%,bus_number.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%`);
+                // Include Sender Name, Phone and Receiver Name, Phone plus Tracking and Bus Number
+                query = query.or(`tracking_number.ilike.%${searchTerm}%,receiver_name.ilike.%${searchTerm}%,receiver_phone.ilike.%${searchTerm}%,sender_name.ilike.%${searchTerm}%,sender_phone.ilike.%${searchTerm}%,bus_number.ilike.%${searchTerm}%,description.ilike.%${searchTerm}%`);
             }
 
             // Pagination
@@ -92,7 +93,16 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
                     table: 'shipments'
                 },
                 (payload) => {
-                    setRefreshTrigger(prev => prev + 1);
+                    const { new: newRow, old: oldRow } = payload;
+
+                    // Only refresh if the change is relevant to this branch (destination or origin)
+                    // This prevents crashes when 7 different branches are all pushing data simultaneously
+                    const affectedBranchId = newRow?.destination_branch_id || newRow?.origin_branch_id ||
+                        oldRow?.destination_branch_id || oldRow?.origin_branch_id;
+
+                    if (!isWorker || (currentBranchId && affectedBranchId === currentBranchId)) {
+                        setRefreshTrigger(prev => prev + 1);
+                    }
                 }
             )
             .subscribe();
