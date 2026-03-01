@@ -31,8 +31,8 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
     }, [searchTerm]);
 
     const fetchShipments = useCallback(async (isSilent = false) => {
-        // Only show loading if we have NO data, otherwise keep existing data while fetching (background)
-        if (!isSilent && shipments.length === 0) setLoading(true);
+        // Show loading if it's NOT a silent refresh (e.g. search, page change, initial load)
+        if (!isSilent) setLoading(true);
 
         try {
             let query = supabase
@@ -88,14 +88,19 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
             setLoading(false);
             isInitialLoad.current = false;
         }
-    }, [filter, isWorker, currentBranchId, statusFilter, debouncedSearch, page, pageSize, shipments.length]);
+    }, [filter, isWorker, currentBranchId, statusFilter, debouncedSearch, page, pageSize]); // shipments.length removed
 
+    // Structural changes (Search, Filter, Page) should NOT be silent
     useEffect(() => {
-        // Decide if this should be a silent refresh
-        // RefreshTrigger means background realtime update
-        const isSilent = !isInitialLoad.current && shipments.length > 0;
-        fetchShipments(isSilent);
-    }, [fetchShipments, refreshTrigger]);
+        fetchShipments(false);
+    }, [fetchShipments]);
+
+    // Background updates (Realtime) SHOULD be silent
+    useEffect(() => {
+        if (!isInitialLoad.current) {
+            fetchShipments(true);
+        }
+    }, [refreshTrigger, fetchShipments]);
 
     // Realtime Subscription
     useEffect(() => {
@@ -142,8 +147,7 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
 
             if (error) throw error;
 
-            // Optimistic stat update call? No, stats update via realtime.
-            // Just trigger list refresh silenty
+            // Trigger list refresh silenty
             fetchShipments(true);
 
             return true;
