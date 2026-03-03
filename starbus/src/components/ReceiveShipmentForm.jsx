@@ -2,22 +2,23 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { User, Phone, MapPin, Calendar, FileText, X, Save, Truck, Clock } from 'lucide-react';
 
-export default function ReceiveShipmentForm({ staffProfile, onSuccess }) {
+export default function ReceiveShipmentForm({ staffProfile, onSuccess, editShipment, onCancel }) {
     const [loading, setLoading] = useState(false);
     const [branches, setBranches] = useState([]);
     const [currentBranch, setCurrentBranch] = useState(null);
     const [formData, setFormData] = useState({
-        sender_name: '',
-        sender_phone: '',
-        receiver_name: '',
-        receiver_phone: '',
-        origin_branch_id: '',
-        destination_branch_id: '', // Will be locked to staff branch
-        description: '',
-        delivery_date: '',
-        bus_number: '',
+        sender_name: editShipment?.sender_name || '',
+        sender_phone: editShipment?.sender_phone || '',
+        receiver_name: editShipment?.receiver_name || '',
+        receiver_phone: editShipment?.receiver_phone || '',
+        origin_branch_id: editShipment?.origin_branch_id || '',
+        destination_branch_id: editShipment?.destination_branch_id || staffProfile?.branch_id || '',
+        description: editShipment?.description || '',
+        bus_number: editShipment?.bus_number || '',
     });
     const [error, setError] = useState(null);
+
+    const isEdit = !!editShipment;
 
     useEffect(() => {
         const fetchBranches = async () => {
@@ -25,98 +26,103 @@ export default function ReceiveShipmentForm({ staffProfile, onSuccess }) {
             if (data) {
                 setBranches(data);
 
-                // Initialize CURRENT branch and set default form data
-                const current = data.find(b => b.id === staffProfile.branch_id);
+                // Initialize CURRENT branch
+                const myBranchId = editShipment ? editShipment.destination_branch_id : staffProfile?.branch_id;
+                const current = data.find(b => b.id === myBranchId);
                 setCurrentBranch(current);
 
-                // Lock DESTINATION to Current Branch (Arrival Mode)
-                setFormData(prev => ({
-                    ...prev,
-                    destination_branch_id: staffProfile.branch_id
-                }));
+                if (!editShipment && staffProfile) {
+                    setFormData(prev => ({
+                        ...prev,
+                        destination_branch_id: staffProfile.branch_id
+                    }));
+                }
             }
         };
         fetchBranches();
-    }, [staffProfile]);
+    }, [staffProfile, editShipment]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
 
-        // Generate specific tracking number
-        const trackingNumber = `STAR-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 1000)}`;
-
         try {
-            console.log(`[ReceiveForm] Attempting to create shipment...`);
-
-            if (!formData.destination_branch_id || formData.destination_branch_id !== staffProfile.branch_id) {
-                throw new Error(`Invalid Assignment. Packages must be registered at your assigned branch.`);
+            if (!formData.destination_branch_id) {
+                throw new Error(`Invalid Assignment. Branch information missing.`);
             }
 
             if (!formData.origin_branch_id) {
                 throw new Error(`Please select an Origin Branch (From City).`);
             }
 
-            const { error } = await supabase.from('shipments').insert({
-                tracking_number: trackingNumber,
-                origin_branch_id: formData.origin_branch_id,
-                destination_branch_id: formData.destination_branch_id,
-                sender_name: formData.sender_name,
-                sender_phone: formData.sender_phone,
-                receiver_name: formData.receiver_name,
-                receiver_phone: formData.receiver_phone,
-                description: formData.description,
-                bus_number: formData.bus_number,
-                received_by: staffProfile.id,
-                status: 'received',
-                created_at: new Date().toISOString(),
-            });
+            let response;
+            if (isEdit) {
+                response = await supabase.from('shipments').update({
+                    origin_branch_id: formData.origin_branch_id,
+                    sender_name: formData.sender_name,
+                    sender_phone: formData.sender_phone,
+                    receiver_name: formData.receiver_name,
+                    receiver_phone: formData.receiver_phone,
+                    description: formData.description,
+                    bus_number: formData.bus_number,
+                }).eq('id', editShipment.id);
+            } else {
+                // Generate specific tracking number
+                const trackingNumber = `STAR-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 1000)}`;
 
-            if (error) {
-                console.error('[ReceiveForm] Database Insert Error:', error);
-                throw error;
+                response = await supabase.from('shipments').insert({
+                    tracking_number: trackingNumber,
+                    origin_branch_id: formData.origin_branch_id,
+                    destination_branch_id: formData.destination_branch_id,
+                    sender_name: formData.sender_name,
+                    sender_phone: formData.sender_phone,
+                    receiver_name: formData.receiver_name,
+                    receiver_phone: formData.receiver_phone,
+                    description: formData.description,
+                    bus_number: formData.bus_number,
+                    received_by: staffProfile?.id,
+                    status: 'received',
+                    created_at: new Date().toISOString(),
+                });
+
+                if (!response.error) {
+                    // Send WhatsApp Notification (Non-blocking)
+                    const originBranch = branches.find(b => b.id === formData.origin_branch_id);
+                    const destBranch = branches.find(b => b.id === formData.destination_branch_id);
+
+                    supabase.functions.invoke('send-whatsapp', {
+                        body: {
+                            receiver_phone: formData.receiver_phone,
+                            receiver_name: formData.receiver_name,
+                            sender_name: formData.sender_name,
+                            tracking_number: trackingNumber,
+                            origin_branch: originBranch?.name || 'Unknown',
+                            destination_branch: destBranch?.name || 'Unknown',
+                            bus_number: formData.bus_number,
+                        },
+                    }).catch(err => console.warn('WhatsApp Trigger Error:', err));
+                }
             }
 
-            console.log(`[ReceiveForm] Shipment created successfully: ${trackingNumber}`);
+            if (response.error) throw response.error;
 
-            // --- Send WhatsApp Notification ---
-            const originBranch = branches.find(b => b.id === formData.origin_branch_id);
-            const destBranch = branches.find(b => b.id === formData.destination_branch_id);
-
-            supabase.functions.invoke('send-whatsapp', {
-                body: {
-                    receiver_phone: formData.receiver_phone,
-                    receiver_name: formData.receiver_name,
-                    sender_name: formData.sender_name,
-                    tracking_number: trackingNumber,
-                    origin_branch: originBranch?.name || 'Unknown',
-                    destination_branch: destBranch?.name || 'Unknown',
-                    bus_number: formData.bus_number,
-                },
-            }).then(({ error: waError }) => {
-                if (waError) {
-                    console.warn('WhatsApp notification failed (non-critical):', waError.message);
-                } else {
-                    console.log('WhatsApp notification sent successfully.');
-                }
-            });
-
-            alert(`Shipment Registered! Tracking Number: ${trackingNumber}`);
+            alert(isEdit ? 'Shipment Updated Successfully!' : 'Shipment Registered Successfully!');
             onSuccess();
 
-            // Reset form but keep destination locked
-            setFormData(prev => ({
-                sender_name: '',
-                sender_phone: '',
-                receiver_name: '',
-                receiver_phone: '',
-                origin_branch_id: '',
-                destination_branch_id: staffProfile.branch_id,
-                description: '',
-                delivery_date: '',
-                bus_number: '',
-            }));
+            if (!isEdit) {
+                // Reset form but keep destination locked
+                setFormData({
+                    sender_name: '',
+                    sender_phone: '',
+                    receiver_name: '',
+                    receiver_phone: '',
+                    origin_branch_id: '',
+                    destination_branch_id: staffProfile?.branch_id || '',
+                    description: '',
+                    bus_number: '',
+                });
+            }
         } catch (err) {
             setError(err.message);
         } finally {
@@ -336,7 +342,7 @@ export default function ReceiveShipmentForm({ staffProfile, onSuccess }) {
                 <div className="flex justify-end items-center gap-4 pt-4 border-t border-gray-100">
                     <button
                         type="button"
-                        onClick={onSuccess}
+                        onClick={onCancel || onSuccess}
                         className="flex items-center gap-2 px-6 py-3 text-sm font-bold text-gray-500 hover:text-gray-700 bg-white hover:bg-gray-50 rounded-xl transition-colors"
                     >
                         <X size={18} />
@@ -344,11 +350,11 @@ export default function ReceiveShipmentForm({ staffProfile, onSuccess }) {
                     </button>
                     <button
                         type="submit"
-                        disabled={loading || !staffProfile?.branch_id}
+                        disabled={loading || (!isEdit && !staffProfile?.branch_id)}
                         className="flex items-center gap-2 px-8 py-3 bg-green-500 hover:bg-green-600 text-white text-sm font-bold uppercase tracking-wide rounded-xl shadow-lg shadow-green-500/20 transition-all hover:shadow-xl hover:shadow-green-500/30 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:grayscale"
                     >
                         <Save size={18} />
-                        {loading ? 'Processing...' : 'Register Arrival'}
+                        {loading ? 'Processing...' : (isEdit ? 'Update Shipment' : 'Register Arrival')}
                     </button>
                 </div>
 

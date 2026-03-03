@@ -121,6 +121,7 @@ export default function WorkerDashboard({ profile, activeView, onViewChange }) {
                     isWorker={true}
                     currentBranchId={profile?.branch_id}
                     onNewReception={handleNewReception}
+                    staffProfile={profile}
                 />
             </div>
         );

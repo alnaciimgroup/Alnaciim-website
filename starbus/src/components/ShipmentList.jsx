@@ -5,7 +5,7 @@ import ShipmentDetailsModal from './ShipmentDetailsModal';
 
 const EMPTY_FILTER = {};
 
-export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & View Deliveries", isWorker = false, currentBranchId = null, limit = 10, onNewReception }) {
+export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & View Deliveries", isWorker = false, currentBranchId = null, limit = 10, onNewReception, staffProfile }) {
     const [shipments, setShipments] = useState([]);
     const [loading, setLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -390,6 +390,7 @@ export default function ShipmentList({ filter = EMPTY_FILTER, title = "Search & 
                         setSelectedShipment(null);
                         fetchShipments(true);
                     }}
+                    staffProfile={staffProfile}
                 />
             )}
         </div>
