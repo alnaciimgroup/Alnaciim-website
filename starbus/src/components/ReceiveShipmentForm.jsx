@@ -139,10 +139,10 @@ export default function ReceiveShipmentForm({ staffProfile, onSuccess, editShipm
             {/* Header */}
             <div className="mb-8">
                 <h1 className="text-3xl font-black text-gray-900 mb-2 font-sans tracking-tight">
-                    {editShipment ? 'Update Shipment Details' : 'Register Incoming Package'}
+                    {!!editShipment ? 'Update Shipment' : 'Register Incoming Package'}
                 </h1>
                 <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">
-                    {editShipment ? 'Refining details for package at' : 'Register a package that has arrived at'} <span className="text-green-600 underline decoration-2 underline-offset-4">{currentBranch?.name || "...loading..."}</span>.
+                    {!!editShipment ? 'Refining details for package at' : 'Register a package that has arrived at'} <span className="text-green-600 underline decoration-2 underline-offset-4">{currentBranch?.name || "...loading..."}</span>.
                 </p>
             </div>
 
@@ -153,7 +153,7 @@ export default function ReceiveShipmentForm({ staffProfile, onSuccess, editShipm
                 </div>
             )}
 
-            {!isEdit && !staffProfile?.branch_id && (
+            {(editShipment ? false : !staffProfile?.branch_id) && (
                 <div className="bg-orange-50 text-orange-600 p-6 rounded-xl mb-6 border border-orange-200 flex flex-col gap-2 font-sans uppercase tracking-tight">
                     <div className="flex items-center gap-2 font-black text-sm">
                         <Clock size={18} />
