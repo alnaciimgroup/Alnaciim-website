@@ -1,3 +1,4 @@
+// Vercel Build Trigger: 2026-03-30
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
