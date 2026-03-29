@@ -3,12 +3,17 @@ import { Droplets } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-32 pb-12 px-6 lg:px-12 font-['Inter'] relative mt-[-100px] z-20">
+    <footer className="bg-slate-900 pt-32 pb-12 px-6 lg:px-12 font-['Inter'] relative mt-[-100px] z-20 overflow-hidden">
       
-      {/* Top Border Accent */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#0066FF] to-transparent opacity-50"></div>
+      {/* Blueprint Background Texture */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1544453896-e2a27b82fe8d?q=80&w=2940&auto=format&fit=crop" alt="Infrastructure Blueprint" className="w-full h-full object-cover opacity-[0.03] grayscale mix-blend-screen" />
+      </div>
 
-      <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-16 mb-20">
+      {/* Top Border Accent */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#0066FF] to-transparent opacity-50 z-10"></div>
+
+      <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-16 mb-20 relative z-10">
         
         {/* Brand Block */}
         <div>

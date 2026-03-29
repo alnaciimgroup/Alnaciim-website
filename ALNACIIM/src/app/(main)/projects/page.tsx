@@ -3,11 +3,9 @@
 import { ArrowRight, Server } from "lucide-react";
 import { useState } from "react";
 import { projects } from "@/data/projects";
-import ProjectModal from "@/components/ProjectModal";
 import { motion } from "framer-motion";
 
 export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   const stats = [
     { value: "28+", label: "Years Experience" },
@@ -56,8 +54,8 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Projects List - Floating Arrays */}
-      <section className="max-w-[1240px] mx-auto px-6 lg:px-12 mb-32 space-y-16 relative z-10">
+      {/* Projects List - Floating Arrays - Reverted to Large Layout per User Request */}
+      <section className="max-w-[1240px] mx-auto px-6 lg:px-12 mb-32 flex flex-col gap-16 relative z-10">
         {projects.map((proj, idx) => (
           <motion.div 
             key={proj.id} 
@@ -65,63 +63,50 @@ export default function ProjectsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-[2rem] border border-slate-200 p-4 lg:p-6 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center group relative shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500"
+            className={`bg-white rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row gap-12 items-center group relative shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-500 ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
           >
             {/* Soft Floating Image Side */}
-            <button 
-              onClick={() => setSelectedProject(proj)}
-              className={`w-full lg:w-1/2 relative bg-slate-100 h-[400px] lg:h-[450px] flex items-center justify-center overflow-hidden outline-none rounded-[1.5rem] group-hover:shadow-inner transition-all duration-700 ${idx % 2 !== 0 ? 'lg:order-last' : ''}`}
+            <div 
+              className="w-full lg:w-1/2 relative bg-slate-100 aspect-[4/3] flex items-center justify-center overflow-hidden rounded-2xl group-hover:shadow-inner transition-all duration-500"
             >
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 text-[11px] font-[700] tracking-wide text-slate-800 z-20 flex items-center gap-2 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse"></span>
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 text-[10px] sm:text-[12px] font-[700] tracking-wide text-slate-800 z-20 flex items-center gap-2 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] animate-pulse"></span>
                 Record [{proj.id}]
               </div>
               
-              <img src={proj.image} alt={proj.title} className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700" />
-            </button>
+              <img src={proj.image} alt={proj.title} className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-[1.05] transition-transform duration-700" />
+            </div>
             
             {/* Stripe Typography Side */}
-            <div className="w-full lg:w-1/2 px-4 lg:px-8 py-8 lg:py-4">
-              <div className="text-[12px] font-[700] uppercase tracking-wide text-[#0066FF] mb-4 bg-blue-50 px-3 py-1.5 rounded-lg inline-block">
-                {proj.category}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div>
+                <div className="text-[12px] font-[700] uppercase tracking-wider text-[#0066FF] mb-4 bg-blue-50 px-3 py-1.5 rounded-md inline-block">
+                  {proj.category}
+                </div>
+                
+                <h2 className="text-[28px] lg:text-[40px] font-[800] text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                  {proj.title}
+                </h2>
+                
+                <p className="text-[16px] lg:text-[18px] text-slate-600 leading-[1.8] mb-10 font-[400]">
+                  {proj.description}
+                </p>
               </div>
               
-              <h2 className="text-[36px] md:text-[48px] font-[800] text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                {proj.title}
-              </h2>
-              
-              <p className="text-[16px] text-slate-600 leading-[1.8] mb-10 w-full font-[400]">
-                {proj.description}
-              </p>
-              
-              <div className="grid grid-cols-2 gap-4 mb-10">
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                  <div className="text-[12px] font-[600] text-slate-500 mb-2">Payload Limit</div>
-                  <div className="text-[18px] font-[700] text-slate-900">{proj.scale}</div>
+              <div className="grid grid-cols-2 gap-6 mt-auto border-t border-slate-100 pt-8">
+                <div>
+                  <div className="text-[12px] font-[600] text-slate-500 uppercase tracking-wide">Payload Scope</div>
+                  <div className="text-[18px] font-[700] text-slate-900 mt-2">{proj.scale}</div>
                 </div>
-                <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                  <div className="text-[12px] font-[600] text-slate-500 mb-2">Grid Spec</div>
-                  <div className="text-[18px] font-[700] text-slate-900">{proj.power}</div>
+                <div>
+                  <div className="text-[12px] font-[600] text-slate-500 uppercase tracking-wide">Grid Specification</div>
+                  <div className="text-[18px] font-[700] text-slate-900 mt-2">{proj.power}</div>
                 </div>
               </div>
-
-              <button 
-                onClick={() => setSelectedProject(proj)}
-                className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-xl text-[14px] font-[600] tracking-wide hover:bg-black transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
-              >
-                Inspect Data <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-              </button>
             </div>
           </motion.div>
         ))}
       </section>
-
-      {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
-        />
-      )}
       
     </div>
   );

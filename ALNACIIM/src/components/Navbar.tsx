@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Droplets } from "lucide-react";
+import { Droplets, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -23,7 +23,18 @@ export default function Navbar() {
         </Link>
         
         <nav className="hidden xl:flex items-center gap-5 text-[13px] font-[600] text-slate-600 mx-4">
-          <Link href="/energy" className="hover:text-[#0066FF] transition-colors whitespace-nowrap">Alnaciim Energy</Link>
+          {/* Energy Dropdown */}
+          <div className="relative group">
+            <button type="button" className="hover:text-[#0066FF] transition-colors whitespace-nowrap flex items-center gap-1 py-4 -my-4 outline-none">
+              Alnaciim Energy
+              <ChevronDown size={14} className="opacity-70 group-hover:-rotate-180 transition-transform duration-300" />
+            </button>
+            
+            <div className="absolute top-full left-0 w-44 bg-white border border-slate-100 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-1 group-hover:translate-y-0 z-50">
+              <Link href="/energy" className="block px-4 py-2 hover:bg-slate-50 hover:text-[#0066FF] transition-colors text-[13px] font-[600] text-slate-700">Energy Home</Link>
+              <Link href="/energy/solutions" className="block px-4 py-2 hover:bg-slate-50 hover:text-[#0066FF] transition-colors text-[13px] font-[600] text-slate-700">Solutions</Link>
+            </div>
+          </div>
           <Link href="/water" className="hover:text-[#0066FF] transition-colors whitespace-nowrap">Alnaciim Water</Link>
           <Link href="/engineering" className="hover:text-[#0066FF] transition-colors whitespace-nowrap">Alnaciim Engineering</Link>
           <Link href="/digital" className="hover:text-[#0066FF] transition-colors whitespace-nowrap">Alnaciim Digital</Link>

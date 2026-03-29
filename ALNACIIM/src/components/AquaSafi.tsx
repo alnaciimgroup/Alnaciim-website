@@ -68,9 +68,9 @@ export default function AquaSafi() {
                <motion.div 
                  animate={{ y: [0, -10, 0] }} 
                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                 className="w-48 h-[400px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[100px] shadow-[0_20px_50px_rgba(17,82,212,0.1)] flex items-center justify-center"
+                 className="w-48 h-[400px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[100px] shadow-[0_20px_50px_rgba(17,82,212,0.1)] flex items-center justify-center overflow-hidden p-2"
                >
-                 <span className="text-[#1152d4] font-['Syne'] font-bold rotate-[-90deg] tracking-widest text-xl opacity-50">AQUA SAFI 3D RENDER</span>
+                 <img src="/images/bottled_water_card_v2_1769526655337.png" alt="Aqua Safi 3D Render" className="w-full h-full object-cover rounded-[90px]" />
                </motion.div>
             </div>
 

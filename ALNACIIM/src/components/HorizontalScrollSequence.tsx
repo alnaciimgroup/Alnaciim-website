@@ -29,7 +29,7 @@ export default function HorizontalScrollSequence() {
       title: "Crystal Clear.",
       subtitle: "The Purest Water in Hargeisa.",
       desc: "An architectural approach to hydration. Delivered directly to your doorstep.",
-      image: "https://images.unsplash.com/photo-1548846399-5567bbed44cd?q=80&w=2940&auto=format&fit=crop",
+      image: "/images/bottled_water_card_1769526592818.png",
       isHero: true
     },
     {
@@ -45,7 +45,7 @@ export default function HorizontalScrollSequence() {
       title: "Industrial Ice.",
       subtitle: "100% RO Purified Assembly.",
       desc: "Massive scale ice blocks and commercial cubes dedicated to the hospitality and logistics sectors.",
-      image: "https://images.unsplash.com/photo-1543301385-bd71be9b9356?q=80&w=2940&auto=format&fit=crop",
+      image: "/images/commercial_ice_cubes_1769372486661.png",
       icon: <Snowflake size={32} />
     },
     {

@@ -6,7 +6,9 @@ export default function CTA() {
     <section className="relative w-full py-40 mt-20 z-10 overflow-hidden">
       
       {/* Stripe-Style Slanted Background Element */}
-      <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0"></div>
+      <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2940&auto=format&fit=crop" alt="Engineering Facility" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
+      </div>
       
       {/* Decorative Glow inside the CTA */}
       <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] bg-[#0066FF] rounded-full filter blur-[100px] opacity-40 mix-blend-screen pointer-events-none z-0"></div>

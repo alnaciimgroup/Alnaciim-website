@@ -3,23 +3,23 @@ import React from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
-export default function StatsGrid() {
+export default function EnergyStatsGrid() {
   const stats = [
-    { value: 4, suffix: "", label: "Core Divisions" },
-    { value: 50, suffix: "k+", label: "Litres/Day" },
-    { value: 2, suffix: "MW+", label: "Solar Deployed" },
-    { value: 15, suffix: "+", label: "Years Operating" }
+    { value: 500, suffix: "kW+", label: "Solar Installed" },
+    { value: 2, suffix: "MWh+", label: "BESS Capacity" },
+    { value: 28, suffix: "Yrs", label: "Expertise" },
+    { value: 78, suffix: "%", label: "Diesel Reduction" }
   ];
 
   return (
     <section className="relative w-full py-32 mt-20 z-10">
       
       {/* Stripe-Style Slanted Background Element */}
-      <div className="absolute inset-0 bg-[#0066FF] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
-         <img src="https://images.unsplash.com/photo-1544453896-e2a27b82fe8d?q=80&w=2940&auto=format&fit=crop" alt="Water Infrastructure" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay scale-110" />
+      <div className="absolute inset-0 bg-[#FF5A00] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2940&auto=format&fit=crop" alt="Solar Array" className="absolute inset-0 w-full h-full object-cover opacity-[0.15] mix-blend-overlay scale-110" />
       </div>
       {/* Secondary accent slanted layer */}
-      <div className="absolute inset-0 bg-blue-900/10 transform -skew-y-2 origin-top-right z-0"></div>
+      <div className="absolute inset-0 bg-[#FF8C00]/10 transform -skew-y-2 origin-top-right z-0"></div>
 
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10">
         
@@ -39,7 +39,7 @@ export default function StatsGrid() {
                 <span className="text-[48px] lg:text-[56px] font-[800] tracking-tight text-slate-900 leading-none">
                   <CountUp enableScrollSpy scrollSpyOnce end={stat.value} duration={2} separator="," />
                 </span>
-                <span className="text-[20px] font-[800] text-[#0066FF]">{stat.suffix}</span>
+                <span className="text-[20px] font-[800] text-[#FF5A00]">{stat.suffix}</span>
               </div>
               <p className="text-slate-500 font-[600] text-[14px]">{stat.label}</p>
             </motion.div>

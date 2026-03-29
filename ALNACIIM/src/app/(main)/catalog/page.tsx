@@ -3,11 +3,13 @@
 import { useState, useMemo } from "react";
 import { catalogProducts, Product } from "@/data/catalog";
 import { Search, Database } from "lucide-react";
+import CatalogModal from "@/components/CatalogModal";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function CatalogPage() {
   const [activeTab, setActiveTab] = useState("All Products");
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   const tabs = [
@@ -165,7 +167,7 @@ export default function CatalogPage() {
                 <p className="text-[14px] text-slate-500 font-[400]">Reconfigure query parameters to locate valid objects.</p>
               </div>
             ) : (
-              <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+              <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 <AnimatePresence mode="popLayout">
                   {filteredProducts.map(product => (
                     <motion.div
@@ -175,9 +177,9 @@ export default function CatalogPage() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
                       key={product.id}
-                      className="bg-white rounded-[13px] border border-[#dde2f0] hover:border-[#1152d4] shadow-sm hover:shadow-[0_6px_24px_rgba(17,82,212,0.1)] hover:-translate-y-0.5 transition-all duration-200 group flex flex-col overflow-hidden"
+                      className="bg-white rounded-2xl border border-slate-200 hover:border-[#0066FF]/30 shadow-sm hover:shadow-[0_20px_40px_rgba(0,102,255,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col overflow-hidden"
                     >
-                      <div className="h-full flex flex-col">
+                      <div onClick={() => setSelectedProduct(product)} className="cursor-pointer h-full flex flex-col">
                         
                         {/* Soft Image Box */}
                         <div className="aspect-[4/3] bg-slate-50 relative overflow-hidden p-8 flex flex-col items-center justify-center border-b border-slate-100 group-hover:bg-blue-50/50 transition-colors">
@@ -215,6 +217,9 @@ export default function CatalogPage() {
         </div>
       </section>
 
+      {selectedProduct && (
+        <CatalogModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      )}
     </main>
   );
 }

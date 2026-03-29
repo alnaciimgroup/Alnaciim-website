@@ -8,8 +8,13 @@ export default function TrustedLeaders() {
   ];
 
   return (
-    <section className="w-full bg-[#f8fafc] py-20 border-t border-slate-200">
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 text-center">
+    <section className="w-full bg-[#f8fafc] py-20 border-t border-slate-200 relative overflow-hidden">
+      {/* Subtle Background Texture */}
+      <div className="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2940&auto=format&fit=crop" alt="Corporate Architecture Architecture" className="w-full h-full object-cover opacity-[0.03] grayscale" />
+      </div>
+
+      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 text-center relative z-10">
         
         <p className="text-slate-500 text-[13px] font-[700] uppercase tracking-[2px] mb-10">
           Trusted by over 850+ major regional operations
