@@ -81,7 +81,7 @@ export default function Divisions() {
                    className="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center border border-slate-100 group-hover:scale-110 transition-all duration-300"
                    style={{ color: card.color }}
                  >
-                   {React.cloneElement(card.icon as React.ReactElement, { size: 20 })}
+                   {React.cloneElement(card.icon as React.ReactElement<{ size?: number }>, { size: 20 })}
                  </div>
               </div>
 

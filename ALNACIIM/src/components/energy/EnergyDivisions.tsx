@@ -70,7 +70,7 @@ export default function EnergyDivisions() {
                  <div className="absolute inset-0 bg-[#FF5A00]/10 mix-blend-multiply"></div>
                  {/* Floating Icon overlapping the image */}
                  <div className="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#FF5A00] border border-slate-100 group-hover:scale-110 group-hover:bg-[#FF5A00] group-hover:text-white transition-all duration-300">
-                   {React.cloneElement(card.icon as React.ReactElement, { size: 20 })}
+                   {React.cloneElement(card.icon as React.ReactElement<{ size?: number }>, { size: 20 })}
                  </div>
               </div>
 
