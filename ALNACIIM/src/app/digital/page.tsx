@@ -20,13 +20,13 @@ export default function DigitalHome() {
       {/* Stats Bar */}
 
       {/* Stats Bar */}
-      <section className="py-12 border-y border-slate-900 bg-slate-950 text-white">
+      <section className="py-8 border-y border-slate-900 bg-slate-950 text-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
             {stats.map((stat, i) => (
               <div key={i} className="text-center md:text-left">
-                <div className="text-[32px] md:text-[42px] font-[800] text-blue-400 leading-none mb-2">{stat.value}</div>
-                <div className="text-[12px] font-[600] text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                <div className="text-[28px] md:text-[36px] font-[800] text-blue-400 leading-none mb-1.5">{stat.value}</div>
+                <div className="text-[11px] font-[600] text-slate-500 uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -34,14 +34,14 @@ export default function DigitalHome() {
       </section>
 
       {/* Integration Highlight */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-[42px] md:text-[56px] font-[800] leading-[1.1] tracking-tight text-slate-900 mb-8 border-l-8 border-blue-600 pl-8">
+              <h2 className="text-[32px] md:text-[42px] font-[800] leading-[1.1] tracking-tight text-slate-900 mb-6 border-l-4 border-blue-600 pl-6">
                 The connection layer between hardware and intelligence.
               </h2>
-              <p className="text-[18px] text-slate-600 leading-relaxed mb-8">
+              <p className="text-[17px] text-slate-600 leading-relaxed mb-6 font-[450]">
                 ALNM Digital works directly alongside ALNM Engineering. The same group that installs the physical infrastructure builds the logic that reads it.
               </p>
               <div className="space-y-4">
@@ -58,9 +58,9 @@ export default function DigitalHome() {
                 ))}
               </div>
             </div>
-            <div className="relative p-6">
-              <div className="bg-slate-100 rounded-[3rem] p-4 shadow-inner relative z-10">
-                 <div className="bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-2xl">
+            <div className="relative p-4">
+              <div className="bg-slate-100 rounded-3xl p-3 shadow-inner relative z-10">
+                 <div className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xl aspect-video">
                    <img 
                       src="/images/industrial_automation_control_room_1774871867828.png" 
                       alt="SCADA Monitoring Interface" 
@@ -75,25 +75,25 @@ export default function DigitalHome() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 text-center mb-16">
-          <h2 className="text-[42px] md:text-[56px] font-[800] text-slate-900 mb-6">Industrial Grade Software.</h2>
-          <p className="text-[18px] text-slate-600 max-w-2xl mx-auto">
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6 text-center mb-12">
+          <h2 className="text-[32px] md:text-[42px] font-[800] text-slate-900 mb-5">Industrial Grade Software.</h2>
+          <p className="text-[17px] text-slate-600 max-w-2xl mx-auto font-[450]">
             From company websites to live SCADA monitoring dashboards that connect a network of remote sites—ALNM Digital delivers.
           </p>
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pillars.map((pillar, i) => (
-              <div key={i} className="bg-white p-10 rounded-[2rem] border border-slate-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                  {i === 0 && <Globe size={28} />}
-                  {i === 1 && <Radio size={28} />}
-                  {i === 2 && <LayoutDashboard size={28} />}
+              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
+                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  {i === 0 && <Globe size={24} />}
+                  {i === 1 && <Radio size={24} />}
+                  {i === 2 && <LayoutDashboard size={24} />}
                 </div>
-                <h3 className="text-[24px] font-[800] text-slate-900 mb-4">{pillar.title}</h3>
-                <p className="text-[16px] text-slate-600 leading-relaxed">
+                <h3 className="text-[20px] font-[800] text-slate-900 mb-3">{pillar.title}</h3>
+                <p className="text-[14px] text-slate-600 leading-relaxed font-[450]">
                   {pillar.description}
                 </p>
               </div>

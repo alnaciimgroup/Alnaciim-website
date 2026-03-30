@@ -9,27 +9,63 @@ const { pillars } = CONTENT.engineering;
 const solutions = [
   {
     id: "01",
-    title: pillars[0].title,
-    image: "/images/industrial_automation_control_room_1774871867828.png",
-    services: ["Switchboard Design", "Panel Build", "Industrial Wiring", "Functional Testing"]
+    title: "Water Infrastructure Engineering",
+    image: "/images/water_infrastructure_ro_plant_1774871836361.png",
+    services: [
+      "Borehole drilling & steel casing",
+      "RO system design & treatment train",
+      "Projects: Nuwaco (2.4k m³/day), Martisoor, Garacad",
+      "MCC panels & VFD motor starters",
+      "SCADA remote monitoring integration"
+    ]
   },
   {
     id: "02",
-    title: pillars[1].title,
-    image: "/images/water_purification_industrial_1774886325880.png",
-    services: ["Mechanical Installation", "Electrical Commissioning", "Performance Verification", "Operator Training"]
+    title: "Power Systems — Full EPC",
+    image: "/images/power_systems_generators_1774871854169.png",
+    services: [
+      "Electrical load analysis & demand calc",
+      "Solar PV mounting & DC string wiring",
+      "ATS design & fabrication (In-house)",
+      "Hybrid source integration (Solar/BESS/Genset)",
+      "Load bank testing to rated capacity"
+    ]
   },
   {
     id: "03",
-    title: pillars[2].title,
-    image: "/images/power_systems_generators_1774871854169.png",
-    services: ["SCADA Programming", "Energy Management Systems", "Manual-to-Auto Retrofit", "System Audits"]
+    title: "SCADA & Industrial Automation",
+    image: "/images/industrial_automation_control_room_1774871867828.png",
+    services: [
+      "Ignition SCADA platform development",
+      "PLC: Allen-Bradley, Siemens, Schneider",
+      "HMI touchscreen operator interfaces",
+      "Historian data & alarm management",
+      "Integration: OPC, Modbus, Profibus"
+    ]
   },
   {
     id: "04",
-    title: pillars[3].title,
-    image: "/images/water_infrastructure_ro_plant_1774871836361.png",
-    services: ["Spare Parts Supply", "Membrane Cleaning", "Pump Repair", "Scheduled Servicing"]
+    title: "Custom Industrial Works",
+    image: "/images/eng_automation.png",
+    services: [
+      "Automatic Transfer Switch (ATS) builds",
+      "Motor Control Centres (MCC)",
+      "Main Distribution Boards (all ratings)",
+      "Solar combiner boxes & DC panels",
+      "IEC 60364 industrial wiring standards"
+    ]
+  },
+  {
+    id: "05",
+    title: "Maintenance & Repair",
+    image: "/images/eng_pm.png",
+    services: [
+      "RO membrane cleaning & performance test",
+      "Pump mechanical seals & impeller service",
+      "Solar array cleaning & inverter service",
+      "Quarterly & annual service contracts",
+      "Garowe warehouse spare parts stock"
+    ]
   }
 ];
 

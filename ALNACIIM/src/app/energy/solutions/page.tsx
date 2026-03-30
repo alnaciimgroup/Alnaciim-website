@@ -7,43 +7,69 @@ export default function EnergySolutions() {
 
   const solutions = [
     {
-      title: "Utility-Scale Solar PV",
-      description: "High-yield commercial and utility-scale solar arrays. We coordinate full EPC services from site assessment and PVSyst modeling to final commissioning and grid integration.",
+      title: "Solar PV Systems",
+      description: "Direct Tier-1 supply and precision design for all scales. Every system is sized against the actual site load profile and measured solar resource—we do not use standard templates.",
       features: [
-        "Tier 1 Bifacial Modules for maximum yield",
-        "Anti-PID Technology & PID Recovery",
-        "Structural Wind Loading Design for regional conditions",
-        "String and Central Inverter Architecture",
-        "Automated Panel Cleaning & Maintenance Programs"
+        "Residential rooftop — 2 kW to 30 kW",
+        "Commercial compounds — 30 kW to 500 kW",
+        "Industrial ground-mount — 100 kW to multi-MW",
+        "High-efficiency PERC and TOPCon modules",
+        "On-grid, off-grid and solar pumping configurations"
       ],
-      image: "/images/power_systems_generators_1774871854169.png",
-      icon: <Sun className="text-[#FF5A00]" size={24} />
+      image: "/images/catalog_solar_panels_1774889827145.png",
+      icon: <Sun className="text-[#00a8ff]" size={24} />
+    },
+    {
+      title: "Hybrid Microgrid Systems",
+      description: "Intelligent coordination of solar, battery storage, and diesel generation. Our energy management controllers select the optimal source in real time to maximize solar and reduce fuel cost.",
+      features: [
+        "Hospitals, clinics and healthcare facilities",
+        "Telecom towers and remote communications",
+        "Industrial manufacturing and processing",
+        "Automated solar-priority dispatch algorithms",
+        "Seamless integration of Solar, BESS and Gensets"
+      ],
+      image: "/images/industrial_automation_control_room_1774871867828.png",
+      icon: <Zap className="text-[#00a8ff]" size={24} />
     },
     {
       title: "Battery Energy Storage (BESS)",
-      description: "Scalable Lithium Iron Phosphate (LiFePO4) battery solutions. From home-scale kWh modular units to 20ft containerized industrial-scale MWh systems.",
+      description: "LFP battery systems for residential to utility applications. We specify LFP chemistry exclusively for superior cycle life (>6,000 cycles) and thermal stability.",
       features: [
-        "Peak Shaving & Load Shifting optimization",
-        "Intelligent BMS with remote monitoring",
-        "High cycle life (>6000 cycles at 80% DoD)",
-        "Seamless transition for 24/7 continuous operation",
-        "Fire suppression & thermal management systems"
+        "Residential LFP — 5 kWh to 20 kWh modules",
+        "Commercial LFP — 20 kWh to 100 kWh scalable racks",
+        "Industrial BESS — 100 kWh to multi-MWh skid deployment",
+        "High cycle life (>16 years of daily cycling)",
+        "Integrated BMS for maintenance-free operation"
       ],
-      image: "/images/power_systems_generators_1774871854169.png",
-      icon: <Battery className="text-[#FF5A00]" size={24} />
+      image: "/images/catalog_inverter_1774889842179.png",
+      icon: <Battery className="text-[#00a8ff]" size={24} />
     },
     {
-      title: "Hybrid Microgrid Integration",
-      description: "Intelligent coordination of solar, battery storage, and diesel generation for 24/7 reliability in off-grid or weak-grid environments.",
+      title: "Generator Sets & Backup",
+      description: "Industrial diesel generator sets from 20 kVA to 3,000+ kVA. We provide full integration with hybrid controllers and in-house ATS panel fabrication.",
       features: [
-        "DEIF & DSE central energy management controllers",
-        "Automated generator start/stop logic",
-        "Optimal solar-priority dispatch algorithms",
-        "Grid-forming and grid-following capabilities",
-        "Site-wide energy auditing and demand management"
+        "Standby, prime and continuous ratings",
+        "Weatherproof and sound-attenuated enclosures",
+        "AMF and parallel load-sharing controllers",
+        "Load bank testing to rated capacity before handover",
+        "Automatic solar-to-generator priority switching"
       ],
-      image: "/images/industrial_automation_control_room_1774871867828.png",
-      icon: <Zap className="text-[#FF5A00]" size={24} />
+      image: "/images/catalog_generator_1774889998709.png",
+      icon: <Fuel className="text-[#00a8ff]" size={24} />
+    },
+    {
+      title: "Intelligent System Controllers",
+      description: "The logic layer of the power system. We specify and program site-specific controllers rather than a one-size-fits-all approach.",
+      features: [
+        "MPPT solar charge controllers (40A - 150A)",
+        "Advanced multi-generator paralleling units",
+        "Hybrid EMS source selection & management",
+        "Remote SCADA monitoring and alarm notifications",
+        "In-house PLC-based industrial process control"
+      ],
+      image: "/images/catalog_controller_1774889872104.png",
+      icon: <Zap className="text-[#00a8ff]" size={24} />
     }
   ];
 

@@ -12,7 +12,7 @@ export default function EnergyStatsGrid() {
   ];
 
   return (
-    <section className="relative w-full py-32 mt-20 z-10">
+    <section className="relative w-full py-20 mt-12 z-10">
       
       {/* Stripe-Style Slanted Background Element */}
       <div className="absolute inset-0 bg-[#FF5A00] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
@@ -24,7 +24,7 @@ export default function EnergyStatsGrid() {
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Floating White Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           
           {stats.map((stat, i) => (
             <motion.div 
@@ -33,15 +33,15 @@ export default function EnergyStatsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/50 hover:-translate-y-2 transition-transform duration-500"
+              className="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/50 hover:-translate-y-2 transition-transform duration-500"
             >
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-[48px] lg:text-[56px] font-[800] tracking-tight text-slate-900 leading-none">
+              <div className="flex items-baseline gap-1 mb-1.5">
+                <span className="text-[36px] lg:text-[42px] font-[800] tracking-tight text-slate-900 leading-none">
                   <CountUp enableScrollSpy scrollSpyOnce end={stat.value} duration={2} separator="," />
                 </span>
-                <span className="text-[20px] font-[800] text-[#FF5A00]">{stat.suffix}</span>
+                <span className="text-[17px] font-[800] text-[#FF5A00]">{stat.suffix}</span>
               </div>
-              <p className="text-slate-500 font-[600] text-[14px]">{stat.label}</p>
+              <p className="text-slate-500 font-[600] text-[13px]">{stat.label}</p>
             </motion.div>
           ))}
 

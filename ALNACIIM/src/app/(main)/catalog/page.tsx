@@ -55,9 +55,9 @@ export default function CatalogPage() {
       {/* Hero Unit */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-16 relative z-10 text-center flex flex-col items-center">
           
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 text-[#0066FF] shadow-sm mb-6">
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-md rounded-fluid border border-primary-light text-primary shadow-sm mb-6">
           <Database size={14} className="fill-current" />
-          <span className="font-[600] text-[12px] tracking-wide">Warehouse Database</span>
+          <span className="font-[600] text-[12px] tracking-wide text-primary">Warehouse Database</span>
         </div>
         
         <h1 className="text-[52px] md:text-[80px] font-[800] text-slate-900 leading-[1] tracking-[-3px] mb-6">
@@ -68,7 +68,7 @@ export default function CatalogPage() {
           Access the secure ALNM Energy distribution node. Procure Tier-1 industrial hydrology and prime power infrastructure hardware.
         </p>
 
-        <div className="flex justify-center gap-12 bg-white px-8 py-5 rounded-2xl shadow-sm border border-slate-100">
+        <div className="flex justify-center gap-12 bg-white px-8 py-5 rounded-fluid shadow-fluid border border-primary-light">
            <div className="flex flex-col items-center">
              <div className="text-[32px] font-[800] text-slate-900 leading-none tracking-[-1px]">200+</div>
              <div className="text-[12px] font-[600] tracking-wide text-slate-500">SKUs Available</div>
@@ -93,9 +93,9 @@ export default function CatalogPage() {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-5 py-2.5 rounded-xl text-[13px] font-[600] transition-all ${
+                    className={`px-5 py-2.5 rounded-fluid text-[13px] font-[600] transition-all ${
                       activeTab === tab 
-                        ? 'bg-slate-900 text-white shadow-md' 
+                        ? 'bg-ink text-white shadow-fluid' 
                         : 'bg-transparent text-slate-500 hover:bg-slate-100'
                     }`}
                   >
@@ -112,7 +112,7 @@ export default function CatalogPage() {
                 placeholder="Query hardware specifications..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-[46px] pr-[16px] py-[10px] bg-slate-50 border border-slate-200 rounded-xl text-[13px] outline-none focus:bg-white focus:border-[#0066FF] focus:ring-4 focus:ring-blue-50 transition-all font-[500] text-slate-900"
+                className="w-full pl-[46px] pr-[16px] py-[10px] bg-slate-50 border border-slate-200 rounded-fluid text-[13px] outline-none focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary-light transition-all font-[500] text-inc"
               />
             </div>
 
@@ -126,7 +126,7 @@ export default function CatalogPage() {
           
           {/* Left Sidebar Filters */}
           <aside className="w-full lg:w-[260px] shrink-0">
-            <div className="lg:sticky lg:top-[200px] bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+            <div className="lg:sticky lg:top-[200px] bg-white p-6 rounded-[2rem] shadow-fluid border border-primary-light">
                <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                  <h3 className="text-[13px] font-[700] tracking-wide text-slate-900">Filter Matrix</h3>
                  {selectedFilters.length > 0 && (
@@ -144,7 +144,7 @@ export default function CatalogPage() {
                           type="checkbox" 
                           checked={selectedFilters.includes(cat)}
                           onChange={() => toggleFilter(cat)}
-                          className="peer appearance-none w-5 h-5 rounded border-2 border-slate-300 bg-white checked:bg-[#0066FF] checked:border-[#0066FF] transition-all cursor-pointer shadow-sm" 
+                          className="peer appearance-none w-5 h-5 rounded border-2 border-slate-300 bg-white checked:bg-primary checked:border-primary transition-all cursor-pointer shadow-sm" 
                         />
                         <svg className="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12"></polyline>
@@ -177,7 +177,7 @@ export default function CatalogPage() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.3 }}
                       key={product.id}
-                      className="bg-white rounded-2xl border border-slate-200 hover:border-[#0066FF]/30 shadow-sm hover:shadow-[0_20px_40px_rgba(0,102,255,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col overflow-hidden"
+                      className="bg-white rounded-[2rem] border border-primary-light hover:border-primary/50 shadow-sm hover:shadow-fluid hover:-translate-y-1 transition-all duration-300 group flex flex-col overflow-hidden"
                     >
                       <div onClick={() => setSelectedProduct(product)} className="cursor-pointer h-full flex flex-col">
                         
@@ -200,7 +200,7 @@ export default function CatalogPage() {
                           
                           <div className="mt-auto flex flex-wrap gap-2">
                             {product.tags.slice(0, 3).map(tag => (
-                              <span key={tag} className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-[11px] font-[500] group-hover:bg-blue-50 group-hover:text-[#0066FF] transition-colors">
+                              <span key={tag} className="bg-slate-100 text-slate-600 px-3 py-1 rounded-fluid text-[11px] font-[500] group-hover:bg-primary-light group-hover:text-primary transition-colors">
                                 {tag}
                               </span>
                             ))}
