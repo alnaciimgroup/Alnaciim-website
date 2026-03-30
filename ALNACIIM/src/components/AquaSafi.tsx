@@ -2,11 +2,23 @@
 import { Droplet, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function AquaSafi() {
+interface AquaSafiProps {
+  title?: string;
+  feature1?: string;
+  feature2?: string;
+  image?: string;
+}
+
+export default function AquaSafi({
+  title = "Aqua Safi Premium Water.",
+  feature1 = "7-Stage Reverse Osmosis",
+  feature2 = "pH Balanced (7.2 - 7.6)",
+  image = "/images/water_desalination_ro_system_1774871305417.png"
+}: AquaSafiProps) {
   const features = [
-    "7-Stage Reverse Osmosis",
+    feature1,
+    feature2,
     "Remineralization Process",
-    "pH Balanced (7.2 - 7.6)",
     "BPA-Free Bottling"
   ];
 
@@ -30,13 +42,12 @@ export default function AquaSafi() {
               Consumer Product Division
             </div>
             
-            <h2 className="font-['Syne'] text-[40px] md:text-[56px] font-[800] leading-[1.05] tracking-[-2px] text-[#0b0d14] mb-8">
-              Aqua Safi<br />
-              <span className="text-[#1152d4]">Premium Water.</span>
+            <h2 className="font-['Syne'] text-[32px] md:text-[42px] font-[800] leading-[1.05] tracking-[-2px] text-[#0b0d14] mb-8">
+              {title}
             </h2>
             
             <p className="text-[17px] text-[#4e5570] mb-10 leading-[1.6] max-w-lg">
-              Derived directly from ALNM Water's industrial purification technology, Aqua Safi delivers bottled perfection. We bring our infrastructure-grade quality control straight to the consumer market.
+              Derived directly from ALNM Water's industrial purification technology, {title} delivers bottled perfection. We bring our infrastructure-grade quality control straight to the consumer market.
             </p>
             
             <div className="grid grid-cols-2 gap-y-4 gap-x-8 mb-12">
@@ -70,7 +81,7 @@ export default function AquaSafi() {
                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                  className="w-48 h-[400px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[100px] shadow-[0_20px_50px_rgba(17,82,212,0.1)] flex items-center justify-center overflow-hidden p-2"
                >
-                 <img src="/images/water_desalination_ro_system_1774871305417.png" alt="Aqua Safi Technical Origin" className="w-full h-full object-cover p-0" />
+                 <img src={image} alt="Aqua Safi Technical Origin" className="w-full h-full object-cover p-0" />
                </motion.div>
             </div>
 
