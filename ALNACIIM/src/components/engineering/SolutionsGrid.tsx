@@ -6,25 +6,25 @@ const solutions = [
   {
     id: "01",
     title: "Water Infrastructure Engineering",
-    image: "/images/media__1771787700513.png",
+    image: "/images/eng_water.png",
     services: ["Borehole Drilling", "RO Plants", "Pump Stations", "SCADA Integration"]
   },
   {
     id: "02",
     title: "Power Systems Engineering",
-    image: "/images/alnaciim_hero_full_1771787383245.png",
+    image: "/images/eng_power.png",
     services: ["Load Analysis", "Solar PV Sizing", "BESS Technology", "Industrial Generators"]
   },
   {
     id: "03",
     title: "Industrial Automation & Control",
-    image: "/images/about_page_middle1_1769372003268.png",
+    image: "/images/eng_automation.png",
     services: ["PLC Programming", "SCADA/HMI", "Industrial IoT", "Factory Automation"]
   },
   {
     id: "04",
     title: "Project Management",
-    image: "/images/alnaciim_bottom_check_1771787310806.png",
+    image: "/images/eng_pm.png",
     services: ["End-to-end Delivery", "Strategic Procurement", "Commissioning & Testing", "Lifecycle Analysis"]
   }
 ];

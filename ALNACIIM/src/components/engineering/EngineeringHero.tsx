@@ -88,7 +88,7 @@ export default function EngineeringHero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/about_page_top_1769371967484.png" alt="Industrial Engineer" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/eng_hero.png" alt="Industrial Engineer" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>

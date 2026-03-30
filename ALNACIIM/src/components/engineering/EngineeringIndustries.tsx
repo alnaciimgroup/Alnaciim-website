@@ -6,14 +6,14 @@ const industries = [
   {
     title: "Water Infrastructure",
     subtitle: "SUSTAINABILITY & SUPPLY",
-    image: "/images/media__1771787700513.png",
+    image: "/images/eng_water.png",
     color: "#ffc100",
     desc: "Large-scale RO plants, borehole drilling, and municipal distribution networks engineered for peak reliability."
   },
   {
     title: "Power Systems",
     subtitle: "STABILIZATION & GRID",
-    image: "/images/alnaciim_hero_full_1771787383245.png",
+    image: "/images/eng_power.png",
     color: "#ffc100",
     desc: "Industrial-grade solar arrays and microgrid systems designed to stabilize and augment national power grids."
   }
@@ -65,7 +65,7 @@ export default function EngineeringIndustries() {
         {/* Full-width Industrial Automation */}
         <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer shadow-xl">
              <img 
-             src="/images/about_page_top_1769371967484.png" 
+             src="/images/eng_automation.png" 
              alt="Industrial Automation" 
              className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
            />
