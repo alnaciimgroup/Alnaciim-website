@@ -10,7 +10,7 @@ export default function Divisions() {
       icon: <Database size={24} />,
       title: "ALNM Water",
       desc: "RO systems, purified water supply, bottled water manufacturing, and ice production. Serving homes, hospitals, and industry.",
-      img: "/images/media__1771787700513.png",
+      img: "/images/water_purification_industrial_1774886325880.png",
       color: "#0066FF",
       href: "/water"
     },
@@ -18,7 +18,7 @@ export default function Divisions() {
        icon: <Zap size={24} />,
        title: "ALNM Energy",
        desc: "Solar PV systems, hybrid inverters, MPPT controllers, and battery energy storage from home-scale kWh to industrial MWh BESS.",
-       img: "/images/alnaciim_hero_full_1771787383245.png",
+       img: "/images/solar_panels_energy_monitoring_1774871842410.png",
        color: "#FF5A00",
        href: "/energy"
     },
@@ -26,7 +26,7 @@ export default function Divisions() {
        icon: <ShieldCheck size={24} />,
        title: "ALNM Engineering",
        desc: "Full EPC — factory design, global procurement, installation, commissioning. Generator supply, installation, and service contracts.",
-       img: "/images/about_page_top_1769371967484.png",
+       img: "/images/engineering_hero_industrial_engineer_1774871631526.png",
        color: "#ffc100",
        href: "/engineering"
     },
@@ -34,7 +34,7 @@ export default function Divisions() {
        icon: <BarChart3 size={24} />,
        title: "ALNM Digital",
        desc: "Custom websites, enterprise database architecture, ERP and systems integration, and managed IT infrastructure.",
-       img: "/images/about_page_middle1_1769372003268.png",
+       img: "/images/industrial_automation_control_room_1774871867828.png",
        color: "#00c2ff",
        href: "/digital"
     }

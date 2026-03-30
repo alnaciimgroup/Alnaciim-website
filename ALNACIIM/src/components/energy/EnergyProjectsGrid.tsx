@@ -1,55 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-
-export const energyProjects = [
-  {
-    id: "06",
-    category: "Energy · Solar",
-    title: "300 kWp Grid-Scale Solar Power System",
-    description: "Design, supply and commissioning of a 300 kWp solar photovoltaic installation serving an industrial facility as its primary daytime power source. Tier-1 monocrystalline panels on ground-mounted racking, feeding three large three-phase string inverters. DEIF ASC 150 solar controllers handle automatic priority switching between solar and the site's diesel generators.",
-    scale: "300 kWp capacity",
-    power: "Three-phase inverters",
-    image: "/images/alnaciim_hero_full_1771787383245.png"
-  },
-  {
-    id: "07",
-    category: "Energy · Solar",
-    title: "200 kWp Solar Power System with Genset Coordination",
-    description: "200 kWp commercial solar installation across a multi-building compound. High-efficiency monocrystalline panels feeding four 50 kW three-phase string inverters. DEIF ASC 150 solar controllers coordinate solar and diesel generator power, automatically prioritising solar and switching to generator when output drops below demand.",
-    scale: "200 kWp capacity",
-    power: "DEIF ASC 150 Coordination",
-    image: "/images/alnaciim_hero_full_1771787383245.png"
-  },
-  {
-    id: "08",
-    category: "Energy · Homes",
-    title: "Solar and Battery Systems for Compounds",
-    description: "ALNM Energy has installed solar and battery storage systems across dozens of residential and commercial sites — from 2 kW household systems to 50+ kW compound installations. Each system combines roof or ground-mounted panels with a hybrid inverter or charge controller, and a battery bank sized to cover overnight demand.",
-    scale: "2 kW to 50+ kW",
-    power: "Hybrid Inverters + ATS",
-    image: "/images/about_page_top_1769371967484.png"
-  },
-  {
-    id: "09",
-    category: "Energy · Generators",
-    title: "Industrial Diesel Generator Setup",
-    description: "ALNM Energy has supplied and commissioned multiple diesel generator sets across industrial and commercial sites — Cummins, MAN, Leader Power and Weichai units sourced through Jubaili Bros. Each project covers the full scope: delivery and positioning, fuel system, ATS panel, load bank testing and controller integration.",
-    scale: "Heavy-Duty Gensets",
-    power: "DSE 8xxx ATS Paralleling",
-    image: "/images/alnaciim_bottom_check_1771787310806.png"
-  },
-  {
-    id: "10",
-    category: "Energy · Controls",
-    title: "DEIF AGC 150 Control Panel Fabrication",
-    description: "ALNM Energy designs, wires, tests and commissions advanced generator and solar control panels — a capability almost unique in East Africa. Multiple builds delivered using the DEIF AGC 150 for generator paralleling and load management, and the DEIF ASC 150 for solar-genset energy coordination.",
-    scale: "Custom Panel Builds",
-    power: "DEIF AGC / ASC 150 Integrations",
-    image: "/images/about_page_middle1_1769372003268.png"
-  }
-];
+import { projects } from "@/data/projects";
 
 export default function EnergyProjectsGrid({ limit }: { limit?: number }) {
+  const energyProjects = projects.filter(p => p.tags.includes("Energy"));
   const displayedProjects = limit ? energyProjects.slice(0, limit) : energyProjects;
 
   return (
@@ -93,14 +47,14 @@ export default function EnergyProjectsGrid({ limit }: { limit?: number }) {
               <div className="w-full lg:w-1/2 flex flex-col justify-center">
                 <div>
                   <div className="text-[11px] font-[700] uppercase tracking-wider text-[#FF5A00] mb-4 bg-[#FFF5F0] px-3 py-1.5 rounded-md inline-block">
-                    {proj.category}
+                    {proj.tags.join(" · ")}
                   </div>
                   
                   <h3 className="text-[24px] lg:text-[32px] font-[800] text-slate-900 leading-[1.2] mb-5 tracking-tight">
                     {proj.title}
                   </h3>
                   
-                  <p className="text-[15px] lg:text-[16px] text-slate-600 leading-[1.8] mb-8 font-[400]">
+                  <p className="text-[15px] lg:text-[16px] text-slate-600 leading-[1.8] mb-8 font-[400] line-clamp-4">
                     {proj.description}
                   </p>
                 </div>
@@ -111,8 +65,8 @@ export default function EnergyProjectsGrid({ limit }: { limit?: number }) {
                     <div className="text-[15px] font-[700] text-slate-900 mt-1">{proj.scale}</div>
                   </div>
                   <div>
-                    <div className="text-[11px] font-[600] text-slate-400 uppercase tracking-widest">Architecture</div>
-                    <div className="text-[15px] font-[700] text-slate-900 mt-1">{proj.power}</div>
+                    <div className="text-[11px] font-[600] text-slate-400 uppercase tracking-widest">Location</div>
+                    <div className="text-[15px] font-[700] text-slate-900 mt-1">{proj.location}</div>
                   </div>
                 </div>
               </div>

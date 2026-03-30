@@ -24,7 +24,7 @@ export default function Projects() {
               Highlighted Case Studies
             </h2>
           </div>
-          <Link href="/projects" className="inline-flex items-center gap-2 text-[13.5px] font-[600] font-['Syne'] text-white hover:text-[#1152d4] transition-colors pb-1 border-b-2 border-white hover:border-[#1152d4]">
+            <Link href="/work" className="inline-flex items-center gap-2 text-[13.5px] font-[600] font-['Syne'] text-white hover:text-[#1152d4] transition-colors pb-1 border-b-2 border-white hover:border-[#1152d4]">
             View The Full Archive
           </Link>
         </div>
@@ -49,7 +49,7 @@ export default function Projects() {
                 />
                 <div className="absolute top-4 left-4 z-20">
                   <span className={`px-3 py-1.5 text-[9.5px] font-[700] tracking-[1.5px] rounded-full uppercase bg-[#1152d4]/90 text-white backdrop-blur-md`}>
-                    {proj.category}
+                    {proj.tags[0]}
                   </span>
                 </div>
               </div>
@@ -58,10 +58,10 @@ export default function Projects() {
                 <h3 className="font-['Syne'] text-[20px] font-[800] text-white tracking-tight mb-3 leading-[1.25]">
                   {proj.title}
                 </h3>
-                <p className="text-[14px] text-white/50 leading-[1.6] flex-1">
-                  {proj.short_description}
+                <p className="text-[14px] text-white/50 leading-[1.6] flex-1 line-clamp-3">
+                  {proj.description}
                 </p>
-                <Link href="/projects" className="inline-flex items-center gap-1.5 text-[12.5px] font-[700] tracking-[0.5px] uppercase text-[#1152d4] hover:text-white transition-colors mt-6 pt-4 border-t border-white/10 w-fit">
+                <Link href="/work" className="inline-flex items-center gap-1.5 text-[12.5px] font-[700] tracking-[0.5px] uppercase text-[#1152d4] hover:text-white transition-colors mt-6 pt-4 border-t border-white/10 w-fit">
                   Read Case Study <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </div>

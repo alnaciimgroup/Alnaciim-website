@@ -2,8 +2,11 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CONTENT } from "@/data/content";
 
 export default function EnergyHero() {
+  const { hero } = CONTENT.energy;
+
   return (
     <section className="relative w-full pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFBFF]">
       
@@ -23,26 +26,25 @@ export default function EnergyHero() {
            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-md border border-white/60 text-[#FF5A00] text-[12px] font-[700] tracking-widest uppercase mb-8 shadow-sm"
          >
            <span className="w-2 h-2 rounded-full bg-[#FF5A00] animate-pulse"></span>
-           East Africa's Energy Division
+           {hero.eyebrow}
          </motion.div>
          
          <motion.h1 
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
            transition={{ duration: 0.8, delay: 0.1 }}
-           className="text-[64px] md:text-[88px] lg:text-[100px] font-[900] tracking-tighter text-slate-900 leading-[0.95] max-w-[1000px] mb-8"
+           className="text-[64px] md:text-[88px] lg:text-[100px] font-[900] tracking-tighter text-slate-900 leading-[0.95] max-w-[1000px] mb-8 whitespace-pre-line"
          >
-           Powering Progress.<br />
-           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8C00] to-[#FF5A00]">Storing Tomorrow.</span>
+           {hero.headline}
          </motion.h1>
 
          <motion.p 
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
            transition={{ duration: 0.8, delay: 0.2 }}
-           className="text-[18px] md:text-[20px] text-slate-600 font-[400] max-w-[600px] mb-12 leading-[1.6]"
+           className="text-[18px] md:text-[20px] text-slate-600 font-[400] max-w-[700px] mb-12 leading-[1.6]"
          >
-           Tier-1 renewable energy infrastructure and advanced battery storage solutions for industrial excellence across the Horn of Africa.
+           {hero.description}
          </motion.p>
 
          <motion.div 

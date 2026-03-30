@@ -3,13 +3,8 @@ import { Droplets } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-32 pb-12 px-6 lg:px-12 font-['Inter'] relative mt-[-100px] z-20 overflow-hidden">
+    <footer className="bg-slate-900 pt-32 pb-12 px-6 lg:px-12 font-['Inter'] relative z-20 overflow-hidden">
       
-      {/* Blueprint Background Texture */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img src="/images/about_page_top_1769371967484.png" alt="Infrastructure Blueprint" className="w-full h-full object-cover opacity-[0.03] grayscale mix-blend-screen" />
-      </div>
-
       {/* Top Border Accent */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#0066FF] to-transparent opacity-50 z-10"></div>
 
@@ -18,53 +13,51 @@ export default function Footer() {
         {/* Brand Block */}
         <div>
           <Link href="/" className="flex items-center gap-3 mb-6 group">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0066FF] to-[#00D2FF] flex items-center justify-center text-white shadow-[0_4px_10px_rgb(0,102,255,0.4)]">
-              <Droplets size={14} className="fill-current" />
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#0066FF] to-[#00D2FF] flex items-center justify-center text-white shadow-lg">
+              <Droplets size={18} className="fill-current" />
             </div>
-            <span className="text-[20px] font-[800] tracking-tight text-white leading-none">
-              Alnaciim <span className="font-[400] text-slate-400">Water</span>
+            <span className="text-[22px] font-[900] tracking-tighter text-white leading-none uppercase">
+              ALNACIIM GROUP
             </span>
           </Link>
           <p className="text-slate-400 text-[15px] leading-[1.7] font-[400] mb-8 max-w-[300px]">
-            Engineered hydration. Operating the largest continuous volumetric output facility in Garowe, Puntland since 1998.
+            Building the technical foundations of East Africa since 1998. Four divisions. One unified standard.
           </p>
         </div>
 
-        {/* Column 2 */}
+        {/* Column 2 - Divisions */}
         <div>
-          <h4 className="text-[13px] font-[700] tracking-[1px] text-white mb-6">
-            Logistics Map
+          <h4 className="text-[13px] font-[700] tracking-[2px] text-white/50 mb-6 uppercase">
+            Divisions
           </h4>
           <div className="flex flex-col gap-3">
-            <Link href="#fleet" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Delivery Fleet</Link>
-            <Link href="#ice" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Commercial Ice Supply</Link>
-            <Link href="#bottling" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Volumetric Facility</Link>
-            <Link href="#sustainability" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Polymer Recycling</Link>
+            <Link href="/" className="text-[14px] text-slate-400 hover:text-[#0066FF] transition-colors">ALNACIIM WATER</Link>
+            <Link href="/energy" className="text-[14px] text-slate-400 hover:text-[#0066FF] transition-colors">ALNACIIM ENERGY</Link>
+            <Link href="/engineering" className="text-[14px] text-slate-400 hover:text-[#0066FF] transition-colors">ALNACIIM ENGINEERING</Link>
+            <Link href="/digital" className="text-[14px] text-slate-400 hover:text-[#0066FF] transition-colors">ALNACIIM DIGITAL</Link>
           </div>
         </div>
 
-        {/* Column 3 */}
+        {/* Column 3 - Navigation */}
         <div>
-          <h4 className="text-[13px] font-[700] tracking-[1px] text-white mb-6">
-            Database
+          <h4 className="text-[13px] font-[700] tracking-[2px] text-white/50 mb-6 uppercase">
+            Navigation
           </h4>
           <div className="flex flex-col gap-3">
-            <Link href="/catalog" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Hardware Catalog</Link>
-            <Link href="/projects" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">Deployment Records</Link>
-            <Link href="#certifications" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">ISO Certifications</Link>
-            <Link href="#api" className="text-[14px] text-slate-400 hover:text-[#00D2FF] transition-colors">B2B Integration</Link>
+            <Link href="/work" className="text-[14px] text-slate-400 hover:text-white transition-colors">OUR WORK</Link>
+            <Link href="/catalog" className="text-[14px] text-slate-400 hover:text-white transition-colors">CATALOG</Link>
+            <Link href="/contact" className="text-[14px] text-slate-400 hover:text-white transition-colors">CONTACT US</Link>
           </div>
         </div>
 
-        {/* Column 4 */}
+        {/* Column 4 - Information */}
         <div>
-          <h4 className="text-[13px] font-[700] tracking-[1px] text-white mb-6">
-            Terminal Nodes
+          <h4 className="text-[13px] font-[700] tracking-[2px] text-white/50 mb-6 uppercase">
+            Information
           </h4>
           <div className="flex flex-col gap-3">
-            <Link href="#garowe" className="text-[14px] text-slate-400 hover:text-white transition-colors">Garowe Operations</Link>
-            <Link href="#mogadishu" className="text-[14px] text-slate-400 hover:text-white transition-colors">Mogadishu Dist.</Link>
-            <Link href="#hargeisa" className="text-[14px] text-slate-400 hover:text-white transition-colors">Hargeisa Node</Link>
+            <Link href="/about" className="text-[14px] text-slate-400 hover:text-white transition-colors">OUR STORY</Link>
+            <Link href="/privacy" className="text-[14px] text-slate-400 hover:text-white transition-colors">PRIVACY POLICY</Link>
           </div>
         </div>
 
@@ -72,11 +65,11 @@ export default function Footer() {
 
       <div className="max-w-[1240px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-[14px] text-slate-500 font-[400]">
-          © {new Date().getFullYear()} Alnaciim Water. All rights reserved.
+          © {new Date().getFullYear()} ALNACIIM GROUP. Built here. Operating here.
         </div>
         <div className="text-[14px] text-slate-500 flex gap-8">
-          <Link href="#privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

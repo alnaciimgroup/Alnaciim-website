@@ -1,0 +1,124 @@
+--- PROJECT 1 ---
+Project 01 — Nuwaco RO Plant
+Location:  Nuwaco, Puntland
+Scale:  2,400 m³ per day
+Service:  Design, installation and commissioning
+The Nuwaco RO Plant is the largest water treatment facility delivered by ALNM Group. Serving the Nuwaco district of Puntland, the plant was designed, procured and commissioned entirely by the ALNM engineering team — from the initial site assessment and system design through to final handover and operational verification.
+The plant processes 2,400 cubic metres of water per day through a multi-stage reverse osmosis treatment system, removing salinity, biological contaminants and suspended solids to deliver water that meets safe drinking standards. The installation includes pre-treatment filtration, high-pressure pump arrays with variable frequency drive control, multi-element RO membrane vessels, a chemical dosing system for antiscalant and biocide, a post-treatment mineralisation stage and a full PLC-based control and monitoring panel fabricated in-house by ALNM Engineering.
+The project represents ALNM's complete service offering in water infrastructure — a single contractor responsible for survey, design, procurement, civil works, mechanical and electrical installation, commissioning and post-handover maintenance support.
+
+--- PROJECT 2 ---
+Project 02 — Martisoor RO Plant
+Location:  Martisoor, Puntland
+Scale:  300 m³ per day
+Service:  Full system setup — supply, installation and commissioning
+The Martisoor RO Plant delivers 300 cubic metres of treated water per day to the Martisoor community. ALNM Group undertook the complete project scope: system design to match the local feed water quality and community demand profile, procurement of all major components, mechanical and electrical installation, and full commissioning including operational testing and handover.
+The system includes multi-stage sediment and carbon pre-treatment, a high-pressure RO stage with energy-recovery consideration, a UV sterilisation unit and a distribution holding tank. The electrical installation includes a solar-priority power supply with diesel generator backup, managed by an ALNM-fabricated automatic transfer switch panel.
+
+--- PROJECT 3 ---
+Project 03 — Garacad RO Plant
+Location:  Garacad, Maxjar Area
+Scale:  360 m³ per day
+Service:  Installation and commissioning
+Located on the coast of Puntland's Maxjar area, the Garacad RO Plant treats 360 cubic metres of water per day for the local community. ALNM Group was engaged to install and commission a supplied system, integrating all mechanical pipework, electrical connections, control panel wiring and instrumentation to bring the plant to operational status.
+The installation included connection of the high-pressure pump units, membrane vessel arrays, pre-filter housings, chemical dosing system and all associated piping and valve assemblies. Following mechanical completion, ALNM's commissioning team performed full pressure testing, membrane flush sequences, performance verification across the full capacity range and operator training.
+
+--- PROJECT 4 ---
+Project 04 — Budunbuto Village Water Project
+Location:  Budunbuto, Puntland
+Scale:  360 m³ per day
+Service:  Community water infrastructure — full scope
+The Budunbuto Village Water Project delivered end-to-end water infrastructure to a rural community in Puntland. ALNM Group was responsible for the complete scope: water source assessment, borehole development, RO treatment system design and installation, storage tank installation, distribution network and power supply.
+The project was designed specifically for the realities of rural community operation — minimal maintenance requirements, simple operator interface, modular spare parts stocking and a power system that prioritises solar generation with generator backup to minimise ongoing fuel costs. The 360 m³ per day RO treatment capacity was sized against the community's projected demand with headroom for population growth.
+The project is a clear example of ALNM's capability across the full water infrastructure scope — from the water in the ground to the tap at the community water point.
+
+--- PROJECT 5 ---
+Project 05 — 300 kWp Solar Power System
+Location:  Garowe, Puntland
+Scale:  300 kWp installed
+Service:  Full EPC — panels, inverters, DEIF solar-genset controllers, in-house panel fabrication
+ALNM Energy and ALNM Engineering jointly delivered this 300 kWp solar power system in Garowe — one of the largest solar installations in Puntland to date. The project involved complete design, supply, installation and commissioning of the full photovoltaic array and associated electrical infrastructure.
+The system was designed around high-efficiency monocrystalline solar panels in a ground-mount configuration, with three-phase string inverters feeding a common AC busbar. ALNM Engineering fabricated the complete solar-genset coordination control panel in-house, integrating a DEIF ASC 150 controller to manage the relationship between solar generation and the existing diesel generator set — automatically maximising solar utilisation and minimising generator run-hours.
+The installation included all DC string cabling, DC surge protection, AC cable runs, earthing and bonding, and a remote monitoring connection providing live visibility of system performance. The completed system has operated reliably since commissioning with full manufacturer warranty support through ALNM's distributor relationship.
+
+--- PROJECT 6 ---
+Project 06 — 200 kWp Solar Power System
+Location:  Puntland
+Scale:  200 kWp installed
+Service:  Solar supply, installation and commissioning
+A 200 kWp commercial solar installation designed and delivered by ALNM Energy. The project covered system sizing against the client's measured load profile, panel and inverter supply, full electrical installation and commissioning. String inverters with multiple MPPT inputs were specified to manage the array configuration and maximise energy harvest across varying irradiance conditions.
+The system is monitored remotely via the inverter manufacturer's cloud platform, with performance data accessible to both the client and the ALNM service team for proactive maintenance management.
+
+--- PROJECT 7 ---
+Project 07 — Aqua Safi Bottling Facility
+Location:  Garowe, Puntland
+Scale:  10,000 bottles per hour production capacity
+Service:  Facility design, procurement and installation
+The Aqua Safi bottling facility is the manufacturing heart of ALNM Water's consumer brand — one of the largest bottled water production operations in the Horn of Africa. ALNM Group designed, procured and installed the complete production facility, from the water pre-treatment system through to the filling, capping and labelling line.
+The production process begins with multi-stage RO water treatment to produce a consistent, high-purity feed. Treated water passes to the automated filling line, which operates at over 10,000 bottles per hour across the full product range: 250 ml, 500 ml, 1.5 L, 5 L, 10 L and 19 L formats. UV sterilisation protects water quality at the point of fill. The facility operates in a sealed, positive-pressure production environment.
+The electrical installation covers the full facility power distribution, motor control for all production equipment, compressed air system for bottle handling, chilled water system for process cooling and the building management panel. ALNM Engineering fabricated the main distribution board and all sub-panels in-house.
+
+--- PROJECT 8 ---
+Project 08 — Block Ice Facility — 10,000 kg/day
+Location:  Garowe, Puntland
+Scale:  10,000 kg of block ice per day
+Service:  Design, installation and commissioning
+ALNM Water's block ice facility at Garowe produces over 10,000 kg of block ice per day, serving the food supply chain, fishing industry, hotels and commercial distribution across Puntland. ALNM Engineering designed and installed the complete refrigeration system — compressor plant, evaporator tanks, brine system, condensers and the cold room storage facility.
+The electrical installation includes the compressor motor control centres, refrigeration controls, defrost management and the building power distribution. The system was commissioned with full capacity verification and operator training.
+
+--- PROJECT 9 ---
+Project 09 — Tube Ice Facility
+Location:  Garowe, Puntland
+Scale:  Commercial-scale tube ice production
+Service:  Installation and commissioning
+Operating alongside the block ice plant, the Aqua Safi tube ice facility produces packaged tube ice for commercial sale and distribution. The tube ice machine, cold storage and bagging station were installed and commissioned by ALNM Engineering as part of the Aqua Safi cold chain expansion, extending the product range beyond block ice into the retail and catering market.
+
+--- PROJECT 10 ---
+Project 10 — Industrial Hybrid Power System + SCADA
+Location:  Puntland
+Scale:  Solar + diesel generator + battery hybrid system
+Service:  System design, full EPC, SCADA commissioning
+This project represents ALNM Energy's most complex system architecture — a fully integrated hybrid power system combining solar generation, battery storage and diesel generator backup under a single energy management controller, with full SCADA remote monitoring commissioned by ALNM Digital.
+The system design began with a detailed load analysis and energy audit of the facility, establishing the peak demand, base load and daily consumption profile. Solar array sizing was optimised against the site's irradiance data to maximise self-consumption, with battery storage sized to bridge the overnight and low-irradiance periods. The diesel generator provides backup for extended low-solar periods and peak demand events that exceed the combined solar-battery capacity.
+ALNM Engineering fabricated the complete hybrid control panel in-house — integrating the solar inverter, battery management interface, automatic transfer switch, genset controller and energy management system communications bus. The SCADA platform, commissioned by ALNM Digital, provides the facility operator with live visibility of all energy flows, battery state of charge, generator status and system alarms via a web-based dashboard accessible from any location.
+
+--- PROJECT 11 ---
+Project 11 — Multi-Site Generator Deployment
+Location:  Multiple sites, Puntland
+Scale:  Diesel generator sets across commercial and infrastructure sites
+Service:  Generator supply, ATS panel fabrication, AMF controller installation
+ALNM Energy deployed diesel generator sets across multiple commercial and infrastructure sites in Puntland, providing reliable backup power for clients where grid supply is absent or unreliable. Each installation was treated as an individual project — site survey, generator sizing against the specific load, ATS panel fabrication and controller programming by the ALNM Engineering team.
+All automatic transfer switch panels were designed and built in-house by ALNM Engineering. DSE AMF controllers were programmed for each site's specific requirements — starting sequences, transfer timings, alarm thresholds and remote notification. Load bank testing was performed on every generator before handover.
+
+--- PROJECT 12 ---
+Project 12 — Garowe Hotels — RO Maintenance Portfolio
+Location:  Garowe, Puntland
+Scale:  Ongoing maintenance across multiple hotel properties
+Service:  RO system maintenance, membrane cleaning, pump repair
+ALNM Water provides ongoing maintenance services for the commercial RO water systems installed in Garowe's hotel sector. The maintenance portfolio covers scheduled service visits, membrane cleaning and replacement, pump inspection and repair, chemical supply, filter cartridge changes and emergency response.
+Each property operates a dedicated RO system producing treated water for both drinking and operational use. ALNM's maintenance programme is designed to maximise system uptime and membrane service life — directly impacting the hotel's operating cost and water quality consistency. Critical spare parts are held in stock at the Garowe warehouse, enabling same-day repair of common fault conditions.
+
+--- PROJECT 13 ---
+Project 13 — Water Wells — Drilled, Cased and Equipped
+Location:  Multiple sites, Puntland
+Scale:  50+ boreholes completed across Puntland
+Service:  Drilling, casing, pump installation, solar and generator power supply
+Over fifty boreholes drilled and fully equipped across Puntland represent the foundation of ALNM Group's 28-year presence in the region. Well drilling was ALNM's founding service and remains a core capability. Each borehole project is delivered as a complete package: site selection and geophysical survey, rotary drilling to the required aquifer depth, steel casing and gravel pack installation, development and yield testing, submersible pump selection and installation, surface headworks, power supply and handover.
+Power supply for the majority of completed wells is solar-priority with diesel generator backup — specified, supplied and installed by ALNM Energy and commissioned by ALNM Engineering. This integration of water and energy capability within a single group is a significant operational advantage: the same team that drills the well can design and install the most cost-effective power system for it.
+
+--- PROJECT 14 ---
+Project 14 — RO Water Treatment Systems — Garowe City
+Location:  Garowe, Puntland
+Scale:  Multiple municipal and commercial installations
+Service:  RO installation, ongoing maintenance and spare parts supply
+ALNM Water has installed and maintains a portfolio of reverse osmosis water treatment systems across Garowe — serving commercial premises, residential compounds, institutions and light industrial users. These installations range from compact commercial units treating 10–50 m³ per day to larger systems serving multiple buildings from a centralised plant.
+For each installation, ALNM provides ongoing maintenance through scheduled service visits and a spare parts supply service from Garowe stock. Membranes, filter cartridges, antiscalant chemicals, pump seals and common electrical components are all held locally — enabling rapid response to faults without the lead times associated with importing spare parts.
+
+--- PROJECT 15 ---
+Project 15 — Custom Industrial Electrical Works
+Location:  Puntland
+Scale:  Custom panel fabrication and industrial electrical installation
+Service:  Switchboard design, panel build, industrial wiring and installation
+ALNM Engineering's in-house panel fabrication capability has produced custom electrical switchboards and control panels for a range of industrial clients across Puntland. Projects have included main distribution boards for commercial buildings, motor control centres for pump and process installations, automatic transfer switch panels for generator integration, and custom instrumentation and control panels for water treatment and industrial process applications.
+All panels are designed to the client's specific requirements, built on DIN rail assemblies with type-tested switchgear and wiring to IEC 60364 standards. Each panel undergoes functional testing before delivery and is installed and commissioned by ALNM's electrical team.
+

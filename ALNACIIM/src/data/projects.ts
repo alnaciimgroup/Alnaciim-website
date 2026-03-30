@@ -1,67 +1,163 @@
-export const projects = [
+export interface Project {
+  id: string;
+  title: string;
+  location: string;
+  scale: string;
+  service: string;
+  description: string;
+  tags: string[];
+  image: string;
+}
+
+export const projects: Project[] = [
   {
     id: "01",
-    category: "WATER INFRASTRUCTURE",
-    title: "Water Wells Drilled, Cased and Fully Equipped — 50+ Sites",
-    scope: "EPC Turnkey",
-    power: "Hybrid Solar",
-    scale: "50+ Sites",
-    short_description: "ALNM's most foundational body of work spans over fifty water well projects across Puntland — each drilled, cased, fitted with a submersible pump and brought to full operation.",
-    description: "ALNM's most foundational body of work spans over fifty water well projects across Puntland — each drilled, cased, fitted with a submersible pump and brought to full operation. The scope varies by site: larger installations include diesel generator sets for primary power, solar panels with MPPT controllers and battery storage for off-grid overnight operation, elevated storage tanks, pump houses and distribution piping to the point of use. Smaller sites have been equipped with solar pump controllers directly driving the submersible pump, eliminating generator dependency entirely.",
-    tags: ["Engineering", "Water", "Energy"],
-    image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=1600&q=80",
-    reverse: false
+    title: "Nuwaco RO Plant",
+    location: "Nuwaco, Puntland",
+    scale: "2,400 m³ per day",
+    service: "Design, installation and commissioning",
+    description: "The largest water treatment facility delivered by ALNM Group. Designed, procured and commissioned entirely in-house — from site assessment to final operational verification.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_purification_industrial_1774886325880.png"
   },
   {
     id: "02",
-    category: "RENEWABLE ENERGY",
-    title: "Solar-Powered Rural Water Pumping Stations",
-    scope: "Design-Build",
-    power: "Off-Grid Solar",
-    scale: "Rural Network",
-    short_description: "Multiple solar-powered pumping station installations serving rural communities without grid access, integrating boreholes with ground-mounted solar arrays and MPPT charge controllers.",
-    description: "Multiple solar-powered pumping station installations serving rural communities without grid access. Each station integrates a borehole or surface water intake with a ground-mounted solar array, MPPT charge controller, submersible pump and battery bank sized to extend pumping into evening hours. Where demand is higher, a small diesel generator is included with automatic transfer switching so that the solar system runs during daylight and the generator covers peak demand or overcast periods. These stations have replaced expensive daily water trucking with low-maintenance, continuous supply.",
-    tags: ["Engineering", "Water", "Energy"],
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1600&q=80",
-    reverse: true
+    title: "Martisoor RO Plant",
+    location: "Martisoor, Puntland",
+    scale: "300 m³ per day",
+    service: "Full system setup — supply, installation and commissioning",
+    description: "Multi-stage sediment and carbon pre-treatment with energy-recovery high-pressure RO stage and UV sterilisation. Includes solar-priority power supply with automatic generator backup.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_desalination_ro_system_1774871305417.png"
   },
   {
     id: "03",
-    category: "WATER TREATMENT",
-    title: "Reverse Osmosis Treatment Plant — 300,000 US Gallons per Day",
-    scope: "Plant Build",
-    power: "Grid Tied",
-    scale: "300K USGPD",
-    short_description: "Supply, installation and commissioning of a large-scale brackish water reverse osmosis system, processing raw groundwater through multi-stage pre-treatment.",
-    description: "Supply, installation and commissioning of a large-scale brackish water reverse osmosis system — one of the largest installed in the region. The plant processes raw brackish groundwater through multi-stage pre-treatment including multimedia filtration, water softening and antiscalant dosing, then drives it through high-pressure reverse osmosis membrane trains. Permeate is post-treated with UV sterilisation and mineralisation before distribution. The entire plant operates under automated PLC control with SCADA monitoring, flow instrumentation and remote alarm capability.",
-    tags: ["Water", "Treatment"],
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80",
-    reverse: false
+    title: "Garacad RO Plant",
+    location: "Garacad, Maxjar Area",
+    scale: "360 m³ per day",
+    service: "Installation and commissioning",
+    description: "Mechanical pipework, electrical connections, and control panel wiring for a coastal water treatment plant. Performance verification across full capacity range with operator training.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_purification_industrial_1774886325880.png"
   },
   {
     id: "04",
-    category: "WATER TREATMENT",
-    title: "Reverse Osmosis Treatment Plant — 150,000 US Gallons per Day",
-    scope: "Plant Build",
-    power: "Grid Tied",
-    scale: "150K USGPD",
-    short_description: "Mid-scale brackish water RO system delivering 150,000 USGPD for industrial and commercial water demand, featuring automated PLC control and full post-treatment.",
-    description: "Mid-scale brackish water RO system delivering 150,000 USGPD for industrial and commercial water demand. Designed for process water, bottling line feed and facility supply. Full scope includes pre-treatment filtration, softening and antiscalant dosing, high-pressure pumping through RO membrane trains, post-treatment with UV sterilisation and remineralisation, and automated PLC control with conductivity, flow and pressure instrumentation throughout.",
-    tags: ["Water", "Treatment"],
-    image: "https://images.unsplash.com/photo-1468421870903-4df1664ac249?w=1600&q=80",
-    reverse: true
+    title: "Budunbuto Village Water Project",
+    location: "Budunbuto, Puntland",
+    scale: "360 m³ per day",
+    service: "Community water infrastructure — full scope",
+    description: "End-to-end water infrastructure including borehole development, solar-priority power, and RO treatment designed for low-maintenance rural community operation.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_infrastructure_ro_plant_1774871836361.png"
   },
   {
     id: "05",
-    category: "INDUSTRIAL MANUFACTURING",
-    title: "Aqua Safi Industries — Industrial Bottled Water Production Facility",
-    scope: "Factory EPC",
-    power: "Industrial",
-    scale: "10K btls/hr",
-    short_description: "ALNM founded and operates Aqua Safi Industries, running a complete line from raw water intake to reverse osmosis, blow moulding, filling, and packaging at 10,000 bottles per hour.",
-    description: "ALNM founded and continues to operate Aqua Safi Industries, one of the largest bottled water producers in Somalia. The production facility runs a complete line from raw water intake to finished bottled product: reverse osmosis treatment, high-speed automatic PET bottle blow moulding from preforms, and a downstream washing, filling, capping, coding, labelling and packaging line running at 10,000 bottles per hour. Products include purified water from 250ml to 19-litre, and block and tube ice for commercial cold-chain.",
-    tags: ["Manufacturing", "Water"],
-    image: "https://images.unsplash.com/photo-1621844064795-d40b3e5bbdb8?w=1600&q=80",
-    reverse: false
+    title: "300 kWp Solar Power System",
+    location: "Garowe, Puntland",
+    scale: "300 kW installed",
+    service: "Full EPC — panels, inverters, in-house DEIF control panels",
+    description: "Large-scale solar priority installation with DEIF ASC 150 solar-genset coordination. Full EPC delivery including structural mounting and automated energy management.",
+    tags: ["Energy", "Engineering"],
+    image: "/images/power_systems_generators_1774871854169.png"
+  },
+  {
+    id: "06",
+    title: "100 kWp Solar Power System",
+    location: "Multi-site deployment",
+    scale: "100 kW installations",
+    service: "System design, supply and installation",
+    description: "Standardised 100 kWp solar arrays for commercial and industrial clients. Optimized for peak performance in high-irradiance regional conditions with Tier-1 components.",
+    tags: ["Energy", "Engineering"],
+    image: "/images/power_systems_generators_1774871854169.png"
+  },
+  {
+    id: "07",
+    title: "Aqua Safi Bottling Facility",
+    location: "Garowe, Puntland",
+    scale: "10,000 bottles per hour",
+    service: "Facility design, procurement and installation",
+    description: "Somalia's most advanced bottling facility. Full automation for formats from 250ml to 19L, including process cooling and compressed air systems.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_purification_industrial_1774886325880.png"
+  },
+  {
+    id: "08",
+    title: "Block Ice Facility",
+    location: "Garowe, Puntland",
+    scale: "10,000 kg per day",
+    service: "Design, installation and commissioning",
+    description: "Complete refrigeration plant serving the regional food supply chain. In-house designed control centres and defost management for maximum efficiency.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_purification_industrial_1774886325880.png"
+  },
+  {
+    id: "09",
+    title: "Tube Ice Facility",
+    location: "Garowe, Puntland",
+    scale: "Commercial-scale tube ice",
+    service: "Installation and commissioning",
+    description: "Packaged tube ice production facility. Extension of the Aqua Safi cold chain to serve the regional retail and hospitality markets.",
+    tags: ["Water", "Engineering"],
+    image: "/images/water_purification_industrial_1774886325880.png"
+  },
+  {
+    id: "10",
+    title: "Industrial Hybrid Power + SCADA",
+    location: "Puntland",
+    scale: "Solar + diesel + battery hybrid",
+    service: "System design, EPC, SCADA commissioning",
+    description: "ALNM's most complex system—solar priority, battery buffering, and generator backup with a central energy management controller and remote SCADA monitoring.",
+    tags: ["Energy", "Digital", "Engineering"],
+    image: "/images/industrial_automation_control_room_1774871867828.png"
+  },
+  {
+    id: "11",
+    title: "Multi-Site Generator Deployment",
+    location: "Multiple sites, Puntland",
+    scale: "Emergency backup power networks",
+    service: "Supply, ATS fabrication, AMF installation",
+    description: "Reliable power backup for critical infrastructure. In-house fabricated ATS panels and DSE controllers programmed for zero-fail site requirements.",
+    tags: ["Energy", "Engineering"],
+    image: "/images/power_systems_generators_1774871854169.png"
+  },
+  {
+    id: "12",
+    title: "Garowe Hotels RO Portfolio",
+    location: "Garowe, Puntland",
+    scale: "Ongoing maintenance portfolio",
+    service: "Maintenance, membrane cleaning, pump repair",
+    description: "Scheduled service visits and rapid-response spares support for the hospitality sector, ensuring consistent water quality and system uptime.",
+    tags: ["Water"],
+    image: "/images/water_purification_industrial_1774886325880.png"
+  },
+  {
+    id: "13",
+    title: "Water Wells (50+ Boreholes)",
+    location: "Multiple sites, Puntland",
+    scale: "28 years of regional delivery",
+    service: "Drilling, casing, and solar pump integration",
+    description: "The foundation of ALNM Group. Full-package borehole delivery from geophysical survey to solar-priority pump installation and commissioning.",
+    tags: ["Water", "Energy"],
+    image: "/images/water_desalination_ro_system_1774871305417.png"
+  },
+  {
+    id: "14",
+    title: "RO Systems Garowe City",
+    location: "Garowe, Puntland",
+    scale: "Municipal & commercial installations",
+    service: "RO installation, maintenance and parts supply",
+    description: "Centrally managed RO systems serving commercial compounds and institutions in Garowe with locally stocked critical spares.",
+    tags: ["Water"],
+    image: "/images/water_purification_industrial_1774886325880.png"
+  },
+  {
+    id: "15",
+    title: "Custom Industrial Electrical",
+    location: "Puntland",
+    scale: "Industrial panel fabrication",
+    service: "Switchboard design, panel build, wiring",
+    description: "In-house panel fabrication for MCCs, ATS, and custom SCADA integration. Built to IEC 60364 standards with type-tested switchgear.",
+    tags: ["Engineering"],
+    image: "/images/industrial_automation_control_room_1774871867828.png"
   }
 ];

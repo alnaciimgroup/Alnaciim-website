@@ -81,7 +81,7 @@ export default function Hero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/media__1771787700513.png" alt="Pure Water Production" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/water_purification_industrial_1774886325880.png" alt="Pure Water Production" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>

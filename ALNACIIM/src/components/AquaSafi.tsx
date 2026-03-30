@@ -70,7 +70,7 @@ export default function AquaSafi() {
                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                  className="w-48 h-[400px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[100px] shadow-[0_20px_50px_rgba(17,82,212,0.1)] flex items-center justify-center overflow-hidden p-2"
                >
-                 <img src="/images/packaged_bottled_water_1769372456350.png" alt="Aqua Safi 3D Render" className="w-full h-full object-contain p-4" />
+                 <img src="/images/water_desalination_ro_system_1774871305417.png" alt="Aqua Safi Technical Origin" className="w-full h-full object-cover p-0" />
                </motion.div>
             </div>
 

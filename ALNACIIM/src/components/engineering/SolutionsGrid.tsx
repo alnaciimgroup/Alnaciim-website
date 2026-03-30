@@ -2,30 +2,34 @@
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 
+import { CONTENT } from "@/data/content";
+
+const { pillars } = CONTENT.engineering;
+
 const solutions = [
   {
     id: "01",
-    title: "Water Infrastructure Engineering",
-    image: "/images/eng_water.png",
-    services: ["Borehole Drilling", "RO Plants", "Pump Stations", "SCADA Integration"]
+    title: pillars[0].title,
+    image: "/images/industrial_automation_control_room_1774871867828.png",
+    services: ["Switchboard Design", "Panel Build", "Industrial Wiring", "Functional Testing"]
   },
   {
     id: "02",
-    title: "Power Systems Engineering",
-    image: "/images/eng_power.png",
-    services: ["Load Analysis", "Solar PV Sizing", "BESS Technology", "Industrial Generators"]
+    title: pillars[1].title,
+    image: "/images/water_purification_industrial_1774886325880.png",
+    services: ["Mechanical Installation", "Electrical Commissioning", "Performance Verification", "Operator Training"]
   },
   {
     id: "03",
-    title: "Industrial Automation & Control",
-    image: "/images/eng_automation.png",
-    services: ["PLC Programming", "SCADA/HMI", "Industrial IoT", "Factory Automation"]
+    title: pillars[2].title,
+    image: "/images/power_systems_generators_1774871854169.png",
+    services: ["SCADA Programming", "Energy Management Systems", "Manual-to-Auto Retrofit", "System Audits"]
   },
   {
     id: "04",
-    title: "Project Management",
-    image: "/images/eng_pm.png",
-    services: ["End-to-end Delivery", "Strategic Procurement", "Commissioning & Testing", "Lifecycle Analysis"]
+    title: pillars[3].title,
+    image: "/images/water_infrastructure_ro_plant_1774871836361.png",
+    services: ["Spare Parts Supply", "Membrane Cleaning", "Pump Repair", "Scheduled Servicing"]
   }
 ];
 

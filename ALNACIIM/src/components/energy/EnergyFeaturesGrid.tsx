@@ -1,21 +1,22 @@
 "use client";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { CONTENT } from "@/data/content";
 
 export default function EnergyFeaturesGrid() {
+  const { pillars } = CONTENT.energy;
+  
   const features = [
     {
-      title: "Utility-Scale Solar PV",
-      desc: "High-yield commercial and utility-scale solar arrays. We coordinate full EPC services from site assessment and PVSyst modeling to final commissioning and grid integration.",
+      ...pillars[0],
       bullets: ["Tier 1 Bifacial Modules", "Anti-PID Technology", "Structural Wind Loading Design"],
-      img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80",
+      img: "/images/alnaciim_hero_full_1771787383245.png",
       align: "left"
     },
     {
-      title: "Battery Energy Storage (BESS)",
-      desc: "Scalable Lithium Iron Phosphate (LiFePO4) battery solutions. From home-scale kWh modular units to 20ft containerized industrial-scale MWh systems, we provide the backbone for energy independence.",
+      ...pillars[1],
       bullets: ["Peak Shaving & Load Shifting", "Intelligent BMS Routing", "24/7 Continuous Operation"],
-      img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80",
+      img: "/images/eng_power.png",
       align: "right"
     }
   ];
@@ -67,7 +68,7 @@ export default function EnergyFeaturesGrid() {
               </h2>
               
               <p className="text-slate-600 text-[18px] leading-[1.8] font-[400] mb-8">
-                {feature.desc}
+                {feature.description}
               </p>
               
               <div className="flex flex-col gap-4">

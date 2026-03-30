@@ -4,15 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { CONTENT } from "@/data/content";
 
-export default function EngineeringHero() {
-  const { hero } = CONTENT.engineering;
+export default function WaterHero() {
+  const { hero } = CONTENT.water;
 
   return (
     <section className="relative w-full pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFBFF]">
       
       {/* Stripe-style Mesh Gradients (Blue Mapped) */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[600px] bg-[#0066FF] rounded-full mix-blend-multiply filter blur-[120px] opacity-10 animate-blob pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[600px] bg-[#00D2FF] rounded-full mix-blend-multiply filter blur-[120px] opacity-10 animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[600px] bg-[#00D2FF] rounded-full mix-blend-multiply filter blur-[120px] opacity-10 animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[600px] bg-[#F0F7FF] rounded-full mix-blend-multiply filter blur-[120px] opacity-50 animate-blob animation-delay-4000 pointer-events-none"></div>
 
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
         
@@ -52,11 +53,11 @@ export default function EngineeringHero() {
            transition={{ duration: 0.7, delay: 0.3 }}
            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
          >
-           <Link href="/engineering/solutions" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-[600] text-[15px] hover:bg-black transition-all shadow-[0_4px_14px_0_rgb(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5">
-             Show Technical Capacity <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+           <Link href="/work" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-xl font-[600] text-[15px] hover:bg-black transition-all shadow-[0_4px_14px_0_rgb(0,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5">
+             Show Infrastructure <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
            </Link>
            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-[600] text-[15px] hover:bg-slate-50 transition-all shadow-sm">
-             Talk to an Engineer
+             Talk to Water Expert
            </Link>
          </motion.div>
        </div> 
@@ -82,7 +83,7 @@ export default function EngineeringHero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/engineering_hero_industrial_engineer_1774871631526.png" alt="Engineering Capacity" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/water_purification_industrial_1774886325880.png" alt="Industrial RO Plant" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
