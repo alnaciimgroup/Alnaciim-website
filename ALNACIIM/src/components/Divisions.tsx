@@ -10,25 +10,33 @@ export default function Divisions() {
       icon: <Database size={24} />,
       title: "ALNM Water",
       desc: "RO systems, purified water supply, bottled water manufacturing, and ice production. Serving homes, hospitals, and industry.",
-      img: "/images/media__1771787700513.png"
+      img: "/images/media__1771787700513.png",
+      color: "#0066FF",
+      href: "/water"
     },
     {
        icon: <Zap size={24} />,
        title: "ALNM Energy",
        desc: "Solar PV systems, hybrid inverters, MPPT controllers, and battery energy storage from home-scale kWh to industrial MWh BESS.",
-       img: "/images/alnaciim_hero_full_1771787383245.png"
+       img: "/images/alnaciim_hero_full_1771787383245.png",
+       color: "#FF5A00",
+       href: "/energy"
     },
     {
        icon: <ShieldCheck size={24} />,
        title: "ALNM Engineering",
        desc: "Full EPC — factory design, global procurement, installation, commissioning. Generator supply, installation, and service contracts.",
-       img: "/images/about_page_top_1769371967484.png"
+       img: "/images/about_page_top_1769371967484.png",
+       color: "#ffc100",
+       href: "/engineering"
     },
     {
        icon: <BarChart3 size={24} />,
        title: "ALNM Digital",
        desc: "Custom websites, enterprise database architecture, ERP and systems integration, and managed IT infrastructure.",
-       img: "/images/about_page_middle1_1769372003268.png"
+       img: "/images/about_page_middle1_1769372003268.png",
+       color: "#00c2ff",
+       href: "/digital"
     }
   ];
 
@@ -69,7 +77,10 @@ export default function Divisions() {
                  <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                  <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply"></div>
                  {/* Floating Icon overlapping the image */}
-                 <div className="absolute -bottom-7 left-8 w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center text-[#0066FF] border border-slate-100 group-hover:scale-110 group-hover:bg-[#0066FF] group-hover:text-white transition-all duration-300">
+                 <div 
+                   className="absolute -bottom-7 left-8 w-14 h-14 rounded-full bg-white shadow-md flex items-center justify-center border border-slate-100 group-hover:scale-110 transition-all duration-300"
+                   style={{ color: card.color }}
+                 >
                    {card.icon}
                  </div>
               </div>
@@ -80,8 +91,12 @@ export default function Divisions() {
                   {card.desc}
                 </p>
                 
-                <Link href="/catalog" className="inline-flex items-center gap-2 text-[#0066FF] font-[700] text-[14px] mt-auto">
-                  Explore Network <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <Link 
+                  href={card.href} 
+                  className="inline-flex items-center gap-2 font-[700] text-[14px] mt-auto transition-colors"
+                  style={{ color: card.color }}
+                >
+                  Explore Division <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
