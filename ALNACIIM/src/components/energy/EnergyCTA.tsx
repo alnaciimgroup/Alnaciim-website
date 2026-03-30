@@ -7,7 +7,7 @@ export default function EnergyCTA() {
       
       {/* Stripe-Style Slanted Background Element */}
       <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1620825937374-87fc7d6adf0e?q=80&w=2940&auto=format&fit=crop" alt="Hybrid Microgrid" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
+        <img src="/images/alnaciim_hero_full_1771787383245.png" alt="Hybrid Microgrid" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
       </div>
       
       {/* Decorative Glow inside the CTA */}

@@ -16,7 +16,7 @@ export default function EnergyStatsGrid() {
       
       {/* Stripe-Style Slanted Background Element */}
       <div className="absolute inset-0 bg-[#FF5A00] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2940&auto=format&fit=crop" alt="Solar Array" className="absolute inset-0 w-full h-full object-cover opacity-[0.15] mix-blend-overlay scale-110" />
+        <img src="/images/alnaciim_hero_full_1771787383245.png" alt="Solar Array" className="absolute inset-0 w-full h-full object-cover opacity-[0.15] mix-blend-overlay scale-110" />
       </div>
       {/* Secondary accent slanted layer */}
       <div className="absolute inset-0 bg-[#FF8C00]/10 transform -skew-y-2 origin-top-right z-0"></div>

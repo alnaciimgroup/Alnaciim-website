@@ -10,25 +10,25 @@ export default function EnergyDivisions() {
       icon: <Lightbulb size={24} />,
       title: "Utility-Scale Solar",
       desc: "High-yield commercial solar arrays. We coordinate full EPC services from site assessment to final commissioning and grid integration.",
-      img: "https://images.unsplash.com/photo-1592833159057-6ade16551c6c?auto=format&fit=crop&q=80"
+      img: "/images/alnaciim_hero_full_1771787383245.png"
     },
     {
        icon: <Zap size={24} />,
        title: "Hybrid Microgrids",
        desc: "Intelligent stabilization of unreliable grid infrastructure. Our systems seamlessly route energy between Solar PV, BESS, and Generators.",
-       img: "https://images.unsplash.com/photo-1620825937374-87fc7d6adf0e?auto=format&fit=crop&q=80"
+       img: "/images/alnaciim_hero_full_1771787383245.png"
     },
     {
        icon: <Battery size={24} />,
        title: "BESS Storage",
        desc: "Peak shaving and load shifting utilizing high-cycle life LiFePO4 chemistry. Essential for energy arbitrage and 24/7 continuous operation.",
-       img: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80"
+       img: "/images/alnaciim_hero_full_1771787383245.png"
     },
     {
        icon: <Factory size={24} />,
        title: "Prime Generators",
        desc: "Heavy-duty diesel generation optimized for base load power in remote locations. Engineered with DSE controllers to synchronize with solar.",
-       img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80"
+       img: "/images/about_page_top_1769371967484.png"
     }
   ];
 

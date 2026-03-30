@@ -8,14 +8,14 @@ export default function FeaturesGrid() {
       title: "10,000 UPH Bottling Capacity",
       desc: "Our automated assembly line is capable of processing and bottling 10,000 units every single hour, running 24/7 without fail. Backed by rigorous SLA uptime metrics.",
       bullets: ["10,000 UPH Production Speed", "Fully Automated Filtration", "Zero-Downtime Architecture"],
-      img: "https://images.unsplash.com/photo-1585834892408-db05cde12586?q=80&w=2940&auto=format&fit=crop",
+      img: "/images/about_page_top_1769371967484.png",
       align: "left"
     },
     {
       title: "Commercial Ice Production",
       desc: "We supply massive quantities of commercial-grade crystal clear tube and block ice engineered specifically for the highest-tier hospitality and event supply chains.",
       bullets: ["Crystal Clear Hospitality Ice", "High-Density Block Yield", "Temperature Verified Distribution"],
-      img: "https://images.unsplash.com/photo-1556910103-1c02745a8286?q=80&w=2940&auto=format&fit=crop",
+      img: "/images/about_page_bottom_1769372132851.png",
       align: "right"
     }
   ];

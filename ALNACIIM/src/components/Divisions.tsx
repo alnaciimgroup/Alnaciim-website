@@ -10,25 +10,25 @@ export default function Divisions() {
       icon: <Database size={24} />,
       title: "ALNM Water",
       desc: "RO systems, purified water supply, bottled water manufacturing, and ice production. Serving homes, hospitals, and industry.",
-      img: "https://images.unsplash.com/photo-1544453896-e2a27b82fe8d?q=80&w=2940&auto=format&fit=crop"
+      img: "/images/media__1771787700513.png"
     },
     {
        icon: <Zap size={24} />,
        title: "ALNM Energy",
        desc: "Solar PV systems, hybrid inverters, MPPT controllers, and battery energy storage from home-scale kWh to industrial MWh BESS.",
-       img: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2940&auto=format&fit=crop"
+       img: "/images/alnaciim_hero_full_1771787383245.png"
     },
     {
        icon: <ShieldCheck size={24} />,
        title: "ALNM Engineering",
        desc: "Full EPC — factory design, global procurement, installation, commissioning. Generator supply, installation, and service contracts.",
-       img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2940&auto=format&fit=crop"
+       img: "/images/about_page_top_1769371967484.png"
     },
     {
        icon: <BarChart3 size={24} />,
        title: "ALNM Digital",
        desc: "Custom websites, enterprise database architecture, ERP and systems integration, and managed IT infrastructure.",
-       img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop"
+       img: "/images/about_page_middle1_1769372003268.png"
     }
   ];
 

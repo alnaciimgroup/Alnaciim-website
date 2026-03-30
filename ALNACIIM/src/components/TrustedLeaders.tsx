@@ -11,7 +11,7 @@ export default function TrustedLeaders() {
     <section className="w-full bg-[#f8fafc] py-20 border-t border-slate-200 relative overflow-hidden">
       {/* Subtle Background Texture */}
       <div className="absolute inset-0 z-0">
-        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2940&auto=format&fit=crop" alt="Corporate Architecture Architecture" className="w-full h-full object-cover opacity-[0.03] grayscale" />
+        <img src="/images/about_page_top_1769371967484.png" alt="Corporate Architecture Architecture" className="w-full h-full object-cover opacity-[0.03] grayscale" />
       </div>
 
       <div className="max-w-[1240px] mx-auto px-6 lg:px-12 text-center relative z-10">

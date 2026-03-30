@@ -7,7 +7,7 @@ export default function CTA() {
       
       {/* Stripe-Style Slanted Background Element */}
       <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2940&auto=format&fit=crop" alt="Engineering Facility" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
+        <img src="/images/about_page_top_1769371967484.png" alt="Engineering Facility" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
       </div>
       
       {/* Decorative Glow inside the CTA */}

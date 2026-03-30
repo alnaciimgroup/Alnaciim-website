@@ -16,7 +16,7 @@ export default function StatsGrid() {
       
       {/* Stripe-Style Slanted Background Element */}
       <div className="absolute inset-0 bg-[#0066FF] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
-         <img src="https://images.unsplash.com/photo-1544453896-e2a27b82fe8d?q=80&w=2940&auto=format&fit=crop" alt="Water Infrastructure" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay scale-110" />
+         <img src="/images/about_page_top_1769371967484.png" alt="Water Infrastructure" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay scale-110" />
       </div>
       {/* Secondary accent slanted layer */}
       <div className="absolute inset-0 bg-blue-900/10 transform -skew-y-2 origin-top-right z-0"></div>

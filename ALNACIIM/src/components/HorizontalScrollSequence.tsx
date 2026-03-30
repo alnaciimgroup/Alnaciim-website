@@ -29,7 +29,7 @@ export default function HorizontalScrollSequence() {
       title: "Crystal Clear.",
       subtitle: "The Purest Water in Hargeisa.",
       desc: "An architectural approach to hydration. Delivered directly to your doorstep.",
-      image: "/images/bottled_water_card_1769526592818.png",
+      image: "/images/media__1771787700513.png",
       isHero: true
     },
     {
@@ -37,7 +37,7 @@ export default function HorizontalScrollSequence() {
       title: "10k Units/Hr.",
       subtitle: "Unmatched Bottling Capacity.",
       desc: "Our facility processes, purifies, and bottles over 10,000 units every single hour using multi-stage reverse osmosis.",
-      image: "https://images.unsplash.com/photo-1548846399-5567bbed44cd?q=80&w=2940&auto=format&fit=crop",
+      image: "/images/about_page_top_1769371967484.png",
       icon: <Droplet size={32} />
     },
     {
@@ -53,7 +53,7 @@ export default function HorizontalScrollSequence() {
       title: "Fleet Dispatch.",
       subtitle: "24/7 Logistics Network.",
       desc: "A massive distribution fleet guarantees your bulk deliveries arrive unconditionally.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2940&auto=format&fit=crop",
+      image: "/images/alnaciim_bottom_check_1771787310806.png",
       icon: <Truck size={32} />
     }
   ];

@@ -9,7 +9,7 @@ export const energyProjects = [
     description: "Design, supply and commissioning of a 300 kWp solar photovoltaic installation serving an industrial facility as its primary daytime power source. Tier-1 monocrystalline panels on ground-mounted racking, feeding three large three-phase string inverters. DEIF ASC 150 solar controllers handle automatic priority switching between solar and the site's diesel generators.",
     scale: "300 kWp capacity",
     power: "Three-phase inverters",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=75"
+    image: "/images/alnaciim_hero_full_1771787383245.png"
   },
   {
     id: "07",
@@ -18,7 +18,7 @@ export const energyProjects = [
     description: "200 kWp commercial solar installation across a multi-building compound. High-efficiency monocrystalline panels feeding four 50 kW three-phase string inverters. DEIF ASC 150 solar controllers coordinate solar and diesel generator power, automatically prioritising solar and switching to generator when output drops below demand.",
     scale: "200 kWp capacity",
     power: "DEIF ASC 150 Coordination",
-    image: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=800&q=75"
+    image: "/images/alnaciim_hero_full_1771787383245.png"
   },
   {
     id: "08",
@@ -27,7 +27,7 @@ export const energyProjects = [
     description: "ALNM Energy has installed solar and battery storage systems across dozens of residential and commercial sites — from 2 kW household systems to 50+ kW compound installations. Each system combines roof or ground-mounted panels with a hybrid inverter or charge controller, and a battery bank sized to cover overnight demand.",
     scale: "2 kW to 50+ kW",
     power: "Hybrid Inverters + ATS",
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=75"
+    image: "/images/about_page_top_1769371967484.png"
   },
   {
     id: "09",
@@ -36,7 +36,7 @@ export const energyProjects = [
     description: "ALNM Energy has supplied and commissioned multiple diesel generator sets across industrial and commercial sites — Cummins, MAN, Leader Power and Weichai units sourced through Jubaili Bros. Each project covers the full scope: delivery and positioning, fuel system, ATS panel, load bank testing and controller integration.",
     scale: "Heavy-Duty Gensets",
     power: "DSE 8xxx ATS Paralleling",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=75"
+    image: "/images/alnaciim_bottom_check_1771787310806.png"
   },
   {
     id: "10",
@@ -45,7 +45,7 @@ export const energyProjects = [
     description: "ALNM Energy designs, wires, tests and commissions advanced generator and solar control panels — a capability almost unique in East Africa. Multiple builds delivered using the DEIF AGC 150 for generator paralleling and load management, and the DEIF ASC 150 for solar-genset energy coordination.",
     scale: "Custom Panel Builds",
     power: "DEIF AGC / ASC 150 Integrations",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=75"
+    image: "/images/about_page_middle1_1769372003268.png"
   }
 ];
 

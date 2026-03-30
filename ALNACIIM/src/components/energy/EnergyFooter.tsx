@@ -7,7 +7,7 @@ export default function EnergyFooter() {
       
       {/* Infrastructure Background Texture */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2940&auto=format&fit=crop" alt="Energy Infrastructure" className="w-full h-full object-cover opacity-[0.03] grayscale mix-blend-screen" />
+        <img src="/images/alnaciim_hero_full_1771787383245.png" alt="Energy Infrastructure" className="w-full h-full object-cover opacity-[0.03] grayscale mix-blend-screen" />
       </div>
 
       {/* Top Border Accent Orange */}
