@@ -8,25 +8,30 @@ export default function DigitalHome() {
 
   const solutions = [
     {
-      title: "Web & Software Development",
-      description: "Custom internal systems and corporate websites built to specification. We develop from the ground up for industrial and commercial clients—not templates.",
+      title: "Web & Software Solutions",
+      description: "We design and build custom digital systems for businesses, industries, and organizations. Our solutions are tailored to real operational needs — from internal management systems to customer-facing platforms.",
       items: [
         {
-          label: "Digital Presence",
+          label: "Customer & Digital Platforms",
           features: [
             "Corporate websites & landing pages",
-            "Multi-language (Somali/English) support",
-            "Customer-facing portals & E-commerce",
+            "Business websites (profiles, portfolios)",
+            "Customer portals (logins, dashboards)",
+            "E-commerce platforms (if needed)",
+            "Multi-language (Somali / English)",
             "Mobile applications (iOS & Android)"
           ]
         },
         {
-          label: "Business Logic",
+          label: "Business Systems & Software",
           features: [
-            "Custom ERP & operational workflows",
-            "Cloud: AWS, Azure, Google Cloud",
-            "API & 3rd-party system integration",
-            "Relational & Document database design"
+            "Custom internal systems (ERP-like)",
+            "Inventory & distribution systems",
+            "Staff management systems",
+            "Sales & reporting systems",
+            "API & third-party integrations",
+            "Database design (secure & scalable)",
+            "Cloud: AWS, Azure, Google Cloud"
           ]
         }
       ],
@@ -160,6 +165,56 @@ export default function DigitalHome() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" />
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Us Different Section */}
+      <section className="py-32 bg-slate-50 border-y border-slate-100">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <h2 className="text-[42px] md:text-[56px] font-[900] text-slate-900 tracking-tighter leading-none mb-6">What Makes Us Different</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Built for Operations",
+                desc: "Every system is custom-built for real business workflows, not adapted from rigid templates.",
+                icon: <Server size={24} />
+              },
+              {
+                title: "Deeply Integrated",
+                desc: "Integrated directly with physical engineering and industrial infrastructure systems.",
+                icon: <Database size={24} />
+              },
+              {
+                title: "Scalable Architecture",
+                desc: "Built on secure, cloud-native foundations that grow with your organizational needs.",
+                icon: <ShieldCheck size={24} />
+              },
+              {
+                title: "Localized Design",
+                desc: "Architected specifically for African industrial environments and regional connectivity challenges.",
+                icon: <Globe size={24} />
+              },
+              {
+                title: "Lifecycle Support",
+                desc: "Continuous technical support and system evolution beyond the initial deployment.",
+                icon: <LayoutDashboard size={24} />
+              }
+            ].map((point, i) => (
+              <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6">
+                  {point.icon}
+                </div>
+                <h3 className="text-[20px] font-[900] text-slate-900 mb-4 tracking-tight">{point.title}</h3>
+                <p className="text-[15px] text-slate-500 leading-relaxed font-[450]">
+                  {point.desc}
+                </p>
               </div>
             ))}
           </div>
