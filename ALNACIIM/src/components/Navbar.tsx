@@ -34,7 +34,7 @@ export default function Navbar() {
             
             <div className="absolute top-full left-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
               <Link href="/energy" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM ENERGY</Link>
-              <Link href="/energy/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENERGY SOLUTIONS</Link>
+              <Link href="/energy/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
             
             <div className="absolute top-full left-0 w-64 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
               <Link href="/engineering" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM ENGINEERING</Link>
-              <Link href="/engineering/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENGINEERING SOLUTIONS</Link>
+              <Link href="/engineering/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
             </div>
           </div>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
             
             <div className="absolute top-full left-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
               <Link href="/digital" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM DIGITAL</Link>
-              <Link href="/digital/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">DIGITAL SOLUTIONS</Link>
+              <Link href="/digital/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
             </div>
           </div>
 
