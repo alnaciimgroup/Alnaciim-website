@@ -113,6 +113,11 @@ export const CONTENT = {
     },
     pillars: [
       {
+        title: "WEB & SOFTWARE DEV",
+        description: "Custom enterprise applications, multi-language corporate websites, and secure cloud-native platforms.",
+        icon: "Code"
+      },
+      {
         title: "Custom Software",
         description: "Internal business systems and database architecture designed for operational efficiency.",
         icon: "Globe"

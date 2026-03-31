@@ -101,13 +101,14 @@ export default function DigitalHome() {
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar, i) => (
               <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group">
                 <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                  {i === 0 && <Globe size={28} />}
-                  {i === 1 && <Radio size={28} />}
-                  {i === 2 && <LayoutDashboard size={28} />}
+                  {i === 0 && <Code size={28} />}
+                  {i === 1 && <Globe size={28} />}
+                  {i === 2 && <Radio size={28} />}
+                  {i === 3 && <LayoutDashboard size={28} />}
                 </div>
                 <h3 className="text-[24px] font-[900] text-slate-900 mb-4 tracking-tight">{pillar.title}</h3>
                 <p className="text-[15px] text-slate-500 leading-relaxed font-[450]">
