@@ -28,39 +28,39 @@ export default function Navbar() {
           {/* Energy Dropdown */}
           <div className="relative group">
             <button type="button" className="hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1.5 py-4 -my-4 outline-none">
-              ALNACIIM ENERGY
+              ENERGY
               <ChevronDown size={14} className="opacity-50 group-hover:-rotate-180 transition-transform duration-300" />
             </button>
             
-            <div className="absolute top-full left-0 w-48 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
-              <Link href="/energy" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENERGY</Link>
-              <Link href="/energy/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
+            <div className="absolute top-full left-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
+              <Link href="/energy" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM ENERGY</Link>
+              <Link href="/energy/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENERGY SOLUTIONS</Link>
             </div>
           </div>
 
           {/* Engineering Dropdown */}
           <div className="relative group">
             <button type="button" className="hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1.5 py-4 -my-4 outline-none">
-              ALNACIIM ENGINEERING
+              ENGINEERING
               <ChevronDown size={14} className="opacity-50 group-hover:-rotate-180 transition-transform duration-300" />
             </button>
             
-            <div className="absolute top-full left-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
-              <Link href="/engineering" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENGINEERING</Link>
-              <Link href="/engineering/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
+            <div className="absolute top-full left-0 w-64 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
+              <Link href="/engineering" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM ENGINEERING</Link>
+              <Link href="/engineering/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ENGINEERING SOLUTIONS</Link>
             </div>
           </div>
 
           {/* Digital Dropdown */}
           <div className="relative group">
             <button type="button" className="hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1.5 py-4 -my-4 outline-none">
-              ALNACIIM DIGITAL
+              DIGITAL
               <ChevronDown size={14} className="opacity-50 group-hover:-rotate-180 transition-transform duration-300" />
             </button>
             
-            <div className="absolute top-full left-0 w-48 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
-              <Link href="/digital" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">DIGITAL</Link>
-              <Link href="/digital/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">SOLUTIONS</Link>
+            <div className="absolute top-full left-0 w-56 bg-white border border-slate-100 rounded-2xl shadow-fluid py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-1 z-50">
+              <Link href="/digital" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">ALNACIIM DIGITAL</Link>
+              <Link href="/digital/solutions" className="block px-4 py-2 hover:bg-primary-light hover:text-primary transition-colors text-[13px] font-[700] text-slate-700">DIGITAL SOLUTIONS</Link>
             </div>
           </div>
 
