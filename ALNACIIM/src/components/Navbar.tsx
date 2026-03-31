@@ -23,6 +23,8 @@ export default function Navbar() {
         </Link>
         
         <nav className="hidden xl:flex items-center gap-6 text-[11px] font-[700] text-slate-600 mx-4 uppercase tracking-[0.15em]">
+          <Link href="/water" className={`hover:text-primary transition-colors whitespace-nowrap ${pathname === '/water' ? 'text-ink font-[800]' : ''}`}>ALNACIIM WATER</Link>
+
           {/* Energy Dropdown */}
           <div className="relative group">
             <button type="button" className="hover:text-primary transition-colors whitespace-nowrap flex items-center gap-1.5 py-4 -my-4 outline-none">

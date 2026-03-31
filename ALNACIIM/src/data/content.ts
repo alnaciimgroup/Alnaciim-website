@@ -1,4 +1,17 @@
 export const CONTENT = {
+  group: {
+    hero: {
+      eyebrow: "INFRASTRUCTURE · WATER · ENERGY · ENGINEERING · DIGITAL",
+      headline: "Powering Life.\nPurifying Tomorrow.",
+      description: "East Africa's integrated infrastructure group. From water treatment and energy systems to precision engineering and digital infrastructure — ALNM Group delivers the full project lifecycle from design through commissioning and beyond."
+    },
+    stats: [
+      { label: "Years delivering infrastructure", value: "28+" },
+      { label: "Litres water purified daily", value: "600,000+" },
+      { label: "Solar capacity installed", value: "500+ kW" },
+      { label: "Projects commissioned to date", value: "60+" }
+    ]
+  },
   water: {
     hero: {
       eyebrow: "ALNACIIM WATER · SINCE 1998",
