@@ -64,6 +64,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          <Link href="/about" className={`hover:text-primary transition-colors whitespace-nowrap ${pathname === '/about' ? 'text-ink font-[800]' : ''}`}>ABOUT</Link>
           <Link href="/work" className={`hover:text-primary transition-colors whitespace-nowrap ${pathname === '/work' ? 'text-ink font-[800]' : ''}`}>OUR WORK</Link>
           <Link href="/catalog" className={`hover:text-primary transition-colors whitespace-nowrap ${pathname === '/catalog' ? 'text-ink font-[800]' : ''}`}>CATALOG</Link>
         </nav>
