@@ -15,59 +15,9 @@ export default function ContactPage() {
       </section>
 
       <section className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
-          {/* Contact Information */}
-          <div className="lg:col-span-5 space-y-12">
-            <div>
-              <h2 className="text-[32px] font-[900] text-slate-900 tracking-tight mb-8">Get in touch</h2>
-              
-              <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-[14px] font-[800] text-slate-400 uppercase tracking-widest mb-1">Call Support</h3>
-                    <p className="text-[18px] font-[700] text-ink">+252 61...</p>
-                    <p className="text-[14px] text-slate-500 font-[500]">Available Sat-Thu, 8am - 5pm</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-[14px] font-[800] text-slate-400 uppercase tracking-widest mb-1">Our Headquarters</h3>
-                    <p className="text-[18px] font-[700] text-ink">Mogadishu, Somalia</p>
-                    <p className="text-[14px] text-slate-500 font-[500]">Regional offices in Puntland & Kenya</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100">
-               <h3 className="text-[18px] font-[800] text-slate-900 mb-6 flex items-center gap-2">
-                 <Clock size={20} className="text-blue-600" />
-                 Response Times
-               </h3>
-               <p className="text-slate-500 font-[450] leading-relaxed text-[15px] mb-4">
-                 We aim to respond to all technical inquiries within **24 hours**. For urgent operational support, please use the direct phone line.
-               </p>
-               <div className="flex items-center gap-4 text-[13px] font-[700] text-blue-600">
-                 <span className="flex items-center gap-1.5"><Globe size={14} /> Global Distribution</span>
-                 <span className="w-1 h-1 bg-slate-300 rounded-full" />
-                 <span>24/7 Monitoring</span>
-               </div>
-            </div>
-          </div>
-
+        <div className="max-w-3xl mx-auto">
           {/* Contact Form */}
-          <div className="lg:col-span-7">
-            <ContactForm />
-          </div>
-
+          <ContactForm />
         </div>
       </section>
 
