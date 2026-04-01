@@ -1,7 +1,12 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to prevent crashes during build when env vars are not present
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+};
 
 export async function POST(req: Request) {
   try {
@@ -10,6 +15,11 @@ export async function POST(req: Request) {
     // In production, you'd want to validate these fields properly
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    const resend = getResend();
+    if (!resend) {
+      return NextResponse.json({ error: 'Email service configuration missing' }, { status: 500 });
     }
 
     const { data, error } = await resend.emails.send({
