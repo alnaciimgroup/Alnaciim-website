@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Globe, Clock } from "lucide-react";
+import { Phone, MapPin, Globe, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
@@ -23,16 +23,6 @@ export default function ContactPage() {
               <h2 className="text-[32px] font-[900] text-slate-900 tracking-tight mb-8">Get in touch</h2>
               
               <div className="space-y-8">
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-[14px] font-[800] text-slate-400 uppercase tracking-widest mb-1">Email Us</h3>
-                    <p className="text-[18px] font-[700] text-ink">mohaarkoz@gmail.com</p>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-5">
                   <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
                     <Phone size={24} />
