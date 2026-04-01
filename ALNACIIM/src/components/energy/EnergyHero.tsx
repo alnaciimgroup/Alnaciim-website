@@ -83,7 +83,7 @@ export default function EnergyHero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/catalog_solar_panels_1774889827145.png" alt="Solar Array" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/energy_landing_hero.png" alt="Solar Array" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
