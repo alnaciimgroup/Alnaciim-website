@@ -100,29 +100,59 @@ export default function EnergySolutions() {
         </div>
       </section>
 
-      {/* Philosophy & Core Systems (Systematic Excellence Style) */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
-            <div className="max-w-2xl">
-              <div className="text-[#FF5A00] font-[700] text-[11px] tracking-widest uppercase mb-4">Technical Philosophy</div>
-              <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tight text-slate-900 leading-[1.05]">
-                Architectural permanence.<br />In energy design.
-              </h2>
-            </div>
-            <p className="max-w-md text-slate-500 text-[17px] leading-[1.6] font-[450]">
-              We deploy industrial-grade power infrastructure designed for a 25-year operational lifespan, prioritizing reliability over minimum-cost templates.
-            </p>
-          </div>
+      {/* Architectural permanence. In energy design. (SolutionsLanding Style) */}
+      <section className="relative w-full pt-32 pb-20 lg:pt-48 lg:pb-16 overflow-hidden bg-white">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-start">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className="w-12 h-[1px] bg-[#FF5A00]"></div>
+            <span className="text-[12px] font-[700] tracking-[0.3em] uppercase text-slate-400">Technical Philosophy</span>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-[64px] md:text-[88px] lg:text-[100px] font-[900] tracking-tighter text-slate-900 leading-[0.9] max-w-[1000px] mb-12"
+          >
+            Architectural<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5A00] to-orange-400">Permanence.</span>
+          </motion.h2>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[18px] md:text-[22px] text-slate-500 font-[450] max-w-3xl leading-[1.6]"
+          >
+            In energy design. Alnaciim Energy delivers high-complexity systems across critical infrastructure sectors. Our technical archive documents a legacy of permanence through rigorous standards and innovative methodology.
+          </motion.p>
+        </div>
+
+        {/* Decorative large number in background */}
+        <div className="absolute right-[-5%] bottom-0 text-[300px] lg:text-[500px] font-[900] text-slate-50 opacity-[0.03] leading-none pointer-events-none select-none">
+          01
+        </div>
+      </section>
+
+      {/* Systematic Excellence Grid for Solar & Hybrid */}
+      <section className="py-24 bg-white border-t border-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 mb-40">
             {[solutions[0], solutions[1]].map((sol, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                transition={{ duration: 0.6 }}
                 className="flex flex-col group relative"
               >
                 <div className="text-[72px] lg:text-[96px] font-[900] text-slate-50 leading-none mb-6 group-hover:text-[#FF5A00]/10 transition-colors duration-500">
@@ -132,7 +162,7 @@ export default function EnergySolutions() {
                   <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#FF5A00]">
                     {sol.icon}
                   </div>
-                  <h3 className="text-[24px] md:text-[28px] font-[800] text-slate-900 tracking-tight group-hover:text-[#FF5A00] transition-colors">
+                  <h3 className="text-[24px] md:text-[32px] font-[800] text-slate-900 tracking-tight group-hover:text-[#FF5A00] transition-colors uppercase">
                     {sol.title}
                   </h3>
                 </div>
@@ -147,37 +177,43 @@ export default function EnergySolutions() {
                     </li>
                   ))}
                 </ul>
-                <div className="aspect-video rounded-3xl overflow-hidden shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
-                  <img src={sol.image} alt={sol.title} className="w-full h-full object-cover" />
-                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Secondary Solutions Grid */}
-          <div className="text-center mb-16">
-            <h3 className="text-[11px] font-[800] text-slate-400 uppercase tracking-[0.3em] mb-4">Supporting Infrastructure</h3>
-            <div className="h-[1px] w-20 bg-[#FF5A00]/20 mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Remaining Solutions - Restored Alternating Blocks */}
+          <div className="flex flex-col gap-32">
             {[solutions[2], solutions[3], solutions[4]].map((sol, i) => (
-              <div key={i} className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-[#FF5A00]/20 transition-all duration-500 group">
-                <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-[#FF5A00] mb-8 group-hover:scale-110 transition-transform">
-                  {sol.icon}
+              <div key={i} className={`flex flex-col lg:flex-row gap-16 lg:gap-24 items-center ${i % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}>
+                <div className="w-full lg:w-1/2">
+                  <div className="aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl relative group">
+                    <img src={sol.image} alt={sol.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+                  </div>
                 </div>
-                <h3 className="text-[20px] font-[800] text-slate-900 mb-4 tracking-tight">{sol.title}</h3>
-                <p className="text-[14px] text-slate-500 leading-relaxed mb-8">
-                  {sol.description}
-                </p>
-                <ul className="space-y-3">
-                  {sol.features.slice(0, 3).map((feat, j) => (
-                    <li key={j} className="flex items-center gap-3 text-[12px] text-slate-600 font-[600]">
-                      <div className="w-1 h-1 rounded-full bg-[#FF5A00]" />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
+                <div className="w-full lg:w-1/2">
+                  <div className="w-14 h-14 rounded-2xl bg-orange-50 flex items-center justify-center mb-8 text-[#FF5A00]">
+                    {sol.icon}
+                  </div>
+                  <h2 className="text-[36px] md:text-[48px] font-[800] text-slate-900 leading-[1.1] tracking-tight mb-6 uppercase">
+                    {sol.title}
+                  </h2>
+                  <p className="text-[18px] text-slate-600 leading-relaxed mb-8">
+                    {sol.description}
+                  </p>
+                  <ul className="space-y-4 mb-10">
+                    {sol.features.map((feat, j) => (
+                      <li key={j} className="flex items-start gap-4 text-slate-700 font-[500]">
+                        <CheckCircle2 size={20} className="text-[#FF5A00] shrink-0 mt-1" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/contact" className="inline-flex items-center gap-2 text-slate-900 font-[700] hover:text-[#FF5A00] transition-colors group uppercase tracking-widest text-[13px]">
+                    Request a technical proposal
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -188,16 +224,16 @@ export default function EnergySolutions() {
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#FF5A00]/5 -skew-x-12 transform translate-x-1/4" />
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-[42px] md:text-[56px] font-[800] mb-8 tracking-tighter">Ready to stabilize your power?</h2>
+          <h2 className="text-[42px] md:text-[56px] font-[800] mb-8 tracking-tighter uppercase">Ready to stabilize your power?</h2>
           <p className="text-[18px] md:text-[20px] text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-[450]">
             Every Alnaciim Energy project starts with a detailed energy audit and load analysis. Talk to our engineers today about your facility's requirements.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#FF5A00] hover:bg-[#FF8C00] text-white rounded-2xl font-[700] transition-all shadow-xl shadow-orange-500/20 group">
+            <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#FF5A00] hover:bg-[#FF8C00] text-white rounded-2xl font-[700] transition-all shadow-xl shadow-orange-500/20 group uppercase tracking-widest text-[13px]">
               Start a Conversation
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/catalog" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-[700] transition-all">
+            <Link href="/catalog" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-[700] transition-all uppercase tracking-widest text-[13px]">
               View Hardware Catalog
             </Link>
           </div>
