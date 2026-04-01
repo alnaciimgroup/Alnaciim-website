@@ -33,16 +33,6 @@ export default function AboutPage() {
       city: "Garowe",
       label: "Headquarters",
       description: "Puntland, Federal Republic of Somalia. The founding location of ALNM Group and home of all divisions, main warehouse, and fabrication facility."
-    },
-    {
-      city: "Mogadishu",
-      label: "Regional Office",
-      description: "Banaadir, Federal Republic of Somalia. Regional operations covering southern Somalia and supporting Energy and Engineering projects."
-    },
-    {
-      city: "Hargeisa",
-      label: "Regional Office",
-      description: "Somaliland. Supporting ALNM Water, Energy and Digital operations in Somaliland and the northwest region."
     }
   ];
 
@@ -152,7 +142,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="max-w-xl mx-auto">
             {locations.map((loc, i) => (
               <div key={i} className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 group">
                 <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
