@@ -92,8 +92,8 @@ export default function GroupHero() {
 
                 <div className="relative aspect-[4/5] lg:aspect-[3.6/4.5] overflow-hidden">
                    <img 
-                      src="/images/alnaciim_hero_glass_1771788106112.png" 
-                      alt="Water Dashboard" 
+                      src="/images/group_hero_premium.png" 
+                      alt="Alnaciim Group Integrated Infrastructure" 
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                    />
                 </div>
@@ -110,8 +110,8 @@ export default function GroupHero() {
                   <div className="w-6 h-6 rounded-full border-4 border-primary border-t-transparent animate-spin" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Live Output</div>
-                  <div className="text-xl font-black text-slate-900 tracking-tight">600k L / day</div>
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Systems Active</div>
+                  <div className="text-xl font-black text-slate-900 tracking-tight">Active Portfolio</div>
                 </div>
               </motion.div>
             </motion.div>
