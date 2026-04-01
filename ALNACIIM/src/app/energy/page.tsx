@@ -1,8 +1,7 @@
 import EnergyHero from "@/components/energy/EnergyHero";
 import EnergyStatsGrid from "@/components/energy/EnergyStatsGrid";
 import EnergyMethodology from "@/components/energy/EnergyMethodology";
-import EnergyDivisions from "@/components/energy/EnergyDivisions";
-import EnergyProjectsGrid from "@/components/energy/EnergyProjectsGrid";
+import EnergyFeaturesGrid from "@/components/energy/EnergyFeaturesGrid";
 import EnergyCTA from "@/components/energy/EnergyCTA";
 
 export default function EnergyHome() {
@@ -11,8 +10,8 @@ export default function EnergyHome() {
       <EnergyHero />
       <EnergyStatsGrid />
       <EnergyMethodology />
-      <EnergyProjectsGrid limit={2} />
+      <EnergyFeaturesGrid />
       <EnergyCTA />
     </div>
-  );
+);
 }
