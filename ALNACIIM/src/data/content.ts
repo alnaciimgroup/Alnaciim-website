@@ -3,7 +3,7 @@ export const CONTENT = {
     hero: {
       eyebrow: "INFRASTRUCTURE · WATER · ENERGY · ENGINEERING · DIGITAL",
       headline: "Powering Life.\nPurifying Tomorrow.",
-      description: "East Africa's integrated infrastructure group. From water treatment and energy systems to precision engineering and digital infrastructure — ALNM Group delivers the full project lifecycle from design through commissioning and beyond."
+      description: "East Africa's integrated infrastructure group. From water treatment and energy systems to precision engineering and digital infrastructure — Alnaciim Group delivers the full project lifecycle from design through commissioning and beyond."
     },
     stats: [
       { label: "Years delivering infrastructure", value: "28+" },
@@ -109,7 +109,7 @@ export const CONTENT = {
     hero: {
       eyebrow: "ALNACIIM DIGITAL · IOT · SCADA",
       headline: "Digital systems\nbuilt for industry.",
-      description: "We build the software layer that infrastructure depends on—from remote IoT asset monitoring to industrial SCADA dashboards."
+      description: "We build the software layer that infrastructure depends on—from remote IoT asset monitoring to industrial SCADA dashboards. Alnaciim Digital specializes in mission-critical software solutions."
     },
     pillars: [
       {

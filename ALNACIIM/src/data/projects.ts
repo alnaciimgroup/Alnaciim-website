@@ -16,7 +16,7 @@ export const projects: Project[] = [
     location: "Nuwaco, Puntland",
     scale: "2,400 m³ per day",
     service: "Design, installation and commissioning",
-    description: "The largest water treatment facility delivered by ALNM Group. Designed, procured and commissioned entirely in-house — from site assessment to final operational verification.",
+    description: "The largest water treatment facility delivered by Alnaciim Group. Designed, procured and commissioned entirely in-house — from site assessment to final operational verification.",
     tags: ["Water", "Engineering"],
     image: "/images/water_purification_industrial_1774886325880.png"
   },
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     location: "Puntland",
     scale: "Solar + diesel + battery hybrid",
     service: "System design, EPC, SCADA commissioning",
-    description: "ALNM's most complex system—solar priority, battery buffering, and generator backup with a central energy management controller and remote SCADA monitoring.",
+    description: "Alnaciim's most complex system—solar priority, battery buffering, and generator backup with a central energy management controller and remote SCADA monitoring.",
     tags: ["Energy", "Digital", "Engineering"],
     image: "/images/industrial_automation_control_room_1774871867828.png"
   },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     location: "Multiple sites, Puntland",
     scale: "28 years of regional delivery",
     service: "Drilling, casing, and solar pump integration",
-    description: "The foundation of ALNM Group. Full-package borehole delivery from geophysical survey to solar-priority pump installation and commissioning.",
+    description: "The foundation of Alnaciim Group. Full-package borehole delivery from geophysical survey to solar-priority pump installation and commissioning.",
     tags: ["Water", "Energy"],
     image: "/images/water_desalination_ro_system_1774871305417.png"
   },

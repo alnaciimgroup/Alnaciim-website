@@ -47,7 +47,7 @@ export default function AquaSafi({
             </h2>
             
             <p className="text-[17px] text-[#4e5570] mb-10 leading-[1.6] max-w-lg">
-              Derived directly from ALNM Water's industrial purification technology, {title} delivers bottled perfection. We bring our infrastructure-grade quality control straight to the consumer market.
+              Derived directly from Alnaciim Water's industrial purification technology, {title} delivers bottled perfection. We bring our infrastructure-grade quality control straight to the consumer market.
             </p>
             
             <div className="grid grid-cols-2 gap-y-4 gap-x-8 mb-12">

@@ -42,7 +42,7 @@ export default function Hero() {
            transition={{ duration: 0.8, delay: 0.2 }}
            className="text-[18px] md:text-[20px] text-slate-600 font-[400] max-w-[600px] mb-12 leading-[1.6]"
          >
-           From clean water and renewable energy to industrial engineering and digital systems — ALNM Group delivers end-to-end infrastructure across East Africa.
+           From clean water and renewable energy to industrial engineering and digital systems — Alnaciim Group delivers end-to-end infrastructure across East Africa.
          </motion.p>
 
          <motion.div 
@@ -81,7 +81,7 @@ export default function Hero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/water_purification_industrial_1774886325880.png" alt="Pure Water Production" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/water_purification_industrial_1774886325880.png" alt="PureAlnaciim Water's Production" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>

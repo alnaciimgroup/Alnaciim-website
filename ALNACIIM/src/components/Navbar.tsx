@@ -18,7 +18,7 @@ export default function Navbar() {
             <Droplets size={16} className="fill-current" />
           </div>
           <span className="text-[16px] font-[900] tracking-tighter text-ink group-hover:text-primary transition-colors">
-            ALNACIIM GROUP
+            Alnaciim Group
           </span>
         </Link>
         

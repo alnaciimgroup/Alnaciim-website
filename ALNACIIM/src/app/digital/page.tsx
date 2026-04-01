@@ -66,7 +66,7 @@ export default function DigitalHome() {
     },
     {
       title: "SCADA & Industrial Data",
-      description: "The digital interface for physical plant operations. Integrated directly with ALNM Engineering's mechanical and electrical installations.",
+      description: "The digital interface for physical plant operations. Integrated directly with Alnaciim Engineering's mechanical and electrical installations.",
       items: [
         {
           label: "OT Platform",
@@ -101,7 +101,7 @@ export default function DigitalHome() {
         <div className="container mx-auto px-6 text-center mb-16">
           <h2 className="text-[42px] md:text-[56px] font-[900] text-slate-900 mb-6 tracking-tighter leading-[1]">Industrial Grade Software.</h2>
           <p className="text-[19px] text-slate-500 max-w-2xl mx-auto font-[450] leading-relaxed">
-            From company websites to live SCADA monitoring dashboards—ALNM Digital delivers the software layer that infrastructure depends on.
+            From company websites to live SCADA monitoring dashboards—Alnaciim Digital delivers the software layer that infrastructure depends on.
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function DigitalHome() {
               Industrial Secure Access.
             </h2>
             <p className="text-[19px] text-slate-400 mb-14 leading-relaxed font-[450]">
-              ALNM Digital uses the Ignition SCADA platform—an industry-standard, web-native platform that runs in any browser. Secure, scalable, and built for 24/7 OT environments.
+              Alnaciim Digital uses the Ignition SCADA platform—an industry-standard, web-native platform that runs in any browser. Secure, scalable, and built for 24/7 OT environments.
             </p>
             <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               {[

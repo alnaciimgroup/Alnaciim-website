@@ -8,7 +8,7 @@ export default function Divisions() {
   const cards = [
     {
       icon: <Database size={24} />,
-      title: "ALNM Water",
+      title: "Alnaciim Water",
       desc: "RO systems, purified water supply, bottled water manufacturing, and ice production. Serving homes, hospitals, and industry.",
       img: "/images/water_purification_industrial_1774886325880.png",
       color: "#0066FF",
@@ -16,7 +16,7 @@ export default function Divisions() {
     },
     {
        icon: <Zap size={24} />,
-       title: "ALNM Energy",
+       title: "Alnaciim Energy",
        desc: "Solar PV systems, hybrid inverters, MPPT controllers, and battery energy storage from home-scale kWh to industrial MWh BESS.",
        img: "/images/solar_panels_energy_monitoring_1774871842410.png",
        color: "#FF5A00",
@@ -24,7 +24,7 @@ export default function Divisions() {
     },
     {
        icon: <ShieldCheck size={24} />,
-       title: "ALNM Engineering",
+       title: "Alnaciim Engineering",
        desc: "Full EPC — factory design, global procurement, installation, commissioning. Generator supply, installation, and service contracts.",
        img: "/images/engineering_hero_industrial_engineer_1774871631526.png",
        color: "#ffc100",
@@ -32,7 +32,7 @@ export default function Divisions() {
     },
     {
        icon: <BarChart3 size={24} />,
-       title: "ALNM Digital",
+       title: "Alnaciim Digital",
        desc: "Custom websites, enterprise database architecture, ERP and systems integration, and managed IT infrastructure.",
        img: "/images/industrial_automation_control_room_1774871867828.png",
        color: "#00c2ff",

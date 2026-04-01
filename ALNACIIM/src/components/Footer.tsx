@@ -17,7 +17,7 @@ export default function Footer() {
               <Droplets size={16} className="fill-current" />
             </div>
             <span className="text-[18px] font-[900] tracking-tighter text-white leading-none uppercase">
-              ALNACIIM GROUP
+              Alnaciim Group
             </span>
           </Link>
           <p className="text-slate-400 text-[14px] leading-[1.6] font-[400] mb-6 max-w-[260px]">
@@ -65,7 +65,7 @@ export default function Footer() {
 
       <div className="max-w-[1240px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-[14px] text-slate-500 font-[400]">
-          © {new Date().getFullYear()} ALNACIIM GROUP. Built here. Operating here.
+          © {new Date().getFullYear()} Alnaciim Group. Built here. Operating here.
         </div>
         <div className="text-[14px] text-slate-500 flex gap-8">
           <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

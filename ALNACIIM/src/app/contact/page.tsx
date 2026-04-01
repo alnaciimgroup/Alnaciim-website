@@ -27,7 +27,7 @@ export default function ContactPage() {
           <p className="text-[20px] italic text-slate-400 font-[450]">
             "Reliability isn't just about the systems we build—it's about the partnership we maintain with our clients."
           </p>
-          <p className="mt-4 text-[12px] font-[800] text-slate-500 uppercase tracking-widest">— ALNM Group Engineering Team</p>
+          <p className="mt-4 text-[12px] font-[800] text-slate-500 uppercase tracking-widest">— Alnaciim Group Engineering Team</p>
         </div>
       </section>
     </div>

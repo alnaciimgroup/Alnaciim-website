@@ -53,7 +53,7 @@ export default function DivisionsGrid() {
               Four Divisions.<br />One Infrastructure Group.
             </h2>
             <p className="text-[17px] text-slate-500 leading-relaxed font-[450]">
-              ALNM Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain through four specialized divisions.
+              Alnaciim Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain through four specialized divisions.
             </p>
           </div>
         </div>

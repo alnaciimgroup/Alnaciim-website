@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'ALNM Group Contact <onboarding@resend.dev>', // You'll need to verify your domain in Resend
+      from: 'Alnaciim Group Contact <onboarding@resend.dev>', // You'll need to verify your domain in Resend
       to: ['mohaarkoz@gmail.com'],
       subject: `New Contact Form Submission: ${name}`,
       replyTo: email,
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background-color: #0066FF; color: white; padding: 24px; text-align: center;">
             <h1 style="margin: 0; font-size: 20px;">New Inquiry</h1>
-            <p style="margin: 4px 0 0; opacity: 0.8;">ALNM Group Digital Portal</p>
+            <p style="margin: 4px 0 0; opacity: 0.8;">Alnaciim Group Digital Portal</p>
           </div>
           <div style="padding: 24px; background-color: white;">
             <div style="margin-bottom: 24px;">
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
             </div>
           </div>
           <div style="padding: 16px; background-color: #f1f5f9; text-align: center; font-size: 12px; color: #64748b;">
-            This message was sent from the ALNM Group website contact form.
+            This message was sent from the Alnaciim Group website contact form.
           </div>
         </div>
       `,

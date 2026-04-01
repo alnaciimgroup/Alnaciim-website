@@ -10,7 +10,7 @@ const highlights = [
     tag: "Water · Engineering",
     scale: "2,400 m³ per day",
     delivery: "Design, installation and commissioning",
-    description: "The largest water treatment facility delivered by ALNM Group — a full-scale reverse osmosis plant providing safe drinking water to the Nuwaco district.",
+    description: "The largest water treatment facility delivered by Alnaciim Group — a full-scale reverse osmosis plant providing safe drinking water to the Nuwaco district.",
     image: "/images/water_purification_industrial_1774886325880.png"
   },
   {
@@ -48,7 +48,7 @@ export default function ProjectHighlights() {
             Project Highlights.
           </h2>
           <p className="text-[17px] text-slate-500 leading-relaxed font-[450]">
-            Four flagship projects that define ALNM Group's integrated capability across water, energy and engineering infrastructure.
+            Four flagship projects that define Alnaciim Group's integrated capability across water, energy and engineering infrastructure.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function ProjectHighlights() {
                         Ready to start your next project?
                     </h3>
                     <p className="text-[17px] text-slate-400 font-[450]">
-                        From water infrastructure and solar energy to engineering and digital systems — ALNM Group delivers the complete project lifecycle.
+                        From water infrastructure and solar energy to engineering and digital systems — Alnaciim Group delivers the complete project lifecycle.
                     </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 shrink-0">

@@ -45,7 +45,7 @@ export default function ContactForm() {
         </div>
         <h3 className="text-[28px] font-[900] text-ink mb-4 tracking-tight">Message Sent!</h3>
         <p className="text-slate-600 font-[450] leading-relaxed max-w-sm mx-auto">
-          Thank you for reaching out to ALNM Group. Our team will review your request and get back to you shortly.
+          Thank you for reaching out to Alnaciim Group. Our team will review your request and get back to you shortly.
         </p>
         <button 
           onClick={() => setStatus("idle")}

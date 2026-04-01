@@ -65,7 +65,7 @@ export default function CatalogPage() {
         </h1>
         
         <p className="text-[18px] text-slate-600 leading-[1.8] max-w-2xl font-[400] mb-8">
-          Access the secure ALNM Energy distribution node. Procure Tier-1 industrial hydrology and prime power infrastructure hardware.
+          Access the secure Alnaciim Energy distribution node. Procure Tier-1 industrial hydrology and prime power infrastructure hardware.
         </p>
 
         <div className="flex justify-center gap-12 bg-white px-8 py-5 rounded-fluid shadow-fluid border border-primary-light">

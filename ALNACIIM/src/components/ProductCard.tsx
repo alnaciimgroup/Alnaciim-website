@@ -7,7 +7,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onClick }: ProductCardProps) {
-  // Theme configuration based on product group matching the ALNM HTML Spec
+  // Theme configuration based on product group matching the Alnaciim HTML Spec
   const getTheme = (group: string) => {
     switch (group) {
       case 'ro': return { bg: 'bg-[#1152d4]/90', text: 'text-[#0e70cc]', tag: 'bg-[#edf2ff] text-[#1152d4]', badge: 'bg-[#1152d4]/80' };

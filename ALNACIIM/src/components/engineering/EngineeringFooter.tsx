@@ -24,7 +24,7 @@ export default function EngineeringFooter() {
                 <Shield size={20} className="fill-current" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[18px] font-[900] tracking-tighter text-white">ALNM ENGINEERING</span>
+                <span className="text-[18px] font-[900] tracking-tighter text-white">ALNACIIM ENGINEERING</span>
                 <span className="text-[10px] font-[700] tracking-[0.2em] uppercase text-[#ffc100]">Heavy Industry Group</span>
               </div>
             </Link>

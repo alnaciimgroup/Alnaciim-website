@@ -7,23 +7,23 @@ import Link from "next/link";
 export default function AboutPage() {
   const divisions = [
     {
-      title: "ALNM Water",
+      title: "Alnaciim Water",
       description: "Water well drilling, large-scale reverse osmosis water treatment, Aqua Safi bottled water manufacturing, block and tube ice production, and ongoing system maintenance.",
       icon: <Droplets size={24} />
     },
     {
-      title: "ALNM Energy",
+      title: "Alnaciim Energy",
       description: "Solar PV system supply and installation, hybrid solar-battery-generator microgrid design, battery energy storage, and generator set supply and integration.",
       icon: <Zap size={24} />
     },
     {
-      title: "ALNM Engineering",
+      title: "Alnaciim Engineering",
       description: "The technical delivery arm. Mechanical and electrical installation, well drilling, RO plant commissioning, SCADA programming, and custom control panel fabrication.",
       icon: <Settings size={24} />
     },
     {
-      title: "ALNM Digital",
-      description: "Web development, software systems, database infrastructure, IoT connectivity, industrial SCADA and remote monitoring — for ALNM and external clients.",
+      title: "Alnaciim Digital",
+      description: "Web development, software systems, database infrastructure, IoT connectivity, industrial SCADA and remote monitoring — for Alnaciim and external clients.",
       icon: <Globe size={24} />
     }
   ];
@@ -32,7 +32,7 @@ export default function AboutPage() {
     {
       city: "Garowe",
       label: "Headquarters",
-      description: "Puntland, Federal Republic of Somalia. The founding location of ALNM Group and home of all divisions, main warehouse, and fabrication facility."
+      description: "Puntland, Federal Republic of Somalia. The founding location of Alnaciim Group and home of all divisions, main warehouse, and fabrication facility."
     }
   ];
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 border border-slate-200"
           >
-            About ALNM Group
+            About Alnaciim Group
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-[19px] md:text-[22px] text-slate-500 leading-relaxed font-[450] max-w-3xl"
           >
-            ALNM Group is an East African infrastructure company headquartered in Garowe, Puntland, Somalia. We design, build and maintain water, energy, engineering and digital infrastructure across the region.
+            Alnaciim Group is an East African infrastructure company headquartered in Garowe, Puntland, Somalia. We design, build and maintain water, energy, engineering and digital infrastructure across the region.
           </motion.p>
         </div>
       </section>
@@ -79,13 +79,13 @@ export default function AboutPage() {
               <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tighter text-ink mb-8">Our story.</h2>
               <div className="space-y-6 text-[17px] text-slate-600 leading-relaxed font-[450]">
                 <p>
-                  ALNM Group was founded in Garowe, Puntland, in 1998 as Al Naciim Water — a company dedicated to solving clean, reliable water challenges across the Horn of Africa.
+                  Alnaciim Group was founded in Garowe, Puntland, in 1998 as Al Naciim Water — a company dedicated to solving clean, reliable water challenges across the Horn of Africa.
                 </p>
                 <p>
                   We began by drilling water wells and installing basic treatment systems. Over time, our technical capacity grew alongside our understanding of what East African communities actually needed. We expanded into water purification at scale, building plants treating thousands of cubic metres daily.
                 </p>
                 <p>
-                  The launch of Aqua Safi Industries marked a new chapter, becoming one of the largest bottled water producers in Somalia. As our clients' needs grew, we established ALNM Energy, ALNM Engineering, and ALNM Digital to provide the full infrastructure lifecycle.
+                  The launch of Aqua Safi Industries marked a new chapter, becoming one of the largest bottled water producers in Somalia. As our clients' needs grew, we established Alnaciim Energy, Alnaciim Engineering, and Alnaciim Digital to provide the full infrastructure lifecycle.
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
                 <img 
                   src="/images/about_hero_office_woman_1769372753617.png" 
-                  alt="ALNM Group Operations" 
+                  alt="Alnaciim Group Operations" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tighter text-ink mb-6">Four divisions. One group.</h2>
             <p className="text-[17px] text-slate-500 font-[450]">
-              Every ALNM Group project is delivered by an integrated team across our four specialized technical divisions.
+              Every Alnaciim Group project is delivered by an integrated team across our four specialized technical divisions.
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export default function AboutPage() {
             <div className="max-w-2xl">
               <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tighter mb-6">Where we operate.</h2>
               <p className="text-[18px] text-slate-400 font-[450]">
-                ALNM Group operates from strategic offices across the region, providing local engineering expertise and direct support to our infrastructure assets.
+                Alnaciim Group operates from strategic offices across the region, providing local engineering expertise and direct support to our infrastructure assets.
               </p>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 Let's discuss your<br />next project.
               </h2>
               <p className="text-[18px] md:text-[21px] text-white/80 font-[450] mb-12 max-w-2xl mx-auto">
-                ALNM Group takes projects from the initial concept through to a functioning, maintained system. Three offices. Four divisions. One point of contact.
+                Alnaciim Group takes projects from the initial concept through to a functioning, maintained system. Three offices. Four divisions. One point of contact.
               </p>
               <Link
                 href="/contact"

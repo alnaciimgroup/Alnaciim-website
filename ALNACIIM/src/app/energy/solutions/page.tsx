@@ -84,7 +84,7 @@ export default function EnergySolutions() {
               Energy solutions for business and industry.
             </h1>
             <p className="text-[20px] text-slate-600 leading-relaxed">
-              ALNM Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of East Africa.
+              Alnaciim Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of East Africa.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function EnergySolutions() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-[42px] md:text-[56px] font-[800] mb-8">Ready to stabilize your power?</h2>
           <p className="text-[18px] text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Every ALNM Energy project starts with a detailed energy audit and load analysis. Talk to our engineers today about your facility's requirements.
+            Every Alnaciim Energy project starts with a detailed energy audit and load analysis. Talk to our engineers today about your facility's requirements.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-5 bg-[#FF5A00] hover:bg-[#FF8C00] text-white rounded-full font-[700] transition-all shadow-xl shadow-orange-500/20">
             Start a Conversation

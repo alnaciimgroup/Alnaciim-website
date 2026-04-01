@@ -33,7 +33,7 @@ export default function WaterHome() {
                 Pure infrastructure.<br />Built for the region.
               </h2>
               <p className="text-[17px] text-slate-600 leading-relaxed font-[450]">
-                ALNM Water integrates deep regional expertise with advanced purification technology. From the source to the bottle, we manage the entire water value chain.
+                Alnaciim Water integrates deep regional expertise with advanced purification technology. From the source to the bottle, we manage the entire water value chain.
               </p>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function WaterHome() {
             {[
               {
                 title: "Water Wells & Community Supply",
-                description: "ALNM Water has drilled and equipped over 50 boreholes across Puntland. Each well is professionally drilled, steel-cased, and equipped with solar-priority pumping systems.",
+                description: "Alnaciim Water has drilled and equipped over 50 boreholes across Puntland. Each well is professionally drilled, steel-cased, and equipped with solar-priority pumping systems.",
                 details: [
                   "Borehole drilling and steel casing installation",
                   "Gravel pack, development and yield testing",
@@ -112,7 +112,7 @@ export default function WaterHome() {
               },
               {
                 title: "Maintenance & Spare Parts",
-                description: "Ongoing support for all ALNM installations and third-party systems. Centrally stocked spare parts at our Garowe warehouse ensure same-day response.",
+                description: "Ongoing support for all Alnaciim installations and third-party systems. Centrally stocked spare parts at our Garowe warehouse ensure same-day response.",
                 details: [
                   "RO membrane cleaning & replacement",
                   "Pump inspection & mechanical seal repair",
@@ -228,7 +228,7 @@ export default function WaterHome() {
                 The Nuwaco RO Plant.
               </h2>
               <p className="text-[17px] text-slate-400 leading-relaxed mb-8">
-                The largest water treatment facility delivered by ALNM Group. A full-scale reverse osmosis plant providing 2,400 m³ of safe drinking water daily. Custom commissioned for the Garowe municipal grid.
+                The largest water treatment facility delivered by Alnaciim Group. A full-scale reverse osmosis plant providing 2,400 m³ of safe drinking water daily. Custom commissioned for the Garowe municipal grid.
               </p>
               <Link href="/work" className="inline-flex items-center gap-2 text-white font-[600] group hover:text-blue-400 transition-colors">
                 Read technical documentation
