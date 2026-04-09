@@ -48,7 +48,7 @@ export default function ProjectHighlights() {
             Project Highlights.
           </h2>
           <p className="text-[17px] text-slate-500 leading-relaxed font-[450]">
-            Four flagship projects that define Alnaciim Group's integrated capability across water, energy and engineering infrastructure.
+            Key flagship projects that define Alnaciim Group's integrated capability across water, energy and engineering infrastructure.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default function ProjectHighlights() {
                         Ready to start your next project?
                     </h3>
                     <p className="text-[17px] text-slate-400 font-[450]">
-                        From water infrastructure and solar energy to engineering and digital systems — Alnaciim Group delivers the complete project lifecycle.
+                        From water infrastructure and solar energy to precision engineering — Alnaciim Group delivers the complete project lifecycle.
                     </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 shrink-0">

@@ -32,15 +32,6 @@ const divisions = [
     lightColor: "bg-slate-100",
     textColor: "text-slate-800"
   },
-  {
-    title: "ALNACIIM Digital",
-    description: "Web development, software systems, database infrastructure, IoT connectivity and industrial SCADA monitoring for regional businesses.",
-    link: "/digital",
-    icon: <Globe size={24} />,
-    color: "bg-indigo-600",
-    lightColor: "bg-indigo-50",
-    textColor: "text-indigo-600"
-  }
 ];
 
 export default function DivisionsGrid() {
@@ -50,15 +41,15 @@ export default function DivisionsGrid() {
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
           <div className="max-w-2xl">
             <h2 className="text-[32px] md:text-[48px] font-[900] leading-[1.1] tracking-tighter text-ink mb-6">
-              Four Divisions.<br />One Infrastructure Group.
+              Three Divisions.<br />One Infrastructure Group.
             </h2>
             <p className="text-[17px] text-slate-500 leading-relaxed font-[450]">
-              Alnaciim Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain through four specialized divisions.
+              Alnaciim Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain through three specialized divisions.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {divisions.map((division, i) => (
             <motion.div
               key={i}

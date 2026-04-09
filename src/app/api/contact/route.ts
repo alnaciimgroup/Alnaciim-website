@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background-color: #0066FF; color: white; padding: 24px; text-align: center;">
             <h1 style="margin: 0; font-size: 20px;">New Inquiry</h1>
-            <p style="margin: 4px 0 0; opacity: 0.8;">Alnaciim Group Digital Portal</p>
+            <p style="margin: 4px 0 0; opacity: 0.8;">Alnaciim Group Portal</p>
           </div>
           <div style="padding: 24px; background-color: white;">
             <div style="margin-bottom: 24px;">

@@ -10,7 +10,7 @@ export default function ContactPage() {
           How can we help power your vision?
         </h1>
         <p className="text-[19px] text-slate-500 max-w-2xl mx-auto font-[450] leading-relaxed">
-          Whether you have a technical inquiry about our engineering solutions or need digital infrastructure support, our team is ready to assist.
+          Whether you have a technical inquiry about our engineering solutions or need custom infrastructure support, our team is ready to assist.
         </p>
       </section>
 

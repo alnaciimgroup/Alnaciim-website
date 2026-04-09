@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Alnaciim Group | Powering Life. Purifying Tomorrow.",
-  description: "East African infrastructure conglomerate specializing in water purification, renewable energy, engineering, and digital systems.",
+  description: "East African infrastructure conglomerate specializing in water purification, renewable energy and engineering.",
 };
 
 import Navbar from "@/components/Navbar";

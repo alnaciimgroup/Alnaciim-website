@@ -42,7 +42,7 @@ export default function Hero() {
            transition={{ duration: 0.8, delay: 0.2 }}
            className="text-[18px] md:text-[20px] text-slate-600 font-[400] max-w-[600px] mb-12 leading-[1.6]"
          >
-           From clean water and renewable energy to industrial engineering and digital systems — Alnaciim Group delivers end-to-end infrastructure across East Africa.
+           From clean water and renewable energy to precision engineering solutions — Alnaciim Group delivers end-to-end infrastructure across East Africa.
          </motion.p>
 
          <motion.div 
