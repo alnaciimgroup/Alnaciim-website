@@ -21,11 +21,6 @@ export default function AboutPage() {
       description: "The technical delivery arm. Mechanical and electrical installation, well drilling, RO plant commissioning, SCADA programming, and custom control panel fabrication.",
       icon: <Settings size={24} />
     },
-    {
-      title: "Alnaciim Digital",
-      description: "Web development, software systems, database infrastructure, IoT connectivity, industrial SCADA and remote monitoring — for Alnaciim and external clients.",
-      icon: <Globe size={24} />
-    }
   ];
 
   const locations = [
@@ -63,7 +58,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2 }}
             className="text-[19px] md:text-[22px] text-slate-500 leading-relaxed font-[450] max-w-3xl"
           >
-            Alnaciim Group is an East African infrastructure company headquartered in Garowe, Puntland, Somalia. We design, build and maintain water, energy, engineering and digital infrastructure across the region.
+            Alnaciim Group is an East African infrastructure company headquartered in Garowe, Puntland, Somalia. We design, build and maintain water, energy and engineering infrastructure across the region.
           </motion.p>
         </div>
       </section>
@@ -85,7 +80,7 @@ export default function AboutPage() {
                   We began by drilling water wells and installing basic treatment systems. Over time, our technical capacity grew alongside our understanding of what East African communities actually needed. We expanded into water purification at scale, building plants treating thousands of cubic metres daily.
                 </p>
                 <p>
-                  The launch of Aqua Safi Industries marked a new chapter, becoming one of the largest bottled water producers in Somalia. As our clients' needs grew, we established Alnaciim Energy, Alnaciim Engineering, and Alnaciim Digital to provide the full infrastructure lifecycle.
+                  The launch of Aqua Safi Industries marked a new chapter, becoming one of the largest bottled water producers in Somalia. As our clients' needs grew, we established Alnaciim Energy and Alnaciim Engineering to provide the full infrastructure lifecycle.
                 </p>
               </div>
             </div>
@@ -107,13 +102,13 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tighter text-ink mb-6">Four divisions. One group.</h2>
+            <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tighter text-ink mb-6">Three divisions. One group.</h2>
             <p className="text-[17px] text-slate-500 font-[450]">
-              Every Alnaciim Group project is delivered by an integrated team across our four specialized technical divisions.
+              Every Alnaciim Group project is delivered by an integrated team across our three specialized technical divisions.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {divisions.map((div, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-primary mb-6">
@@ -169,7 +164,7 @@ export default function AboutPage() {
                 Let's discuss your<br />next project.
               </h2>
               <p className="text-[18px] md:text-[21px] text-white/80 font-[450] mb-12 max-w-2xl mx-auto">
-                Alnaciim Group takes projects from the initial concept through to a functioning, maintained system. Three offices. Four divisions. One point of contact.
+                Alnaciim Group takes projects from the initial concept through to a functioning, maintained system. Three offices. Three divisions. One point of contact.
               </p>
               <Link
                 href="/contact"

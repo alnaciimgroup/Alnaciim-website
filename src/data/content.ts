@@ -1,9 +1,9 @@
 export const CONTENT = {
   group: {
     hero: {
-      eyebrow: "INFRASTRUCTURE · WATER · ENERGY · ENGINEERING · DIGITAL",
+      eyebrow: "INFRASTRUCTURE · WATER · ENERGY · ENGINEERING",
       headline: "Powering Life.\nPurifying Tomorrow.",
-      description: "East Africa's integrated infrastructure group. From water treatment and energy systems to precision engineering and digital infrastructure — Alnaciim Group delivers the full project lifecycle from design through commissioning and beyond."
+      description: "East Africa's integrated infrastructure group. From water treatment and energy systems to precision engineering — Alnaciim Group delivers the full project lifecycle from design through commissioning and beyond."
     },
     stats: [
       { label: "Years delivering infrastructure", value: "28+" },
@@ -105,34 +105,5 @@ export const CONTENT = {
       }
     ]
   },
-  digital: {
-    hero: {
-      eyebrow: "ALNACIIM DIGITAL · IOT · SCADA",
-      headline: "Digital systems\nbuilt for industry.",
-      description: "We build the software layer that infrastructure depends on—from remote IoT asset monitoring to industrial SCADA dashboards. Alnaciim Digital specializes in mission-critical software solutions."
-    },
-    pillars: [
-      {
-        title: "WEB & SOFTWARE DEV",
-        description: "Custom enterprise applications, multi-language corporate websites, and secure cloud-native platforms.",
-        icon: "Code"
-      },
-      {
-        title: "Custom Software",
-        description: "Internal business systems and database architecture designed for operational efficiency.",
-        icon: "Globe"
-      },
-      {
-        title: "IoT / Remote Data",
-        description: "Remote asset monitoring and smart metering for infrastructure in challenging locations.",
-        icon: "Radio"
-      },
-      {
-        title: "SCADA Dashboards",
-        description: "Industrial plant monitoring dashboards with real-time visibility and historical historian data.",
-        icon: "LayoutDashboard"
-      }
-    ]
-  }
 
 };

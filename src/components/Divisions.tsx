@@ -30,14 +30,6 @@ export default function Divisions() {
        color: "#ffc100",
        href: "/engineering"
     },
-    {
-       icon: <BarChart3 size={24} />,
-       title: "Alnaciim Digital",
-       desc: "Custom websites, enterprise database architecture, ERP and systems integration, and managed IT infrastructure.",
-       img: "/images/industrial_automation_control_room_1774871867828.png",
-       color: "#00c2ff",
-       href: "/digital"
-    }
   ];
 
   return (
@@ -52,7 +44,7 @@ export default function Divisions() {
           transition={{ duration: 0.6 }}
           className="text-center md:text-left mb-12 max-w-2xl"
         >
-          <div className="text-[#0066FF] font-[700] text-[11px] tracking-widest uppercase mb-4">Our Four Divisions</div>
+          <div className="text-[#0066FF] font-[700] text-[11px] tracking-widest uppercase mb-4">Our Three Divisions</div>
           <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tight text-slate-900 leading-[1.1] mb-5">
             Specialised expertise.<br />Integrated delivery.
           </h2>
@@ -62,7 +54,7 @@ export default function Divisions() {
         </motion.div>
 
        {/* Floating SaaS Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 text-left">
           {cards.map((card, i) => (
             <motion.div 
               key={i}

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function OurWorkPage() {
   const [filter, setFilter] = useState("All");
-  const tags = ["All", "Water", "Energy", "Engineering", "Digital"];
+  const tags = ["All", "Water", "Energy", "Engineering"];
 
   const filteredProjects = filter === "All" 
     ? projects 

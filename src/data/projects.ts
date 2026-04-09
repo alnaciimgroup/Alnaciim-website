@@ -107,7 +107,7 @@ export const projects: Project[] = [
     scale: "Solar + diesel + battery hybrid",
     service: "System design, EPC, SCADA commissioning",
     description: "Alnaciim's most complex system—solar priority, battery buffering, and generator backup with a central energy management controller and remote SCADA monitoring.",
-    tags: ["Energy", "Digital", "Engineering"],
+    tags: ["Energy", "Engineering"],
     image: "/images/industrial_automation_control_room_1774871867828.png"
   },
   {

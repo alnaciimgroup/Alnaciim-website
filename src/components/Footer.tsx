@@ -21,7 +21,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-slate-400 text-[14px] leading-[1.6] font-[400] mb-6 max-w-[260px]">
-            Building the technical foundations of East Africa since 1998. Four divisions. One unified standard.
+            Building the technical foundations of East Africa since 1998. Three divisions. One unified standard.
           </p>
         </div>
 
@@ -34,7 +34,6 @@ export default function Footer() {
             <Link href="/" className="text-[13px] text-slate-400 hover:text-primary transition-colors">ALNACIIM WATER</Link>
             <Link href="/energy" className="text-[13px] text-slate-400 hover:text-primary transition-colors">ALNACIIM ENERGY</Link>
             <Link href="/engineering" className="text-[13px] text-slate-400 hover:text-primary transition-colors">ALNACIIM ENGINEERING</Link>
-            <Link href="/digital" className="text-[13px] text-slate-400 hover:text-primary transition-colors">ALNACIIM DIGITAL</Link>
           </div>
         </div>
 
