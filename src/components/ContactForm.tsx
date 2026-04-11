@@ -26,14 +26,17 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
       });
 
-      if (!res.ok) throw new Error("Failed to send");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to send");
+      }
       
       setStatus("success");
       (e.target as HTMLFormElement).reset();
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
       setStatus("error");
-      setMessage("Something went wrong. Please try again or contact us directly.");
+      setMessage(err.message || "Something went wrong. Please try again or contact us directly.");
     }
   }
 
