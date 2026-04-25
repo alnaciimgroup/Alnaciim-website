@@ -1,5 +1,6 @@
 import GroupHero from "@/components/GroupHero";
 import StatsBar from "@/components/StatsBar";
+import LeadText from "@/components/LeadText";
 import DivisionsGrid from "@/components/DivisionsGrid";
 import ProjectHighlights from "@/components/ProjectHighlights";
 
@@ -8,6 +9,7 @@ export default function GroupHome() {
     <div className="bg-white">
       <GroupHero />
       <StatsBar />
+      <LeadText />
       <DivisionsGrid />
       <ProjectHighlights />
     </div>

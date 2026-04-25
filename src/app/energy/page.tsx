@@ -6,12 +6,12 @@ import EnergyCTA from "@/components/energy/EnergyCTA";
 
 export default function EnergyHome() {
   return (
-    <div className="w-full">
+    <div className="bg-white">
       <EnergyHero />
       <EnergyStatsGrid />
       <EnergyMethodology />
       <EnergyCompetencies />
       <EnergyCTA />
     </div>
-);
+  );
 }

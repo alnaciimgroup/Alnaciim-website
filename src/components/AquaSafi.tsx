@@ -13,7 +13,7 @@ export default function AquaSafi({
   title = "Aqua Safi Premium Water.",
   feature1 = "7-Stage Reverse Osmosis",
   feature2 = "pH Balanced (7.2 - 7.6)",
-  image = "/images/water_desalination_ro_system_1774871305417.png"
+  image = "/images/aqua_safi_production.png"
 }: AquaSafiProps) {
   const features = [
     feature1,

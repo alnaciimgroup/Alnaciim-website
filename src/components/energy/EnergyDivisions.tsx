@@ -10,19 +10,19 @@ export default function EnergyDivisions() {
       icon: <Lightbulb size={24} />,
       title: "Utility-Scale Solar",
       desc: "High-yield commercial solar arrays. We coordinate full EPC services from site assessment to final commissioning and grid integration.",
-      img: "/images/catalog_solar_panels_1774889827145.png"
+      img: "/images/solar_power_system.png"
     },
     {
        icon: <Zap size={24} />,
        title: "Hybrid Microgrids",
        desc: "Intelligent stabilization of unreliable grid infrastructure. Our systems seamlessly route energy between Solar PV, BESS, and Generators.",
-       img: "/images/industrial_automation_control_room_1774871867828.png"
+       img: "/images/energy_intelligent_controller.png"
     },
     {
        icon: <Battery size={24} />,
        title: "BESS Storage",
        desc: "Peak shaving and load shifting utilizing high-cycle life LiFePO4 chemistry. Essential for energy arbitrage and 24/7 continuous operation.",
-       img: "/images/catalog_inverter_1774889842179.png"
+       img: "/images/battery_energy_storage_bess.png"
     },
     {
        icon: <Factory size={24} />,
@@ -66,7 +66,7 @@ export default function EnergyDivisions() {
             >
               {/* Image Thumbnail */}
               <div className="w-full h-44 bg-slate-100 relative overflow-hidden">
-                 <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={card.img} alt={card.title} className={`absolute inset-0 w-full h-full object-cover block group-hover:scale-105 transition-transform duration-700 ${card.title.includes('Solar') ? 'object-bottom' : ''}`} />
                  <div className="absolute inset-0 bg-[#FF5A00]/10 mix-blend-multiply"></div>
                  {/* Floating Icon overlapping the image */}
                  <div className="absolute -bottom-6 left-6 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-[#FF5A00] border border-slate-100 group-hover:scale-110 group-hover:bg-[#FF5A00] group-hover:text-white transition-all duration-300">

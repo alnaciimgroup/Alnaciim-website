@@ -50,7 +50,7 @@ export const catalogProducts: Product[] = [
     category: "Solar Panels",
     name: "JA Solar Monocrystalline — 540W to 580W",
     brand: "JA Solar Technology — Tier 1",
-    img: "/images/catalog_solar_panels_1774889827145.png",
+    img: "/images/solar_power_system.png",
     desc: "JA Solar Tier-1 monocrystalline PV panels in PERC and TOPCon technologies. Proven in high-irradiance climates. Used in Alnaciim 300 kWp solar installations.",
     specs: [["Output","540W – 580W"],["Technology","PERC / TOPCon"],["Efficiency","Up to 22.3%"],["Temp coeff","-0.34% / °C"],["Warranty","25-year output · 12-year product"]],
     tags: ["JA Solar","Tier 1","PERC","TOPCon","540–580W"]
@@ -61,7 +61,7 @@ export const catalogProducts: Product[] = [
     category: "Solar Panels",
     name: "BYD Monocrystalline Panels — 540W to 570W",
     brand: "BYD Company Ltd — Tier 1",
-    img: "/images/catalog_solar_panels_1774889827145.png",
+    img: "/images/solar_power_system.png",
     desc: "BYD high-efficiency monocrystalline panels with bifacial option. Low degradation, suitable for high-irradiance environments. Used in Alnaciim 200 kWp solar installations.",
     specs: [["Output","540W – 570W"],["Technology","Mono bifacial / mono"],["Efficiency","Up to 21.9%"],["Bifacial gain","Up to 25%"],["Warranty","25-year output"]],
     tags: ["BYD","Tier 1","Bifacial","540–570W"]
@@ -72,7 +72,7 @@ export const catalogProducts: Product[] = [
     category: "Solar Panels",
     name: "Canadian Solar HiKu — 400W to 545W",
     brand: "Canadian Solar Inc. — Tier 1",
-    img: "/images/catalog_solar_panels_1774889827145.png",
+    img: "/images/solar_power_system.png",
     desc: "Canadian Solar HiKu PERC monocrystalline panels. Reliable Tier-1 option for residential to utility-scale solar.",
     specs: [["Output","400W – 545W"],["Technology","Monocrystalline PERC"],["Efficiency","Up to 21.5%"],["Warranty","25-year performance"]],
     tags: ["Canadian Solar","Tier 1","PERC","400–545W"]
@@ -83,7 +83,7 @@ export const catalogProducts: Product[] = [
     category: "Inverters",
     name: "DEYE SUN-100k-G03 — 100 kW Three-Phase",
     brand: "Deye Inverter Technology",
-    img: "/images/catalog_inverter_1774889842179.png",
+    img: "/images/energy_inverters.png",
     desc: "100 kW three-phase string inverter. 10 MPPT inputs, 98.6% peak efficiency, IP65. Used in Alnaciim 300 kWp installations.",
     specs: [["Output","100 kW"],["Phase","Three-phase string"],["MPPT","10 × MPPT"],["Efficiency","98.6%"],["Comms","RS485 · WiFi"],["IP","IP65"]],
     tags: ["DEYE","100kW","3-Phase","10 MPPT","98.6%"]
@@ -94,7 +94,7 @@ export const catalogProducts: Product[] = [
     category: "Inverters",
     name: "SAJ Suntrio Plus 50K — 50 kW Three-Phase",
     brand: "SAJ Electric Co., Ltd",
-    img: "/images/catalog_inverter_1774889842179.png",
+    img: "/images/energy_inverters.png",
     desc: "SAJ 50K three-phase string inverter. 6 MPPT, 98.5% efficiency. Used in Alnaciim 200 kWp solar installations.",
     specs: [["Output","50 kW"],["Phase","Three-phase string"],["MPPT","6 × MPPT"],["Efficiency","98.5%"],["IP","IP66"]],
     tags: ["SAJ","50kW","3-Phase","6 MPPT","98.5%"]
@@ -105,7 +105,7 @@ export const catalogProducts: Product[] = [
     category: "Inverters",
     name: "DEYE Hybrid Inverter — 8 / 12 / 16 kW",
     brand: "Deye Inverter Technology",
-    img: "/images/catalog_inverter_1774889842179.png",
+    img: "/images/energy_inverters.png",
     desc: "DEYE hybrid inverter for residential and small commercial solar+battery. On-grid, off-grid and hybrid modes. Compatible with lithium and lead-acid batteries.",
     specs: [["Output","8 / 12 / 16 kW"],["MPPT","2 × MPPT"],["Battery","Li / Lead-acid"],["Modes","Grid · Off-grid · Hybrid"],["IP","IP65"]],
     tags: ["DEYE","Hybrid","8/12/16kW","Off-Grid","Battery"]
@@ -116,7 +116,7 @@ export const catalogProducts: Product[] = [
     category: "Solar Controllers",
     name: "DEIF ASC 150 — Advanced Solar Controller",
     brand: "DEIF A/S — Denmark",
-    img: "/images/catalog_controller_1774889872104.png",
+    img: "/images/energy_intelligent_controller.png",
     desc: "Advanced solar controller managing PV-genset priority, load shedding and protection. Alnaciim Energy builds complete ASC 150 panels in-house.",
     specs: [["Function","Solar / genset coordinator"],["Features","PV priority · Load shedding"],["Comms","Modbus · CANbus · Ethernet"],["Panel build","Alnaciim in-house fabrication"]],
     tags: ["DEIF","ASC 150","Solar","Genset","PV Priority"]
@@ -127,7 +127,7 @@ export const catalogProducts: Product[] = [
     category: "Genset Controllers",
     name: "DEIF AGC 150 — Advanced Genset Controller",
     brand: "DEIF A/S — Denmark",
-    img: "/images/catalog_controller_1774889872104.png",
+    img: "/images/energy_intelligent_controller.png",
     desc: "Full-featured genset controller for parallel and standalone operation. Auto-synchronisation, load sharing, AMF, comprehensive protection. Alnaciim builds panels in-house.",
     specs: [["Function","Advanced genset controller"],["Modes","Standalone · Parallel · AMF"],["Comms","Modbus · CANbus · IEC 61850"],["Panel build","Alnaciim in-house fabrication"]],
     tags: ["DEIF","AGC 150","Genset","Parallel","AMF"]
@@ -138,7 +138,7 @@ export const catalogProducts: Product[] = [
     category: "Genset Controllers",
     name: "DSE 6xxx Series — AMF Single Genset",
     brand: "Deep Sea Electronics — UK",
-    img: "/images/catalog_controller_1774889872104.png",
+    img: "/images/energy_intelligent_controller.png",
     desc: "DSE 6xxx for single-genset AMF applications. Reliable and widely used across Alnaciim generator installations.",
     specs: [["Models","6120 · 6130 · 6139"],["Function","AMF — single genset"],["Comms","USB · RS232 · Modbus RTU"]],
     tags: ["DSE","6xxx","AMF","Single Genset"]
@@ -149,7 +149,7 @@ export const catalogProducts: Product[] = [
     category: "Genset Controllers",
     name: "DSE 7xxx Series — Parallel Load Sharing",
     brand: "Deep Sea Electronics — UK",
-    img: "/images/catalog_controller_1774889872104.png",
+    img: "/images/energy_intelligent_controller.png",
     desc: "DSE 7xxx for multi-genset parallel with active and reactive load sharing.",
     specs: [["Models","7310 · 7320 · 7410 MKII"],["Function","Multi-genset parallel"],["Feature","Active + reactive load share"]],
     tags: ["DSE","7xxx","Parallel","Load Share"]
@@ -160,7 +160,7 @@ export const catalogProducts: Product[] = [
     category: "Genset Controllers",
     name: "DSE 8xxx Series — Advanced SCADA",
     brand: "Deep Sea Electronics — UK",
-    img: "/images/catalog_controller_1774889872104.png",
+    img: "/images/energy_intelligent_controller.png",
     desc: "DSE 8xxx advanced controllers with Ethernet and Modbus TCP/IP for SCADA integration.",
     specs: [["Models","8610 MKII · 8660"],["Comms","Ethernet · Modbus TCP"],["Remote","Web page · SCADA"]],
     tags: ["DSE","8xxx","SCADA","Ethernet"]
@@ -171,7 +171,7 @@ export const catalogProducts: Product[] = [
     category: "Generator Sets",
     name: "Cummins Diesel Generator Sets — 20 to 2,000+ kVA",
     brand: "Cummins Inc. — via Jubaili Bros",
-    img: "/images/catalog_generator_1774889998709.png",
+    img: "/images/multi-site_generator_deployment.png",
     desc: "Cummins generator sets across the full commercial and industrial range. Supplied and commissioned by Alnaciim Energy through Jubaili Bros with full ATS, controller integration and load testing.",
     specs: [["Range","20 – 2,000+ kVA"],["Fuel","Diesel"],["Ratings","Standby · Prime · Continuous"],["Controller","DSE or DEIF AGC 150"],["Enclosure","Open · Canopy · Sound-attenuated"]],
     tags: ["Cummins","Jubaili Bros","20–2000kVA","Standby","Prime","ATS"]
@@ -182,7 +182,7 @@ export const catalogProducts: Product[] = [
     category: "Generator Sets",
     name: "MAN Diesel Generator Sets — 500 to 3,000+ kVA",
     brand: "MAN Energy Solutions — via Jubaili Bros",
-    img: "/images/catalog_generator_1774889998709.png",
+    img: "/images/multi-site_generator_deployment.png",
     desc: "MAN generator sets for heavy industrial and prime power. High durability, long service intervals.",
     specs: [["Range","500 – 3,000+ kVA"],["Application","Heavy industrial / prime"],["Fuel","Diesel"],["Controller","DSE or DEIF fitted"]],
     tags: ["MAN","Jubaili Bros","500–3000kVA","Heavy Industrial"]
@@ -193,7 +193,7 @@ export const catalogProducts: Product[] = [
     category: "Generator Sets",
     name: "Weichai Diesel Generator Sets — 30 to 1,500 kVA",
     brand: "Weichai Power — via Jubaili Bros",
-    img: "/images/catalog_generator_1774889998709.png",
+    img: "/images/multi-site_generator_deployment.png",
     desc: "Weichai diesel generator sets — cost-effective mid-range option. Full DSE/DEIF integration by Alnaciim Energy.",
     specs: [["Range","30 – 1,500 kVA"],["Fuel","Diesel"],["Ratings","Standby · Prime"]],
     tags: ["Weichai","Jubaili Bros","30–1500kVA"]
@@ -204,7 +204,7 @@ export const catalogProducts: Product[] = [
     category: "Generator Sets",
     name: "Leader Power Diesel Generator Sets — 20 to 2,000 kVA",
     brand: "Leader Power — via Jubaili Bros",
-    img: "/images/catalog_generator_1774889998709.png",
+    img: "/images/multi-site_generator_deployment.png",
     desc: "Leader Power generator sets for commercial and industrial standby. Wide kVA range, full commissioning by Alnaciim Energy.",
     specs: [["Range","20 – 2,000 kVA"],["Fuel","Diesel"],["Ratings","Standby · Prime"]],
     tags: ["Leader Power","Jubaili Bros","20–2000kVA"]

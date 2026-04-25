@@ -3,6 +3,7 @@ import EngineeringStats from "@/components/engineering/EngineeringStats";
 import EngineeringCoreCompetencies from "@/components/engineering/EngineeringCoreCompetencies";
 import EngineeringIndustries from "@/components/engineering/EngineeringIndustries";
 import TechnicalArchive from "@/components/engineering/TechnicalArchive";
+import EngineeringCTA from "@/components/engineering/EngineeringCTA";
 import EngineeringFooter from "@/components/engineering/EngineeringFooter";
 
 export const metadata = {
@@ -18,6 +19,8 @@ export default function EngineeringPage() {
       <EngineeringCoreCompetencies />
       <EngineeringIndustries />
       <TechnicalArchive />
+      <EngineeringCTA />
+      <EngineeringFooter />
     </main>
   );
 }

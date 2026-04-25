@@ -10,45 +10,64 @@ export default function WaterHome() {
     <div className="bg-white">
       <WaterHero />
 
-      {/* Stats Bar */}
-      <section className="py-8 border-y border-slate-100 bg-slate-50/50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+      {/* Stats Bar - Widened 1600px */}
+      <section className="py-12 border-y border-slate-100 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center md:text-left">
-                <div className="text-[28px] md:text-[36px] font-[800] text-[#00a8ff] leading-none mb-1.5">{stat.value}</div>
-                <div className="text-[11px] font-[600] text-slate-500 uppercase tracking-widest">{stat.label}</div>
+              <div key={i} className="flex flex-col">
+                <span className="text-[24px] md:text-[28px] font-[900] text-[#0066FF] tracking-tighter leading-none mb-2">
+                  {stat.value}
+                </span>
+                <span className="text-[10px] font-[800] text-slate-400 uppercase tracking-widest leading-tight">
+                  {stat.label}
+                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pillars Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
-            <div className="max-w-xl">
-              <h2 className="text-[32px] md:text-[42px] font-[900] leading-[1.1] tracking-tighter text-slate-900 mb-4">
-                Pure infrastructure.<br />Built for the region.
-              </h2>
-              <p className="text-[17px] text-slate-600 leading-relaxed font-[450]">
-                Alnaciim Water integrates deep regional expertise with advanced purification technology. From the source to the bottle, we manage the entire water value chain.
-              </p>
+      {/* Pillars Section - Centered Architectural Layout */}
+      <section className="py-32 bg-slate-50/30 relative overflow-hidden">
+        {/* Subtle Dot Grid Mask */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+             style={{ backgroundImage: `radial-gradient(#0066FF 0.5px, transparent 0.5px)`, backgroundSize: '16px 16px' }} />
+
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col items-center text-center mb-24">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#0066FF] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+              Core Capabilities
             </div>
+            
+            <div className="relative w-full flex items-center justify-center gap-10 mb-8">
+              {/* Left Structural Line */}
+              <div className="hidden lg:block h-[1px] flex-grow bg-[#0066FF]/20 max-w-[400px]" />
+              
+              <h2 className="text-[28px] md:text-[36px] font-[900] leading-[1.1] tracking-[0.12em] text-slate-900 uppercase">
+                Pure infrastructure.<br />Built for Somalia.
+              </h2>
+              
+              {/* Right Structural Line */}
+              <div className="hidden lg:block h-[1px] flex-grow bg-[#0066FF]/20 max-w-[400px]" />
+            </div>
+            
+            <p className="text-[16px] text-slate-500 leading-relaxed font-[450] max-w-2xl mx-auto text-center">
+              Alnaciim Water integrates deep regional expertise with advanced purification technology. From the source to the bottle, we manage the entire water value chain through technical hydrometry and industrial purification.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar, i) => (
-              <div key={i} className="group p-7 rounded-[1.5rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 cursor-default">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-[#00a8ff] shadow-sm mb-5 group-hover:scale-110 group-hover:bg-[#00a8ff] group-hover:text-white transition-all duration-500">
-                  {i === 0 && <Droplets size={24} />}
-                  {i === 1 && <Filter size={24} />}
-                  {i === 2 && <GlassWater size={24} />}
-                  {i === 3 && <CloudSnow size={24} />}
+              <div key={i} className="group p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 cursor-default">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#0066FF] mb-6 group-hover:scale-110 group-hover:bg-[#0066FF] group-hover:text-white transition-all duration-500 shadow-sm">
+                  {i === 0 && <Droplets size={22} />}
+                  {i === 1 && <Filter size={22} />}
+                  {i === 2 && <GlassWater size={22} />}
+                  {i === 3 && <CheckCircle2 size={22} />}
                 </div>
-                <h3 className="text-[20px] font-[800] text-slate-900 mb-4 tracking-tight">{pillar.title}</h3>
-                <p className="text-[15px] text-slate-600 leading-relaxed">
+                <h3 className="text-[18px] font-[900] text-slate-900 mb-4 tracking-tight uppercase tracking-widest">{pillar.title}</h3>
+                <p className="text-[14px] text-slate-500 leading-relaxed group-hover:text-slate-900 transition-colors">
                   {pillar.description}
                 </p>
               </div>
@@ -57,32 +76,44 @@ export default function WaterHome() {
         </div>
       </section>
 
-      {/* Detailed Solutions Grid (Merged from /solutions) */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-             <h2 className="text-[32px] md:text-[42px] font-[900] text-slate-900 leading-[1.1] tracking-tighter mb-4">
-              Engineering Excellence.
-            </h2>
-            <p className="text-[17px] text-slate-600 font-[450]">
-              Technical specifications for our core hydrology and infrastructure services.
+      {/* Detailed Solutions Grid - Widened 1600px Centered */}
+      <section className="py-32 bg-white">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col items-center text-center mb-24">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#0066FF] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
+              Engineering Excellence
+            </div>
+            
+            <div className="relative w-full flex items-center justify-center gap-10 mb-8">
+              {/* Left Structural Line */}
+              <div className="hidden lg:block h-[1px] flex-grow bg-[#0066FF]/20 max-w-[400px]" />
+              
+              <h2 className="text-[28px] md:text-[42px] font-[900] text-slate-900 leading-[1] tracking-[0.12em] uppercase">
+                Technical Specifications.
+              </h2>
+              
+              {/* Right Structural Line */}
+              <div className="hidden lg:block h-[1px] flex-grow bg-[#0066FF]/20 max-w-[400px]" />
+            </div>
+            
+            <p className="text-[16px] text-slate-600 font-[450] leading-relaxed max-w-2xl mx-auto">
+              Core hydrology and infrastructure services delivered by Alnaciim Engineering.
             </p>
           </div>
           
-          <div className="flex flex-col gap-20 lg:gap-24">
+          <div className="flex flex-col gap-24 lg:gap-32">
             {[
               {
                 title: "Water Wells & Community Supply",
-                description: "Alnaciim Water has drilled and equipped over 50 boreholes across Puntland. Each well is professionally drilled, steel-cased, and equipped with solar-priority pumping systems.",
+                description: "Alnaciim Water has drilled and equipped over 30 boreholes across the region. Each well is professionally drilled, steel-cased, and equipped with solar-priority pumping systems.",
                 details: [
                   "Borehole drilling and steel casing installation",
-                  "Gravel pack, development and yield testing",
                   "Submersible pump sizing & installation",
                   "Solar panel and generator power supply",
                   "Storage tank installation and distribution"
                 ],
-                image: "/images/water_infrastructure_ro_plant_1774871836361.png",
-                icon: <Droplets size={24} className="text-[#00a8ff]" />
+                image: "/images/water_wells_30plus_boreholes.png",
+                icon: <Droplets size={24} className="text-[#0066FF]" />
               },
               {
                 title: "Reverse Osmosis Water Treatment",
@@ -92,10 +123,10 @@ export default function WaterHome() {
                   "Martisoor RO Plant — 300 m³/day system",
                   "Garacad (Maxjar) — 360 m³/day installation",
                   "Budunbuto Village — 360 m³/day solution",
-                  "Commercial RO systems for hospitality"
+                  "Custom commercial RO system."
                 ],
-                image: "/images/water_purification_industrial_1774886325880.png",
-                icon: <Filter size={24} className="text-[#00a8ff]" />
+                image: "/images/nuwaco_ro_plant.png",
+                icon: <Filter size={24} className="text-[#0066FF]" />
               },
                {
                 title: "Industrial Ice Production",
@@ -104,47 +135,45 @@ export default function WaterHome() {
                   "Standard commercial block ice formats",
                   "Packaged tube ice for retail and catering",
                   "Cold room storage for consolidation",
-                  "Bulk delivery logistics across Puntland",
-                  "Integrated water purification for all ice"
+                  "Bulk delivery logistics across the region"
                 ],
                 image: "/images/commercial_ice_cubes_1769372486661.png",
-                icon: <CloudSnow size={24} className="text-[#00a8ff]" />
+                icon: <CloudSnow size={24} className="text-[#0066FF]" />
               },
               {
                 title: "Maintenance & Spare Parts",
-                description: "Ongoing support for all Alnaciim installations and third-party systems. Centrally stocked spare parts at our Garowe warehouse ensure same-day response.",
+                description: "Ongoing support for all Alnaciim installations and third-party systems.",
                 details: [
                   "RO membrane cleaning & replacement",
                   "Pump inspection & mechanical seal repair",
                   "Chemical supply: Antiscalant, Biocide, CIP",
-                  "UV lamp replacement & sterilizer service",
-                  "Quarterly & annual service contracts"
+                  "Replacement filters and components"
                 ],
-                image: "/images/eng_pm.png",
-                icon: <Droplets size={24} className="text-[#00a8ff]" />
+                image: "/images/commercial_ro_systems_and_maintenance.png",
+                icon: <CheckCircle2 size={24} className="text-[#0066FF]" />
               }
             ].map((section, i) => (
-              <div key={i} className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-start ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+              <div key={i} className={`flex flex-col lg:flex-row gap-16 lg:gap-32 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                 <div className="w-full lg:w-1/2">
-                  <div className="aspect-video rounded-[1.5rem] overflow-hidden shadow-xl relative border border-slate-100 group">
-                    <img src={section.image} alt={section.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+                  <div className="aspect-video rounded-[3rem] overflow-hidden shadow-2xl relative border border-slate-200 group">
+                    <img src={section.image} alt={section.title} className="absolute inset-0 w-full h-full object-cover object-bottom block group-hover:scale-110 transition-transform duration-[2s] ease-out" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60" />
                   </div>
                 </div>
                 <div className="w-full lg:w-1/2">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50/50 flex items-center justify-center mb-6 text-[#00a8ff]">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-[#0066FF] shadow-sm">
                     {section.icon}
                   </div>
-                  <h2 className="text-[28px] md:text-[36px] font-[900] text-slate-900 leading-[1.1] tracking-tighter mb-4">
+                  <h3 className="text-[28px] md:text-[36px] font-[900] text-slate-900 leading-[1] tracking-tight mb-6 uppercase">
                     {section.title}
-                  </h2>
-                  <p className="text-[17px] text-slate-600 leading-relaxed mb-6 font-[450]">
+                  </h3>
+                  <p className="text-[16px] text-slate-500 leading-relaxed mb-8 font-[450]">
                     {section.description}
                   </p>
-                  <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-10">
                     {section.details.map((detail, j) => (
-                      <li key={j} className="flex items-start gap-4 text-slate-700 font-[500] text-[15px]">
-                        <CheckCircle2 size={18} className="text-[#00a8ff] shrink-0 mt-1" />
+                      <li key={j} className="flex items-start gap-4 text-slate-700 font-[600] text-[14px]">
+                        <CheckCircle2 size={16} className="text-[#0066FF] shrink-0 mt-0.5" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -156,94 +185,93 @@ export default function WaterHome() {
         </div>
       </section>
 
-      {/* Aqua Safi Manufacturing Section */}
-      <section className="py-16 bg-slate-50 border-y border-slate-100 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <div className="aspect-square rounded-[1.5rem] overflow-hidden shadow-xl relative z-10 border border-white">
-                <img src="/images/packaged_bottled_water_1769372456350.png" alt="Aqua Safi Manufacturing" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply" />
+      {/* Aqua Safi Manufacturing Section - Widened & Centered */}
+      <section className="py-24 bg-slate-50 border-y border-slate-100 overflow-hidden">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+            <div className="relative">
+              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border border-white bg-white">
+                <img src="/images/aqua_safi_industries_final.png" alt="" className="absolute inset-0 w-full h-full object-cover block scale-[1.2] origin-bottom transition-transform duration-700" />
               </div>
               {/* Floating Spec Pill */}
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20 border border-slate-100 hidden md:block">
-                <div className="text-[28px] font-[900] text-[#00a8ff] mb-0.5">10,000+</div>
-                <div className="text-[10px] font-[700] text-slate-400 uppercase tracking-widest">Bottles per hour</div>
+              <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-[2rem] shadow-2xl z-20 border border-slate-100 hidden md:block">
+                <div className="text-[32px] font-[900] text-[#0066FF] mb-0.5 leading-none">10,000+</div>
+                <div className="text-[11px] font-[800] text-slate-400 uppercase tracking-widest">Bottles per hour</div>
               </div>
             </div>
             
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00a8ff]/10 border border-[#00a8ff]/20 mb-5 font-[700] text-[10px] text-[#00a8ff] tracking-[0.2em] uppercase">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 border border-blue-100 text-[#0066FF] text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
                 Manufacturing Excellence
               </div>
-              <h2 className="text-[32px] md:text-[42px] font-[900] text-slate-900 leading-[1.1] tracking-tighter mb-6">
+              <h2 className="text-[32px] md:text-[42px] font-[900] text-slate-900 leading-[1.05] tracking-tight mb-6 uppercase">
                 Aqua Safi Industries.
               </h2>
-              <p className="text-[18px] text-slate-600 leading-relaxed mb-10 italic">
+              <p className="text-[17px] text-slate-500 leading-relaxed mb-10 font-[450] italic border-l-4 border-blue-500 pl-8">
                 "One of the largest bottled water operations in the Horn of Africa, utilizing multi-stage RO and automated filling under sterile conditions."
               </p>
               
-              <div className="grid sm:grid-cols-2 gap-8 mb-12">
+              <div className="grid sm:grid-cols-2 gap-12 mb-12">
                 <div>
-                  <h4 className="text-[13px] font-[800] text-slate-400 uppercase tracking-widest mb-4">Product Range</h4>
+                  <h4 className="text-[11px] font-[800] text-slate-400 uppercase tracking-widest mb-5">Product Range</h4>
                   <ul className="space-y-3">
-                    {["250 ml & 500 ml", "1.5 L Household", "5 L Family Size", "10 L & 19L/20 L"].map((item, id) => (
-                      <li key={id} className="flex items-center gap-3 text-slate-700 font-[500] text-[14px]">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#00a8ff]" /> {item}
+                    {["250 ml & 400 ml", "500 ml & 800 ml", "1 L & 1.5 L & 5 L", "10 L & 19L/20 L"].map((item, id) => (
+                      <li key={id} className="flex items-center gap-3 text-slate-700 font-[700] text-[15px]">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" /> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-[13px] font-[800] text-slate-400 uppercase tracking-widest mb-4">Specifications</h4>
+                  <h4 className="text-[11px] font-[800] text-slate-400 uppercase tracking-widest mb-5">Quality Standards</h4>
                   <ul className="space-y-3">
-                    {["UV Sterilization", "In-line Quality Control", "Automated Packaging", "HACCP Compliance"].map((item, id) => (
-                      <li key={id} className="flex items-center gap-3 text-slate-700 font-[500] text-[14px]">
-                        <CheckCircle2 size={16} className="text-[#00a8ff]" /> {item}
+                    {["UV Sterilization", "In-line Quality Control", "Automated Packaging"].map((item, id) => (
+                      <li key={id} className="flex items-center gap-3 text-slate-700 font-[700] text-[15px]">
+                        <CheckCircle2 size={18} className="text-[#0066FF]" /> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
               
-              <Link href="/contact" className="inline-flex items-center gap-2 text-slate-900 font-[800] group hover:text-[#00a8ff] transition-colors">
-                Enquire about supply agreements
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <Link href="/contact?subject=Aqua Safi Enquiry" className="inline-flex items-center gap-3 text-slate-900 font-[900] group hover:text-[#0066FF] transition-all uppercase tracking-widest text-[14px]">
+                Enquire about supply
+                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Project */}
-      <section className="py-16 bg-slate-950 text-white overflow-hidden relative">
+      {/* Featured Project - Widened & Centered */}
+      <section className="py-32 bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-[#0066FF]/5 pointer-events-none" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-32 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-5">
-                <span className="text-[10px] font-[700] tracking-[0.2em] text-blue-400 uppercase">Case Study</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-500/10 border border-blue-500/20 mb-8 text-blue-400 text-[10px] font-[800] tracking-[0.2em] uppercase">
+                Case Study
               </div>
-              <h2 className="text-[32px] md:text-[42px] font-[800] leading-[1.1] tracking-tight mb-6">
-                The Nuwaco RO Plant.
+              <h2 className="text-[36px] md:text-[52px] font-[900] leading-[1.05] tracking-tight mb-8 uppercase">
+                Case Study - <br/>The Nuwaco RO Plant.
               </h2>
-              <p className="text-[17px] text-slate-400 leading-relaxed mb-8">
+              <p className="text-[17px] text-slate-400 leading-relaxed font-[450] mb-10">
                 The largest water treatment facility delivered by Alnaciim Group. A full-scale reverse osmosis plant providing 2,400 m³ of safe drinking water daily. Custom commissioned for the Garowe municipal grid.
               </p>
-              <Link href="/work" className="inline-flex items-center gap-2 text-white font-[600] group hover:text-blue-400 transition-colors">
-                Read technical documentation
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <Link href="/contact" className="inline-flex items-center gap-3 text-white font-[900] group hover:text-blue-400 transition-all uppercase tracking-widest text-[14px]">
+                Enquire more
+                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10 border border-white/5">
+              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10 border border-white/10 group">
                 <img 
-                  src="/images/water_purification_industrial_1774886325880.png" 
+                  src="/images/nuwaco_ro_plant.png" 
                   alt="Nuwaco RO Plant Installation" 
-                  className="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-[1s]"
+                  className="absolute inset-0 w-full h-full object-cover object-bottom block transition-all duration-[2s] ease-out"
                 />
               </div>
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-600/20 rounded-full blur-[100px] z-0" />
+              <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] z-0" />
             </div>
           </div>
         </div>

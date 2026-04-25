@@ -8,14 +8,14 @@ export default function FeaturesGrid() {
       title: "10,000 UPH Bottling Capacity",
       desc: "Our automated assembly line is capable of processing and bottling 10,000 units every single hour, running 24/7 without fail. Backed by rigorous SLA uptime metrics.",
       bullets: ["10,000 UPH Production Speed", "Fully Automated Filtration", "Zero-Downtime Architecture"],
-      img: "/images/about_page_top_1769371967484.png",
+      img: "/images/aqua_safi_bottling_facility.png",
       align: "left"
     },
     {
       title: "Commercial Ice Production",
       desc: "We supply massive quantities of commercial-grade crystal clear tube and block ice engineered specifically for the highest-tier hospitality and event supply chains.",
       bullets: ["Crystal Clear Hospitality Ice", "High-Density Block Yield", "Temperature Verified Distribution"],
-      img: "/images/about_page_bottom_1769372132851.png",
+      img: "/images/commercial_ice_cubes_1769372486661.png",
       align: "right"
     }
   ];
@@ -41,7 +41,7 @@ export default function FeaturesGrid() {
             >
                <div className="bg-white p-4 pb-12 rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,102,255,0.15)] border border-slate-100 transform rotate-1 group hover:rotate-0 transition-transform duration-700">
                  <div className="aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-slate-100 relative">
-                   <img src={feature.img} alt={feature.title} className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
+                   <img src={feature.img} alt={feature.title} className="absolute inset-0 w-full h-full object-cover block filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                  </div>
                </div>

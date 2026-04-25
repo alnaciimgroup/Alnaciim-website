@@ -1,47 +1,28 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-
-const competencies = [
-  {
-    number: "01",
-    title: "System Design",
-    desc: "Advanced computational modeling and structural design for complex utility systems and industrial frameworks.",
-    link: "Technical Specs"
-  },
-  {
-    number: "02",
-    title: "Procurement",
-    desc: "Global supply chain logistics ensuring high-integrity components and materials sourced to exact technical tolerances.",
-    link: "Supply Network"
-  },
-  {
-    number: "03",
-    title: "Commissioning",
-    desc: "Rigorous field testing and final system validation to guarantee peak operational performance and site safety.",
-    link: "Quality Control"
-  }
-];
+import { CONTENT } from "@/data/content";
 
 export default function EngineeringCoreCompetencies() {
+  const { pillars, pillars_intro } = CONTENT.engineering;
+
   return (
-    <section className="w-full py-16 md:py-20 bg-[#FAFBFF]" id="capabilities">
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12">
+    <section className="w-full py-24 md:py-32 bg-white" id="capabilities">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-8">
-          <div className="max-w-2xl">
-            <div className="text-[#ffc100] font-[700] text-[11px] tracking-widest uppercase mb-4">Core Competencies</div>
-            <h2 className="text-[32px] md:text-[42px] font-[900] tracking-tight text-slate-900 leading-[1.05]">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">
+          <div className="max-w-4xl">
+            <div className="text-blue-500 font-[800] text-[10px] tracking-[0.25em] uppercase mb-4">Core Competencies</div>
+            <h2 className="text-[44px] md:text-[64px] font-[900] tracking-tighter text-[#0F172A] leading-[1] mb-6">
               Systematic Excellence.
             </h2>
+            <p className="max-w-2xl text-slate-500 text-[18px] md:text-[20px] leading-[1.6] font-[450]">
+              {pillars_intro}
+            </p>
           </div>
-          <p className="max-w-md text-slate-500 text-[17px] leading-[1.6] font-[450]">
-            We deploy a comprehensive engineering framework across three critical pillars to ensure architectural permanence.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {competencies.map((comp, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+          {pillars.map((pillar, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -50,14 +31,14 @@ export default function EngineeringCoreCompetencies() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="flex flex-col group"
             >
-              <div className="text-[48px] lg:text-[64px] font-[900] text-slate-100 leading-none mb-5 group-hover:text-[#ffc100]/20 transition-colors duration-500">
-                {comp.number}
+              <div className="text-[80px] lg:text-[100px] font-[900] text-slate-100 leading-none mb-8 group-hover:text-blue-500/10 transition-colors duration-500">
+                0{idx + 1}
               </div>
-              <h3 className="text-[18px] font-[800] text-slate-900 mb-3 tracking-tight group-hover:text-[#ffc100] transition-colors">
-                {comp.title}
+              <h3 className="text-[22px] font-[900] text-[#0F172A] mb-5 tracking-tight group-hover:text-blue-600 transition-colors">
+                {pillar.title}
               </h3>
-              <p className="text-slate-500 leading-[1.6] text-[14px]">
-                {comp.desc}
+              <p className="text-slate-500 leading-[1.7] text-[15px] md:text-[17px] font-[450]">
+                {pillar.description}
               </p>
             </motion.div>
           ))}

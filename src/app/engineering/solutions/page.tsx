@@ -1,6 +1,5 @@
 import SolutionsLanding from "@/components/engineering/SolutionsLanding";
 import SolutionsGrid from "@/components/engineering/SolutionsGrid";
-import SecondaryStats from "@/components/engineering/SecondaryStats";
 
 export const metadata = {
   title: "Engineering Solutions | Alnaciim Engineering Portfolio",
@@ -12,7 +11,6 @@ export default function EngineeringSolutionsPage() {
     <main className="relative bg-white pt-[60px]">
       <SolutionsLanding />
       <SolutionsGrid />
-      <SecondaryStats />
     </main>
   );
 }
