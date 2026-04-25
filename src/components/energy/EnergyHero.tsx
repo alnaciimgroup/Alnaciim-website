@@ -38,7 +38,7 @@ export default function EnergyHero() {
              </div>
              
              {/* Image Underlay */}
-             <img src="/images/solar_power_system.png" alt="Industrial Energy Infrastructure" className="absolute inset-0 w-full h-full object-cover object-bottom block filter brightness-[0.98] group-hover:scale-105 transition-transform duration-700" />
+             <img src="/images/solar_power_.png" alt="Industrial Energy Infrastructure" className="absolute inset-0 w-full h-full object-cover block filter brightness-[0.98] group-hover:scale-105 transition-transform duration-700" />
              
              {/* Overlay Gradient */}
              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40"></div>
