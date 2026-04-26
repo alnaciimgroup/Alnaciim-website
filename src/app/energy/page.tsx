@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Zap, ShieldCheck, Sun, Battery, Settings, Filter, Plus, Activity } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EnergyStatsGrid from "@/components/energy/EnergyStatsGrid";
@@ -10,7 +10,7 @@ export default function EnergyHome() {
   return (
     <div className="bg-white selection:bg-blue-600 selection:text-white">
       
-      {/* 1. HERO SECTION - PRESERVED AS REQUESTED */}
+      {/* 1. HERO SECTION - PRESERVED */}
       <section className="relative w-full min-h-[90vh] bg-white flex flex-col lg:flex-row border-b border-slate-200">
         <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-20 pt-32 pb-24 lg:py-0 relative z-10 bg-white">
           <div className="max-w-xl w-full">
@@ -99,103 +99,77 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 4. SYSTEMATIC EXCELLENCE - REPLACES PREVIOUS GRID */}
+      {/* 4. SYSTEMATIC EXCELLENCE - EXACT SCREENSHOT DESIGN (SLIDE 12) */}
       <section className="py-40 bg-white border-t border-slate-100" id="solutions">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-32">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-40">
             <div className="max-w-2xl">
-              <div className="text-[11px] font-bold text-[#FF5C00] uppercase tracking-[0.3em] mb-6">Core Competencies</div>
-              <h2 className="text-5xl md:text-7xl font-bold text-[#001B3D] font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Systematic Excellence.</h2>
+              <div className="text-[10px] font-bold text-[#E65200] uppercase tracking-[0.4em] mb-4">CORE COMPETENCIES</div>
+              <h2 className="text-5xl md:text-6xl font-bold text-[#001B3D] font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Systematic Excellence.</h2>
             </div>
-            <div className="max-w-md text-slate-500 font-light leading-relaxed pt-8">
+            <div className="max-w-md text-slate-500 font-light text-lg leading-relaxed pt-10">
               We deploy a comprehensive engineering framework across three critical pillars to ensure architectural permanence.
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
-            {[
-              {
-                id: "01",
-                title: "SOLAR ARRAYS",
-                desc: "Commercial and industrial solar installations from rooftop arrays to large ground-mount systems. We handle site assessment, system design, supply and full installation.",
-                color: "text-slate-900"
-              },
-              {
-                id: "02",
-                title: "HYBRID MICROGRIDS",
-                desc: "Intelligent coordination of solar, battery storage, and diesel generation for 24/7 reliability and peak fuel efficiency.",
-                color: "text-[#FF5C00]"
-              },
-              {
-                id: "03",
-                title: "GENERATOR SETS",
-                desc: "Heavy-duty diesel generation optimized for base load power, synchronized with solar through advanced DSE controllers.",
-                color: "text-slate-900",
-                highlight: true
-              }
-            ].map((pillar, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative"
-              >
-                <div className="text-7xl md:text-8xl font-bold text-slate-100 mb-6 leading-none select-none">
-                  {pillar.id}
-                </div>
-                <h3 className={`text-xl font-bold mb-6 tracking-widest uppercase ${pillar.color}`}>
-                  {pillar.title}
-                </h3>
-                <div className={`p-8 ${pillar.highlight ? 'bg-slate-200' : 'bg-slate-50'} rounded-lg`}>
-                  <p className="text-[14px] text-slate-600 leading-relaxed font-medium">
-                    {pillar.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. CUSTOM CONFIGURATION CTA - SLIDE 12 */}
-      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-40">
-        <div className="relative bg-[#001B3D] rounded-[2rem] overflow-hidden p-12 md:p-24 shadow-2xl">
-          {/* Subtle industrial pattern background */}
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }} />
-          
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full mb-8">
-                <Plus size={14} className="text-[#FF5C00]" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-widest">High Voltage Capacity</span>
+            {/* PILLAR 01: SOLAR ARRAYS */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">01</div>
+              <h3 className="text-xl font-bold mb-6 tracking-widest text-slate-900 uppercase">SOLAR ARRAYS</h3>
+              <div className="bg-slate-100 p-8">
+                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+                  Commercial and industrial solar installations from rooftop arrays to large ground-mount systems. We handle site assessment, system design, supply and full installation.
+                </p>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
-                Require a custom <br /> configuration?
-              </h2>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto">
-              <Link 
-                href="/contact" 
-                className="w-full sm:w-auto px-10 py-5 bg-[#FF5C00] hover:bg-[#E65200] text-white font-bold uppercase tracking-widest text-[13px] transition-all flex items-center justify-center gap-3 group"
-              >
-                Contact Engineering <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link 
-                href="/" 
-                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:bg-white/5 text-white font-bold uppercase tracking-widest text-[13px] transition-all flex items-center justify-center"
-              >
-                Return to Main Site
-              </Link>
-            </div>
+            </motion.div>
+
+            {/* PILLAR 02: HYBRID MICROGRIDS */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative"
+            >
+              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">02</div>
+              <h3 className="text-xl font-bold mb-6 tracking-widest text-[#E65200] uppercase">HYBRID MICROGRIDS</h3>
+              <div className="p-8">
+                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+                  Intelligent coordination of solar, battery storage, and diesel generation for 24/7 reliability and peak fuel efficiency.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* PILLAR 03: GENERATOR SETS */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">03</div>
+              <div className="bg-slate-300 inline-block px-6 py-2 mb-6">
+                <h3 className="text-xl font-bold tracking-widest text-slate-900 uppercase">GENERATOR SETS</h3>
+              </div>
+              <div className="p-8">
+                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+                  Heavy-duty diesel generation optimized for base load power, synchronized with solar through advanced DSE controllers.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 6. EXTENDED TECHNICAL PILLARS - PRESERVED */}
+      {/* 5. EXTENDED TECHNICAL PILLARS - PRESERVED */}
       <section className="py-40 bg-white border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
@@ -221,7 +195,41 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 7. CTA */}
+      {/* 6. CUSTOM CONFIGURATION CTA - MOVED TO THE END */}
+      <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-40">
+        <div className="relative bg-[#001B3D] rounded-[2.5rem] overflow-hidden p-12 md:p-24 shadow-2xl">
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+          
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-white/20 rounded-full mb-8">
+                <Plus size={14} className="text-[#FF5C00]" />
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest">HIGH VOLTAGE CAPACITY</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-bold text-white mb-6 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
+                Require a custom <br /> configuration?
+              </h2>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto">
+              <Link 
+                href="/contact" 
+                className="w-full sm:w-auto px-10 py-5 bg-[#FF5C00] hover:bg-[#E65200] text-white font-bold uppercase tracking-widest text-[13px] transition-all flex items-center justify-center gap-3 group"
+              >
+                CONTACT ENGINEERING <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                href="/" 
+                className="w-full sm:w-auto px-10 py-5 border border-white/20 hover:bg-white/5 text-white font-bold uppercase tracking-widest text-[13px] transition-all flex items-center justify-center"
+              >
+                RETURN TO MAIN SITE
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FINAL FOOTER CTA */}
       <EnergyCTA />
 
     </div>
