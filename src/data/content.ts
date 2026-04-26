@@ -55,9 +55,9 @@ export const CONTENT = {
       image: "/images/energy_hero.jpg"
     },
     stats: [
-      { label: "Installed Capacity", value: "12.5MW+" },
-      { label: "BESS Capacity", value: "8.5MWh+" },
-      { label: "Regional Experience", value: "28+ Yrs" },
+      { label: "Solar Installed", value: "500kW+" },
+      { label: "BESS Capacity", value: "2MWh+" },
+      { label: "Expertise", value: "28Yrs" },
       { label: "Diesel Reduction", value: "78%" }
     ],
     pillars: [
@@ -96,13 +96,35 @@ export const CONTENT = {
       },
       {
         title: "Intelligent System Controllers",
-        description: "The logic layer of the power system. We specify and program site-specific controllers rather than a one-size-fits-all approach.",
+        description: "Alnaciim Energy supplies and programmes controllers, solar MPPT charge controllers, automatic mains failure controllers that start and transfer the generator when solar drops, and hybrid energy management systems that coordinate solar, battery and generator sources automatically.",
         bullets: [
           "Programmable logic for complex grids",
           "DSE and ComAp industrial controller support",
           "Remote SCADA monitoring and control",
           "Custom ATS and parallel panel fabrication",
           "Real-time energy telemetry and reporting"
+        ]
+      },
+      {
+        title: "Inverters",
+        description: "Alnaciim Energy supplies string inverters for grid-connected commercial arrays, hybrid inverters for systems combining solar with battery storage and generator backup, and off-grid inverters for remote sites with no grid connection.",
+        bullets: [
+          "Grid-connected string inverters",
+          "Hybrid storage-ready inverters",
+          "Off-grid standalone inverters",
+          "High-efficiency MPPT technology",
+          "Regional technical support"
+        ]
+      },
+      {
+        title: "Generator Sets",
+        description: "Alnaciim Energy supplies Reliable backup and prime power diesel generator sets and integrates them into the wider power system with in-house automatic transfer switch panels and programmed controllers.",
+        bullets: [
+          "Prime and standby ratings",
+          "Automatic Transfer Switch (ATS) builds",
+          "Industrial generator controllers",
+          "Hybrid system synchronization",
+          "Full load bank testing"
         ]
       }
     ]

@@ -23,7 +23,7 @@ export default function EnergyHome() {
             >
               <div className="w-8 h-px bg-blue-600" />
               <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
-                Alnaciim Energy Division
+                ALNACIIM ENERGY · SOLAR · HYBRID
               </span>
             </motion.div>
             
@@ -41,7 +41,7 @@ export default function EnergyHome() {
               animate={{ opacity: 1, y: 0 }}
               className="text-lg md:text-xl text-slate-600 leading-relaxed font-light mb-12"
             >
-              Alnaciim Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of East Africa.
+              We design and install solar arrays, hybrid microgrids, and battery storage systems that stabilize regional power grids for homes, businesses and critical infrastructure.
             </motion.p>
 
             <motion.div 
@@ -87,10 +87,10 @@ export default function EnergyHome() {
                <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">Technological Precision</span>
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-slate-900 mb-10 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
-              Energy Framework. <br /><span className="text-blue-600 italic">Built for Reliability.</span>
+              Engineered for the long term. <br /><span className="text-blue-600 italic">Sized for your load.</span>
             </h2>
             <p className="text-xl text-slate-600 font-light leading-relaxed">
-              We deliver complete turnkey energy projects, from initial feasibility and demand calculation to technical design, installation, and long-term asset management.
+              We design, procure, and install end-to-end power delivery systems. By unifying generation and storage, we drastically reduce operating expenses for our region's industrials.
             </p>
           </div>
 
@@ -104,8 +104,8 @@ export default function EnergyHome() {
                 </div>
               </div>
               <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Utility-Scale <br /><span className="text-blue-600 italic">Solar PV</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Alnaciim Energy designs, supplies, and installs solar photovoltaic systems sized for the actual load and site conditions. We utilize Tier-1 components for maximum lifecycle performance.</p>
+                  <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Utility-Scale <br /><span className="text-blue-600 italic">Solar PV</span></h3>
+                  <p className="text-xl text-slate-600 font-light leading-relaxed mb-12"><strong>Solar PV Systems</strong> From small commercial rooftop installations to large industrial ground-mount arrays, Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.</p>
                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 border-l border-slate-200 pl-10">
                    {[
                      "Residential rooftop — 2 kW to 30 kW",
@@ -130,8 +130,8 @@ export default function EnergyHome() {
                 </div>
               </div>
               <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Hybrid <br /><span className="text-blue-600 italic">Microgrid Systems</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Our systems seamlessly route energy between Solar PV, BESS, and Generators. Alnaciim Group integrates all three systems into a single-source solution.</p>
+                  <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Hybrid <br /><span className="text-blue-600 italic">Microgrid Systems</span></h3>
+                  <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Intelligent stabilization of unreliable grid infrastructure. Our systems seamlessly route energy between Solar PV, BESS, and Generators.</p>
                  <ul className="grid grid-cols-1 gap-y-6 border-l border-slate-200 pl-10">
                    {[
                      "Intelligent stabilization of unreliable grids",
@@ -157,8 +157,8 @@ export default function EnergyHome() {
                 </div>
               </div>
               <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>BESS <br /><span className="text-blue-600 italic">Battery Storage</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Battery Energy Storage Systems (BESS) are the logic layer of modern power grids. We specialize in high-capacity lithium iron phosphate (LiFePO4) storage for industrial reliability.</p>
+                  <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>BESS <br /><span className="text-blue-600 italic">Battery Storage</span></h3>
+                  <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Peak shaving and load shifting utilizing high-cycle life LiFePO4 chemistry. Essential for energy arbitrage and 24/7 continuous operation.</p>
                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 border-l border-slate-200 pl-10">
                    {[
                      "Modular 5kWh to 1MWh+ solutions",
@@ -184,8 +184,8 @@ export default function EnergyHome() {
                 </div>
               </div>
               <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Prime <br /><span className="text-blue-600 italic">Generator Sets</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Heavy-duty diesel generation optimized for base load power in remote locations. Engineered with industrial controllers to synchronize with solar.</p>
+                  <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Prime <br /><span className="text-blue-600 italic">Generator Sets</span></h3>
+                  <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Heavy-duty diesel generation optimized for base load power in remote locations. Engineered with DSE controllers to synchronize with solar.</p>
                  <ul className="grid grid-cols-1 gap-y-6 border-l border-slate-200 pl-10">
                    {[
                      "Standby, prime and continuous ratings",
@@ -206,7 +206,33 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 4. TECHNICAL COMPETENCIES */}
+      {/* 4. EXTENDED TECHNICAL PILLARS - FROM SLIDE 5 */}
+      <section className="py-40 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Inverters</h3>
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                Alnaciim Energy supplies string inverters for grid-connected commercial arrays, hybrid inverters for systems combining solar with battery storage and generator backup, and off-grid inverters for remote sites with no grid connection.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>System Controllers</h3>
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                Alnaciim Energy supplies and programmes controllers, solar MPPT charge controllers, automatic mains failure controllers that start and transfer the generator when solar drops, and hybrid energy management systems that coordinate solar, battery and generator sources automatically.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Generator Sets</h3>
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                Alnaciim Energy supplies Reliable backup and prime power diesel generator sets and integrates them into the wider power system with in-house automatic transfer switch panels and programmed controllers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. TECHNICAL COMPETENCIES */}
       <EnergyCompetencies />
 
       {/* 5. CTA */}
