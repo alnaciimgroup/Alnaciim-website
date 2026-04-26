@@ -4,7 +4,6 @@ import { ArrowRight, Plus, Sun, Zap, Battery, Settings } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EnergyStatsGrid from "@/components/energy/EnergyStatsGrid";
-import EnergyCompetencies from "@/components/energy/EnergyCompetencies";
 
 export default function EnergyHome() {
   return (
@@ -181,6 +180,7 @@ export default function EnergyHome() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+            {/* PILLAR 01: SOLAR ARRAYS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -196,6 +196,7 @@ export default function EnergyHome() {
               </div>
             </motion.div>
 
+            {/* PILLAR 02: HYBRID MICROGRIDS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -212,6 +213,7 @@ export default function EnergyHome() {
               </div>
             </motion.div>
 
+            {/* PILLAR 03: GENERATOR SETS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -233,33 +235,7 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 6. EXTENDED TECHNICAL PILLARS - PRESERVED */}
-      <section className="py-40 bg-white border-t border-slate-200">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
-            <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-10 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Inverters</h3>
-              <p className="text-lg text-slate-600 font-light leading-relaxed">
-                Alnaciim Energy supplies string inverters for grid-connected commercial arrays, hybrid inverters for systems combining solar with battery storage and generator backup, and off-grid inverters for remote sites with no grid connection.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-10 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>System Controllers</h3>
-              <p className="text-lg text-slate-600 font-light leading-relaxed">
-                Alnaciim Energy supplies and programmes controllers, solar MPPT charge controllers, automatic mains failure controllers that start and transfer the generator when solar drops, and hybrid energy management systems that coordinate solar, battery and generator sources automatically.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-10 font-serif uppercase tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Generator Sets</h3>
-              <p className="text-lg text-slate-600 font-light leading-relaxed">
-                Alnaciim Energy supplies Reliable backup and prime power diesel generator sets and integrates them into the wider power system with in-house automatic transfer switch panels and programmed controllers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. CUSTOM CONFIGURATION CTA - THE ONLY FINAL CTA */}
+      {/* 6. CUSTOM CONFIGURATION CTA - THE ONLY FINAL CTA */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-40">
         <div className="relative bg-[#001B3D] rounded-[2.5rem] overflow-hidden p-12 md:p-24 shadow-2xl">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
