@@ -9,11 +9,13 @@ export default function EnergyStatsGrid() {
   const { stats } = CONTENT.energy;
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <section className="bg-[#FF5C00] py-12 relative overflow-hidden">
+      {/* Subtle grid pattern for the orange bar */}
+      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+      
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, i) => {
-            // Helper to extract number and non-number parts
             const numericValue = parseFloat(stat.value.replace(/[^0-9.]/g, '')) || 0;
             const suffix = stat.value.replace(/[0-9.]/g, '');
 
@@ -24,15 +26,15 @@ export default function EnergyStatsGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center justify-center text-center bg-slate-50 rounded-[2rem] p-8 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                className="bg-white rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl transition-all group"
               >
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-none group-hover:text-blue-600 transition-colors duration-500">
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-3xl md:text-4xl font-bold tracking-tight text-[#001B3D]">
                     <CountUp enableScrollSpy scrollSpyOnce end={numericValue} decimals={stat.value.includes('.') ? 1 : 0} duration={2} separator="," />
                   </span>
-                  <span className="text-2xl font-bold text-blue-600 italic">{suffix}</span>
+                  <span className="text-sm font-bold text-[#FF5C00] uppercase">{suffix}</span>
                 </div>
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest group-hover:text-slate-800 transition-colors">
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                   {stat.label}
                 </p>
               </motion.div>
