@@ -1,7 +1,8 @@
 "use client";
+
 import { useState } from "react";
 import { projects } from "@/data/projects";
-import { ArrowRight, MapPin, Tag, Search } from "lucide-react";
+import { ArrowRight, MapPin, ArrowUpRight, Activity, Archive } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,146 +14,117 @@ export default function OurWorkPage() {
     ? projects 
     : projects.filter(p => p.tags.includes(filter));
 
-  const featuredProject = projects[0]; // Nuwaco as featured
-
   return (
-    <div className="bg-[#FAFBFF] pt-24 min-h-screen relative overflow-hidden font-['Inter']">
-      
-      {/* Neo-SaaS Background Architecture */}
-      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[800px] bg-[#0066FF] rounded-full mix-blend-multiply filter blur-[140px] opacity-10 pointer-events-none animate-pulse"></div>
-      <div className="absolute top-[20%] right-[-10%] w-[50%] h-[600px] bg-[#00D2FF] rounded-full mix-blend-multiply filter blur-[120px] opacity-10 pointer-events-none"></div>
-
-      {/* Header Strategy */}
-      <section className="mb-12 relative z-10">
-        <div className="container mx-auto px-6 lg:px-12">
+    <div className="bg-white min-h-screen selection:bg-blue-600 selection:text-white">
+      {/* Header Section */}
+      <section className="pt-48 pb-24 lg:pt-64 lg:pb-32 relative border-b border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/80 backdrop-blur-md border border-primary-light text-primary text-[10px] font-[800] tracking-[0.2em] uppercase mb-8 shadow-sm border-l-4 border-l-primary">
-              MAJOR INFRASTRUCTURE ARCHIVE
-            </div>
-            <h1 className="text-[48px] md:text-[72px] font-[900] text-slate-900 leading-[0.9] tracking-[-0.04em] mb-8">
-              Transforming the <span className="text-primary italic">Regional</span> Grid.
-            </h1>
-            <p className="text-[17px] md:text-[18px] text-slate-500 leading-relaxed max-w-3xl font-[450] mb-12">
-              A definitive catalog of ALNACIIM's Tier-1 industrial deployments. From municipal hydrology to regional power integration.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <div className="w-8 h-px bg-blue-600" />
+              <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">The Archive</span>
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-6xl md:text-8xl lg:text-[90px] font-bold text-slate-900 leading-[1] mb-12 font-serif"
+              style={{ fontFamily: "var(--font-playfair)" }}
+            >
+              PROJECT <br /><span className="text-blue-600 italic">PORTFOLIO.</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl mb-16"
+            >
+              Delivering industrial-scale technical foundations across Somalia since 1998.
+            </motion.p>
 
-            {/* Premium Filter Command Bar */}
-            <div className="inline-flex flex-wrap items-center gap-1.5 p-1.5 bg-white rounded-2xl shadow-fluid border border-slate-100">
+            {/* Filter Bar */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
               {tags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => setFilter(tag)}
-                  className={`px-6 py-2.5 rounded-xl text-[12px] font-[700] transition-all ${
+                  className={`px-8 py-3 text-[13px] font-bold tracking-widest uppercase transition-all duration-300 border ${
                     filter === tag 
-                    ? "bg-ink text-white shadow-xl scale-105" 
-                    : "bg-transparent text-slate-400 hover:text-slate-900 hover:bg-slate-50"
+                    ? "bg-blue-600 border-blue-600 text-white" 
+                    : "bg-white border-slate-200 text-slate-500 hover:border-slate-400"
                   }`}
                 >
                   {tag}
                 </button>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Featured Banner (Dynamic) */}
-      <AnimatePresence>
-        {filter === "All" && (
-          <motion.section 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="mb-24 relative z-10 px-6 lg:px-12 overflow-hidden"
-          >
-            <div className="container mx-auto">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="group relative h-[450px] md:h-[550px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white"
-              >
-                <img src={featuredProject.image} alt="Featured Project" className="w-full h-full object-cover transition-transform duration-[2.5s] group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                
-                <div className="absolute bottom-12 left-10 right-10 flex flex-col md:flex-row justify-between items-end gap-10 text-white">
-                  <div className="max-w-2xl">
-                    <div className="flex items-center gap-3 mb-6">
-                       <div className="px-4 py-1.5 bg-primary rounded-full text-[10px] font-[800] uppercase tracking-widest leading-none shadow-xl shadow-primary/20">Featured Case</div>
-                       <div className="flex items-center gap-2 text-[12px] font-[600] text-slate-300">
-                         <MapPin size={14} className="text-primary" /> {featuredProject.location}
-                       </div>
-                    </div>
-                    <h2 className="text-[42px] md:text-[64px] font-[900] tracking-tighter leading-[0.9] mb-6">
-                      {featuredProject.title}
-                    </h2>
-                    <p className="text-[18px] text-slate-300 leading-relaxed font-[400] max-w-xl">
-                      {featuredProject.description}
-                    </p>
-                  </div>
-                  <div className="shrink-0 flex flex-col items-end">
-                    <div className="text-[11px] font-[800] text-primary uppercase tracking-widest mb-2 opacity-80">Technical Scale</div>
-                    <div className="text-[36px] md:text-[48px] font-[900] text-white tracking-tight leading-none">{featuredProject.scale}</div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.section>
-        )}
-      </AnimatePresence>
-
-      {/* Modern Industrial Zigzag List */}
-      <section className="pb-32 relative z-10">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex flex-col gap-24 md:gap-32">
+      {/* Project Grid - Refined Zigzag Layout */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col gap-32">
             <AnimatePresence mode="popLayout">
-              {(filter === "All" ? projects.slice(1) : filteredProjects).map((project, idx) => (
+              {filteredProjects.map((project, idx) => (
                 <motion.div
                   key={project.id}
                   layout
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                  className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-24 group ${
+                    idx % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
                 >
-                  <div className="w-full lg:w-1/2">
-                    <div className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl group border border-slate-100">
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.2s]" 
-                      />
-                      <div className="absolute top-8 left-8">
-                         <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-[10px] font-[800] text-slate-900 tracking-[0.15em] uppercase">
-                            {project.location}
-                         </div>
-                      </div>
+                  {/* Image Side - Smaller Aspect */}
+                  <div className="w-full lg:w-[45%] relative aspect-[16/11] overflow-hidden bg-slate-100 border border-slate-200">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" 
+                    />
+                    <div className="absolute top-0 left-0 bg-blue-600 text-white text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2">
+                      {project.tags[0]}
                     </div>
                   </div>
                   
-                  <div className="w-full lg:w-1/2">
-                    <div className="flex items-center gap-3 mb-8">
-                      <div className="h-[3px] w-12 bg-primary rounded-full" />
-                      <span className="text-[11px] font-[900] text-primary uppercase tracking-[0.3em]">{project.tags[0]}</span>
+                  {/* Text Side - Refined Spacing */}
+                  <div className="w-full lg:w-[55%] flex flex-col">
+                    <div className="flex items-center gap-2 text-blue-600 mb-6">
+                      <MapPin size={14} />
+                      <span className="text-[11px] font-bold uppercase tracking-widest">{project.location}</span>
                     </div>
-
-                    <h3 className="text-[36px] md:text-[48px] font-[900] text-slate-900 leading-[1] tracking-tighter mb-8 transition-colors">
+                    
+                    <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 font-serif group-hover:text-blue-600 transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>
                       {project.title}
                     </h3>
                     
-                    <p className="text-[17px] md:text-[19px] text-slate-500 leading-relaxed mb-10 font-[450]">
+                    <p className="text-lg text-slate-600 font-light leading-relaxed mb-10">
                       {project.description}
                     </p>
-
-                    <div className="flex items-center gap-16 py-8 border-y border-slate-100">
-                       <div className="flex flex-col">
-                         <span className="text-[10px] font-[800] text-slate-400 uppercase tracking-widest mb-2">Project Impact</span>
-                         <span className="text-[20px] font-[900] text-slate-900 tracking-tight">{project.scale}</span>
-                       </div>
-                       <div className="flex flex-col">
-                         <span className="text-[10px] font-[800] text-slate-400 uppercase tracking-widest mb-2">Technical Scope</span>
-                         <span className="text-[20px] font-[900] text-slate-900 tracking-tight">{project.service.split(' — ')[0]}</span>
-                       </div>
+                    
+                    <div className="flex items-center justify-between border-t border-slate-100 pt-8 mt-auto">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Impact Scale</span>
+                        <span className="text-lg font-bold text-slate-900 tracking-tight">{project.scale}</span>
+                      </div>
+                      <div className="w-12 h-12 bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <ArrowUpRight size={20} />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -162,27 +134,22 @@ export default function OurWorkPage() {
         </div>
       </section>
 
-      {/* Conversion Terminal */}
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#0066FF]/10 pointer-events-none blur-[100px]" />
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 font-[700] text-[10px] text-blue-400 tracking-[0.2em] uppercase">
-            Start Collaboration
-          </div>
-          <h2 className="text-[36px] md:text-[56px] font-[900] tracking-tighter mb-8 leading-[1] max-w-4xl mx-auto">
-            Ready to build the future of <span className="text-secondary italic">Infrastructure?</span>
+      {/* Footer CTA */}
+      <section className="py-32 bg-slate-900 text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <Archive className="text-blue-500 mx-auto mb-10" size={48} />
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
+            Ready to <span className="text-blue-400 italic">Build the future?</span>
           </h2>
-          <p className="text-[17px] text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-[450]">
-            Deployment-ready engineering teams for major water and energy projects across East Africa.
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-light">
+            Take your infrastructure from concept to reality with our integrated engineering team.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/contact" className="px-8 py-4 bg-primary hover:bg-[#0086cc] text-white rounded-full font-[800] text-[15px] transition-all shadow-xl shadow-blue-500/20">
-              Contact Engineering Team
-            </Link>
-            <Link href="/catalog" className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-[800] text-[15px] transition-all backdrop-blur-md">
-              View Hardware Catalog
-            </Link>
-          </div>
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold uppercase tracking-widest text-[13px] transition-all"
+          >
+            Start Project <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
     </div>

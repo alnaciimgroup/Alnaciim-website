@@ -1,5 +1,6 @@
 "use client";
-import { ArrowRight } from "lucide-react";
+
+import { ArrowRight, Settings, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CONTENT } from "@/data/content";
@@ -8,66 +9,39 @@ export default function EngineeringHero() {
   const { hero } = CONTENT.engineering;
 
   return (
-    <section className="relative w-full pt-24 pb-12 lg:pt-36 lg:pb-20 overflow-hidden bg-[#FAFBFF]">
+    <section className="relative w-full min-h-[90vh] bg-white flex flex-col lg:flex-row border-b border-slate-200">
       
-      {/* Stripe-style Mesh Gradients (Blue Mapped) */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[140px] opacity-20 animate-blob pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[450px] bg-secondary rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
-
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
-        
-        {/* Floating Dashboard Element - NOW FIRST */}
-        <motion.div
-           initial={{ opacity: 0, y: 40 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
-           className="w-full mb-16 relative z-20"
-        >
-          <div className="w-full aspect-[21/9] bg-white rounded-[2rem] border border-primary-light shadow-fluid overflow-hidden relative group">
-             {/* Mock Dashboard UI Top Bar */}
-             <div className="h-12 border-b border-slate-100 flex items-center px-4 gap-2 bg-slate-50/50">
-               <div className="flex gap-1.5">
-                 <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                 <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                 <div className="w-3 h-3 rounded-full bg-green-400"></div>
-               </div>
-               <div className="mx-auto w-48 h-6 bg-white rounded border border-slate-200 flex items-center justify-center">
-                 <div className="w-24 h-2 bg-slate-100 rounded-full"></div>
-               </div>
-             </div>
-             
-             {/* SECTION: Engineering Hero */}
-             <img src="/images/water_ro_treatment.png" alt="Engineering Capacity" className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
-             
-             {/* Overlay Gradient */}
-             <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
-          </div>
-        </motion.div>
-
-        <div className="flex flex-col items-center justify-center text-center z-20 relative mb-12">
+      {/* Left Content Area */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-20 pt-32 pb-24 lg:py-0 relative z-10 bg-white">
+        <div className="max-w-xl w-full">
+          
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-blue-500 text-[11px] font-[800] tracking-[0.25em] uppercase mb-8"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex items-center gap-3 mb-8"
           >
-            {hero.eyebrow}
+            <div className="w-8 h-px bg-blue-600" />
+            <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
+              {hero.eyebrow}
+            </span>
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[42px] md:text-[64px] lg:text-[88px] font-[900] tracking-tighter text-[#0F172A] leading-[1] max-w-[1200px] mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
+            style={{ fontFamily: "var(--font-playfair)" }}
           >
-            {hero.headline}
+            PRECISION <br /> ENGINEERING. <br /><span className="text-blue-600 italic">BUILT TO LAST.</span>
           </motion.h1>
 
           <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-[17px] md:text-[19px] text-slate-500 font-[450] max-w-[850px] mb-12 leading-[1.6]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-lg md:text-xl text-slate-600 leading-relaxed font-light mb-12"
           >
             {hero.description}
           </motion.p>
@@ -75,16 +49,55 @@ export default function EngineeringHero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto"
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
-            <Link href="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#0F172A] text-white rounded-2xl font-[700] text-[12px] hover:bg-[#1E293B] transition-all shadow-xl hover:-translate-y-1 uppercase tracking-widest">
-              Send a Project Brief <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <Link 
+              href="/contact" 
+              className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors flex items-center justify-center gap-3 group text-[15px]"
+            >
+              Start a Project
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              href="/work" 
+              className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-slate-50 text-slate-900 border border-slate-300 font-medium transition-colors flex items-center justify-center text-[15px]"
+            >
+              Browse Our Work
             </Link>
           </motion.div>
-        </div> 
 
+        </div>
       </div>
+
+      {/* Right Image Area */}
+      <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
+          <img 
+            src="/images/water_ro_treatment.png" 
+            alt="Engineering Infrastructure" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
+        </motion.div>
+        
+        {/* Metric Overlay */}
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="absolute bottom-10 right-10 bg-white p-6 shadow-xl max-w-sm hidden md:block"
+        >
+          <div className="text-3xl font-bold text-slate-900 mb-2 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Precision Systems</div>
+          <p className="text-sm text-slate-500 font-medium">Delivering complex technical solutions and asset management for regional industrial nodes.</p>
+        </motion.div>
+      </div>
+
     </section>
   );
 }

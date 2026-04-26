@@ -6,82 +6,103 @@ import Link from "next/link";
 
 const divisions = [
   {
-    title: "ALNACIIM Water",
-    description: "Clean water supply, large-scale reverse osmosis purification and the Aqua Safi bottled water range — Somalia's most recognised water brand.",
+    title: "Water Infrastructure",
+    description: "Municipal-scale reverse osmosis, clean water distribution, and the Aqua Safi bottled water range.",
     link: "/water",
     icon: <Droplets size={24} />,
-    color: "#0066FF",
-    bgColor: "bg-blue-50"
+    glowColor: "rgba(59, 130, 246, 0.5)",
+    iconColor: "text-blue-400",
+    borderColor: "border-blue-500/20"
   },
   {
-    title: "ALNACIIM Energy",
-    description: "Tier-1 solar supply, hybrid microgrid systems, battery storage and generator integration — from residential to industrial scale.",
+    title: "Energy & Solar",
+    description: "Tier-1 solar supply, hybrid microgrid systems, and large-scale battery storage integration.",
     link: "/energy",
     icon: <Zap size={24} />,
-    color: "#FF6B00",
-    bgColor: "bg-orange-50"
+    glowColor: "rgba(249, 115, 22, 0.5)",
+    iconColor: "text-orange-400",
+    borderColor: "border-orange-500/20"
   },
   {
-    title: "ALNACIIM Engineering",
-    description: "The engineering backbone of the group. Water well drilling, RO plant installation, power system commissioning, SCADA and automation.",
+    title: "Precision Engineering",
+    description: "The technical backbone. Water well drilling, infrastructure installation, SCADA and automation.",
     link: "/engineering",
     icon: <Settings size={24} />,
-    color: "#0F172A",
-    bgColor: "bg-slate-100"
+    glowColor: "rgba(99, 102, 241, 0.5)",
+    iconColor: "text-indigo-400",
+    borderColor: "border-indigo-500/20"
   }
 ];
 
 export default function DivisionsGrid() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-[#050505] border-t border-white/10 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-24">
-          <h2 className="text-[48px] md:text-[64px] font-[800] leading-[1.1] tracking-[-0.03em] text-ink mb-8 font-heading uppercase max-w-4xl">
-            Three Divisions<br />One Infrastructure Group.
-          </h2>
-          
-          <p className="text-[18px] text-slate-500 leading-relaxed font-[450] max-w-3xl mx-auto">
-            Alnaciim Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain through three specialized divisions.
-          </p>
+        <div className="max-w-3xl mb-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-10"
+          >
+            <div className="w-8 h-px bg-blue-600" />
+            <span className="text-[11px] font-bold text-white/40 tracking-[0.3em] uppercase">Core Infrastructure</span>
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-10 font-serif"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Three Divisions.<br /><span className="text-zinc-600 italic">One Standard.</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-zinc-500 font-light leading-relaxed max-w-2xl"
+          >
+            Alnaciim Group integrates deep regional expertise with advanced technology. We manage the entire infrastructure value chain.
+          </motion.p>
         </div>
 
-        {/* 3-Card Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 3-Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-t border-white/10">
           {divisions.map((division, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative bg-white rounded-[40px] p-12 flex flex-col border border-slate-100 shadow-sm hover:shadow-premium transition-all duration-500 min-h-[500px]"
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={`border-r border-b border-white/10 p-12 flex flex-col min-h-[480px] group hover:bg-white/[0.02] transition-all duration-300 relative`}
             >
               <div className="mb-12">
-                <div 
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-10 ${division.bgColor}`}
-                  style={{ color: division.color }}
-                >
+                <div className={`text-blue-500 mb-10 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3`}>
                   {division.icon}
                 </div>
                 
-                <h3 className="text-[28px] font-[800] text-ink mb-6 font-heading uppercase tracking-tight">
+                <h3 className="text-3xl font-bold text-white mb-6 tracking-tight font-serif uppercase group-hover:text-blue-500 transition-colors" style={{ fontFamily: "var(--font-playfair)" }}>
                   {division.title}
                 </h3>
-                <p className="text-[17px] text-slate-500 leading-relaxed group-hover:text-slate-900 transition-colors">
+                <p className="text-[15px] text-zinc-500 leading-relaxed font-light">
                   {division.description}
                 </p>
               </div>
 
-              <div className="mt-auto">
+              <div className="mt-auto pt-10 flex items-center justify-between group/link">
                 <Link
                   href={division.link}
-                  className="inline-flex items-center gap-3 text-[14px] font-[800] text-ink group-hover:text-primary transition-all tracking-[0.15em] uppercase font-heading"
+                  className="text-[11px] font-bold text-white/40 group-hover:text-white uppercase tracking-[0.2em] transition-all duration-300"
                 >
                   Explore Division
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
+                <ArrowRight size={18} className="text-white/20 group-hover/link:translate-x-3 group-hover/link:text-blue-500 transition-all duration-300" />
               </div>
             </motion.div>
           ))}

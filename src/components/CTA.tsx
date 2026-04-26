@@ -1,43 +1,81 @@
+"use client";
 import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="relative w-full py-40 mt-20 z-10 overflow-hidden">
-      
-      {/* Stripe-Style Slanted Background Element */}
-      <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0 overflow-hidden">
-        <img src="/images/about_page_top_1769371967484.png" alt="Engineering Facility" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
-      </div>
-      
-      {/* Decorative Glow inside the CTA */}
-      <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] bg-[#0066FF] rounded-full filter blur-[100px] opacity-40 mix-blend-screen pointer-events-none z-0"></div>
+    <section className="bg-white relative">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-32">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative bg-blue-600 p-12 md:p-20 lg:p-32 overflow-hidden shadow-2xl flex flex-col items-center text-center"
+        >
+          {/* Subtle Technical Pattern Background */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none" 
+            style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center gap-3 mb-10 relative z-10"
+          >
+            <div className="w-8 h-px bg-white/40" />
+            <span className="text-xs font-bold tracking-[0.2em] text-white uppercase">
+              Strategic Deployment
+            </span>
+            <div className="w-8 h-px bg-white/40" />
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="text-4xl md:text-6xl lg:text-[72px] font-bold text-white mb-10 relative z-10 leading-[1.1] max-w-4xl font-serif"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Ready to build your <span className="italic">infrastructure?</span>
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-16 leading-relaxed relative z-10 font-light"
+          >
+            Connect with our engineering team for a technical consultation. We deliver end-to-end solutions from design to commissioning.
+          </motion.p>
 
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
-        
-        <div className="w-full lg:w-3/5 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-blue-100 rounded-full font-[600] text-[12px] uppercase tracking-wide mb-8 border border-white/20">
-            <Zap size={14} className="fill-current text-[#0066FF]" /> Fast Deployment
-          </div>
-          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-[42px] md:text-[64px] font-[900] tracking-tighter text-white leading-[1.1] mb-6">
-              Ready to build<br />something together?
-            </h2>
-            <p className="text-[18px] md:text-[22px] text-blue-200 font-[400] mb-10 max-w-2xl mx-auto leading-[1.6]">
-              Tell us about your project. Our team will respond within 24 hours with a tailored proposal.
-            </p>
-          </div>
-        </div>
-        
-        <div className="w-full lg:w-auto flex flex-col gap-4">
-          <Link href="/order" className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#0066FF] text-white text-[15px] font-[700] rounded-xl hover:bg-blue-600 hover:-translate-y-1 transition-all shadow-[0_4px_14px_0_rgb(0,102,255,0.39)] hover:shadow-[0_6px_20px_rgba(0,102,255,0.23)]">
-            Start Processing <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-5 bg-white/10 border border-white/20 rounded-xl text-white text-[15px] font-[600] hover:bg-white/20 transition-colors">
-            Contact Distribution
-          </Link>
-        </div>
-
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10 w-full sm:w-auto"
+          >
+            <Link 
+              href="/contact" 
+              className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 font-bold transition-all hover:bg-slate-50 flex items-center justify-center gap-3 group text-[15px] uppercase tracking-widest"
+            >
+              Inquire Now
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              href="/contact" 
+              className="w-full sm:w-auto px-10 py-5 bg-transparent text-white border border-white/30 font-bold transition-all hover:bg-white/10 flex items-center justify-center gap-3 text-[15px] uppercase tracking-widest"
+            >
+              Contact Sales
+              <Mail size={18} />
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

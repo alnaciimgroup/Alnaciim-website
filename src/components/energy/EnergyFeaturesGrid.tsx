@@ -22,60 +22,53 @@ export default function EnergyFeaturesGrid() {
   ];
 
   return (
-    <section className="w-full bg-[#f8fafc] py-20 relative overflow-hidden" id="renewables">
-      
-      {/* Background soft mesh for depth */}
-      <div className="absolute bottom-[20%] right-[-10%] w-[30%] h-[500px] bg-[#FF8C00]/10 rounded-full filter blur-[100px] pointer-events-none"></div>
-
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 flex flex-col gap-20">
+    <section className="w-full bg-slate-50 py-24 relative overflow-hidden" id="renewables">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-24">
         
         {features.map((feature, idx) => (
-          <div key={idx} className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${feature.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
+          <div key={idx} className={`flex flex-col lg:flex-row gap-16 lg:gap-24 items-center ${feature.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
             
-            {/* Soft Shadow Image Side */}
+            {/* Image Side */}
             <motion.div 
-              initial={{ opacity: 0, x: feature.align === 'left' ? -50 : 50 }}
+              initial={{ opacity: 0, x: feature.align === 'left' ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="w-full lg:w-1/2 relative"
             >
-               <div className="bg-white p-3 pb-8 rounded-3xl shadow-[0_20px_60px_-15px_rgba(255,90,0,0.15)] border border-slate-100 transform rotate-1 group hover:rotate-0 transition-transform duration-700">
-                 <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 relative">
-                   <img src={feature.img} alt={feature.title} className="w-full h-full object-cover filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+               <div className="bg-white p-2 rounded-2xl shadow-xl border border-slate-200">
+                 <div className="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 relative group">
+                   <img src={feature.img} alt={feature.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
                  </div>
                </div>
-               
-               {/* Decorative Abstract Pill */}
-               <div className={`absolute top-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-[#FF5A00] to-[#FF8C00] rounded-full blur-[60px] opacity-30 -z-10 ${feature.align === 'left' ? '-left-8' : '-right-8'}`}></div>
             </motion.div>
 
-            {/* Clean Typography Side */}
+            {/* Typography Side */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-full lg:w-1/2 flex flex-col justify-center"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FFF5F0] text-[#FF5A00] rounded-lg font-[700] text-[11px] uppercase tracking-wide mb-5">
-                Feature // {idx + 1}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full font-semibold text-xs tracking-wide uppercase mb-6 shadow-sm w-fit border border-blue-100">
+                Core Feature // 0{idx + 1}
               </div>
               
-              <h2 className="text-[32px] md:text-[42px] font-[800] text-slate-900 leading-[1.1] tracking-tight mb-5">
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
                 {feature.title}
               </h2>
               
-              <p className="text-slate-600 text-[17px] leading-[1.7] font-[450] mb-6">
+              <p className="text-lg text-slate-600 leading-relaxed font-medium mb-10">
                 {feature.description}
               </p>
               
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-4">
                 {feature.bullets.map((bullet, i) => (
-                  <div key={i} className="flex items-center gap-3 text-slate-700 font-[500] text-[15px]">
-                    <div className="w-5 h-5 rounded-full bg-[#FFF5F0] flex items-center justify-center shrink-0">
-                      <CheckCircle2 size={14} className="text-[#FF5A00]" />
+                  <div key={i} className="flex items-center gap-3 text-slate-700 font-semibold text-sm tracking-wide group">
+                    <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
+                      <CheckCircle2 size={14} className="text-blue-600 group-hover:text-white transition-colors" />
                     </div>
                     {bullet}
                   </div>

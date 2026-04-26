@@ -1,16 +1,18 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { CONTENT } from "@/data/content";
 
 export default function SolutionsGrid() {
   const { items } = CONTENT.engineering_solutions;
 
   return (
-    <section className="w-full py-24 bg-white">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+    <section className="w-full py-40 bg-white border-b border-slate-200">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-40">
           {items.map((sol, idx) => (
             <motion.div 
               key={sol.id}
@@ -18,49 +20,61 @@ export default function SolutionsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Image Side */}
-              <div className={`relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                {/* SECTION: Engineering Solutions Grid */}
-                <img src={sol.image} alt={sol.title} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className={`relative aspect-[16/11] overflow-hidden border border-slate-200 group ${idx % 2 === 1 ? 'lg:order-2' : ''}`}
+              >
+                <img 
+                  src={sol.image} 
+                  alt={sol.title} 
+                  className="w-full h-full object-cover transition-all duration-[3s] group-hover:scale-105" 
+                />
+              </motion.div>
 
               {/* Text Side */}
               <div className="flex flex-col">
-                <span className="text-[14px] font-[900] text-blue-600 mb-6 flex items-center gap-3">
-                  <span className="w-8 h-[2px] bg-blue-600"></span>
-                  {sol.id}
-                </span>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-8 h-px bg-blue-600" />
+                  <span className="text-[11px] font-bold text-blue-600 tracking-widest uppercase">
+                    Architecture // {sol.id}
+                  </span>
+                </div>
                 
-                <h3 className="text-[36px] md:text-[48px] font-[900] tracking-tighter text-[#0F172A] mb-8 leading-[1]">
+                <h3 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1] font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
                   {sol.title}
                 </h3>
                 
-                <p className="text-[17px] md:text-[19px] text-slate-500 font-[450] mb-10 leading-[1.6]">
+                <p className="text-xl text-slate-500 font-light mb-12 leading-relaxed max-w-xl">
                   {sol.subtext}
                 </p>
 
-                <ul className="grid grid-cols-1 gap-5 mb-12">
+                <ul className="space-y-6 mb-12 border-l border-slate-100 pl-8">
                   {sol.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start gap-4">
-                      <div className="mt-1.5 w-4 h-4 rounded-full border-2 border-orange-400 flex items-center justify-center flex-shrink-0">
-                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400"></div>
-                      </div>
-                      <span className="text-[16px] font-[600] text-[#0F172A] tracking-tight">
-                        {bullet}
+                    <li key={bIdx} className="flex flex-col gap-1">
+                      <span className="text-[13px] font-bold text-slate-900 uppercase tracking-tight">
+                        {bullet.split(':')[0]}
                       </span>
+                      {bullet.includes(':') && (
+                        <span className="text-[13px] text-slate-500 font-light">
+                          {bullet.split(':')[1]}
+                        </span>
+                      )}
                     </li>
                   ))}
                 </ul>
 
-                <motion.button 
-                  whileHover={{ x: 8 }}
-                  className="inline-flex items-center gap-3 text-blue-600 font-[800] text-[13px] uppercase tracking-[0.2em] group"
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center gap-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] uppercase tracking-widest px-8 py-4 w-fit transition-all"
                 >
-                  Request a Technical Proposal <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                  Request Technical Proposal 
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </motion.div>
           ))}

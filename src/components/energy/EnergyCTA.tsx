@@ -1,43 +1,46 @@
 import Link from "next/link";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, Settings2 } from "lucide-react";
 
 export default function EnergyCTA() {
   return (
-    <section className="relative w-full py-40 mt-20 z-10 overflow-hidden">
-      
-      {/* Stripe-Style Slanted Background Element */}
-      <div className="absolute top-0 left-0 w-full h-[120%] bg-slate-900 transform -skew-y-3 origin-bottom-right z-0 overflow-hidden">
-        <img src="/images/alnaciim_hero_full_1771787383245.png" alt="Hybrid Microgrid" className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay scale-110" />
-      </div>
-      
-      {/* Decorative Glow inside the CTA */}
-      <div className="absolute top-0 right-[-10%] w-[400px] h-[400px] bg-[#FF5A00] rounded-full filter blur-[100px] opacity-40 mix-blend-screen pointer-events-none z-0"></div>
-
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
-        
-        <div className="w-full lg:w-3/5 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-orange-100 rounded-full font-[600] text-[10px] uppercase tracking-[0.2em] mb-8 border border-white/20">
-            <Zap size={14} className="fill-current text-[#FF5A00]" /> High Voltage Capacity
+    <section className="py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative bg-blue-600 rounded-[3rem] p-8 md:p-16 lg:p-24 overflow-hidden shadow-2xl shadow-blue-600/20 text-center flex flex-col items-center">
+          
+          {/* Background Decorative Lighting */}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500 rounded-full blur-[120px] pointer-events-none z-0 translate-x-1/3 -translate-y-1/3 opacity-50" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500 rounded-full blur-[100px] pointer-events-none z-0 -translate-x-1/3 translate-y-1/3 opacity-30" />
+          
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-10 relative z-10 shadow-sm">
+            <Zap size={14} className="text-blue-200" />
+            High Voltage Capacity
           </div>
-          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center lg:text-left">
-            <h2 className="text-[32px] md:text-[48px] lg:text-[56px] font-[900] tracking-[0.12em] text-white leading-[1.1] mb-6 uppercase">
-              Require a custom<br />configuration?
-            </h2>
-            <p className="text-[15px] md:text-[16px] text-orange-200 font-[400] mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed italic">
-              Our in-house engineering team specializes in heavy loads and complex synchronization constraints.
-            </p>
+          
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 relative z-10 leading-[1.1] max-w-4xl">
+            Require a custom <span className="text-blue-200 italic font-light pr-2">configuration?</span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl text-blue-100 max-w-2xl mx-auto mb-16 leading-relaxed relative z-10 font-light">
+            Our in-house engineering team specializes in heavy loads and complex synchronization constraints. Let's design your power architecture.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10 w-full sm:w-auto">
+            <Link 
+              href="/contact" 
+              className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 rounded-[2rem] font-bold text-lg transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group"
+            >
+              Contact Engineering
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              href="/" 
+              className="w-full sm:w-auto px-10 py-5 bg-blue-700/50 hover:bg-blue-700/80 backdrop-blur-md text-white border border-blue-400/30 rounded-[2rem] font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-lg"
+            >
+              Return to Group
+              <Settings2 size={20} className="text-blue-200" />
+            </Link>
           </div>
         </div>
-        
-        <div className="w-full lg:w-auto flex flex-col gap-4">
-          <Link href="/contact" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-5 bg-[#FF5A00] text-white text-[13px] font-[800] rounded-xl hover:bg-[#FF4500] hover:-translate-y-1 transition-all shadow-[0_4px_14px_0_rgb(255,90,0,0.39)] uppercase tracking-widest shadow-lg shadow-orange-500/20">
-            Contact Engineering <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link href="/" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-5 bg-white/10 border border-white/20 rounded-xl text-white text-[13px] font-[600] hover:bg-white/20 transition-colors uppercase tracking-widest">
-            Main Site
-          </Link>
-        </div>
-
       </div>
     </section>
   );

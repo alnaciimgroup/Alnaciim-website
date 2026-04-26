@@ -1,50 +1,41 @@
 "use client";
+
 import React from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 export default function StatsGrid() {
   const stats = [
-    { value: 28, suffix: "+", label: "Years delivering infrastructure" },
-    { value: 600000, suffix: "+", label: "Litres water purified daily" },
-    { value: 500, suffix: "+ kW", label: "Solar capacity installed" },
-    { value: 60, suffix: "+", label: "Projects commissioned to date" }
+    { value: 450, suffix: "+", label: "Active Projects" },
+    { value: 12.5, suffix: "MW", label: "Solar Capacity Installed" },
+    { value: 5000000, suffix: "L", label: "Daily Water Purified" },
+    { value: 120, suffix: "+", label: "Technical Engineering Staff" }
   ];
 
   return (
-    <section className="relative w-full py-32 mt-20 z-10">
-      
-      {/* Stripe-Style Slanted Background Element */}
-      <div className="absolute inset-0 bg-[#0066FF] transform -skew-y-3 origin-top-left z-0 overflow-hidden">
-         <img src="/images/about_page_top_1769371967484.png" alt="Water Infrastructure" className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay scale-110" />
-      </div>
-      {/* Secondary accent slanted layer */}
-      <div className="absolute inset-0 bg-blue-900/10 transform -skew-y-2 origin-top-right z-0"></div>
-
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 relative z-10">
-        
-        {/* Floating White Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+    <section className="bg-slate-900 text-white border-y border-slate-800 relative z-20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-800">
           {stats.map((stat, i) => (
             <motion.div 
-              key={i} 
-              initial={{ opacity: 0, y: 30 }}
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/50 hover:-translate-y-2 transition-transform duration-500"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="py-16 md:py-20 lg:px-12 flex flex-col items-start justify-center group"
             >
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-[48px] lg:text-[56px] font-[800] tracking-tight text-slate-900 leading-none">
-                  <CountUp enableScrollSpy scrollSpyOnce end={stat.value} duration={2} separator="," />
+                <span className="text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
+                  <CountUp enableScrollSpy scrollSpyOnce end={stat.value} duration={2.5} separator="," />
                 </span>
-                <span className="text-[20px] font-[800] text-[#0066FF]">{stat.suffix}</span>
+                <span className="text-3xl font-light text-blue-400">{stat.suffix}</span>
               </div>
-              <p className="text-slate-500 font-[600] text-[14px]">{stat.label}</p>
+              <p className="text-slate-400 font-medium text-sm tracking-wide">
+                {stat.label}
+              </p>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

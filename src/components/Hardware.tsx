@@ -1,11 +1,12 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { catalogProducts } from "@/data/catalog";
 import ProductCard from "@/components/ProductCard";
+import { ArrowRight, Database } from "lucide-react";
 
 export default function Hardware() {
-  // Grab a robust cross-section of hardware for the marquee
   const showcaseProducts = [
     catalogProducts.find(p => p.id === "sp1"),
     catalogProducts.find(p => p.id === "ro1"),
@@ -16,39 +17,55 @@ export default function Hardware() {
   ].filter(Boolean) as typeof catalogProducts;
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-t border-[#dde2f0]/60" id="catalog">
-      <div className="max-w-[1160px] mx-auto px-6 mb-14">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-6">
-          <div className="max-w-xl">
-             <div className="text-[10px] font-[700] tracking-[2px] uppercase text-[#1152d4] mb-3 flex items-center gap-3">
-               <span className="w-6 h-px bg-[#1152d4]/50"></span> Infrastructure Catalog
-             </div>
-             <h2 className="font-['Syne'] text-[36px] sm:text-[46px] font-[800] tracking-[-1.5px] text-[#0b0d14] leading-[1.1]">
-               Superior Hardware for <br/>Every Scale
-             </h2>
+    <section className="py-32 bg-white relative overflow-hidden border-t border-slate-100" id="catalog">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-24 relative z-10">
+        <div className="flex flex-col md:flex-row items-end justify-between gap-10">
+          <div className="max-w-2xl">
+             <motion.div 
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[11px] font-bold tracking-widest uppercase mb-10"
+             >
+               <Database size={14} />
+               Infrastructure Catalog
+             </motion.div>
+             <motion.h2 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.1 }}
+               className="text-[40px] md:text-[68px] font-bold tracking-tight text-slate-900 leading-[1] uppercase"
+             >
+               Superior Hardware <br/><span className="text-blue-600 italic">For Every Scale.</span>
+             </motion.h2>
           </div>
-          <Link href="/catalog" className="inline-flex items-center justify-center shrink-0 bg-[#f0f3fa] hover:bg-[#e4e9f5] border border-transparent hover:border-[#dde2f0] text-[#1152d4] px-8 py-3.5 rounded-[12px] text-[13.5px] font-[600] font-['Syne'] transition-all">
-            Explore Full Catalog
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link href="/catalog" className="px-10 py-5 bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 rounded-2xl font-bold text-[14px] uppercase tracking-widest transition-all flex items-center gap-3 group">
+              Explore Catalog <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-blue-600" />
+            </Link>
+          </motion.div>
         </div>
       </div>
 
       {/* Infinite Marquee Slider */}
-      <div className="relative w-full flex overflow-hidden group pb-8">
-        
-        {/* Left Fade Edge */}
-        <div className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        {/* Right Fade Edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+      <div className="relative w-full flex overflow-hidden group pb-12">
+        {/* Edge Fades */}
+        <div className="absolute left-0 top-0 bottom-0 w-[15%] bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-[15%] bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
 
         <motion.div 
-          className="flex shrink-0 gap-[20px] px-[10px]"
+          className="flex shrink-0 gap-10 px-5"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
         >
-          {/* Double array to ensure seamless looping without glitch */}
           {[...showcaseProducts, ...showcaseProducts].map((product, i) => (
-            <div key={`${product.id}-${i}`} className="w-[300px] shrink-0 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+            <div key={`${product.id}-${i}`} className="w-[340px] shrink-0 pointer-events-none">
               <ProductCard 
                 product={product} 
                 onClick={() => {}} 
@@ -56,7 +73,6 @@ export default function Hardware() {
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

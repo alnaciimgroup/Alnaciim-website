@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function TrustedLeaders() {
   const logos = [
     { name: "Puntland Gov.", label: "State Protocol" },
@@ -8,23 +11,41 @@ export default function TrustedLeaders() {
   ];
 
   return (
-    <section className="w-full bg-[#f8fafc] py-20 border-t border-slate-200 relative overflow-hidden">
-      {/* Subtle Background Texture */}
-      <div className="absolute inset-0 z-0">
-        <img src="/images/about_page_top_1769371967484.png" alt="Corporate Architecture Architecture" className="w-full h-full object-cover opacity-[0.03] grayscale" />
-      </div>
+    <section className="w-full bg-slate-50 py-24 relative border-t border-slate-200">
 
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 text-center relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center relative z-10">
         
-        <p className="text-slate-500 text-[13px] font-[700] uppercase tracking-[2px] mb-10">
-          Trusted by over 850+ major regional operations
-        </p>
+        <div className="flex items-center justify-center gap-4 mb-16">
+          <div className="h-px bg-slate-300 w-12" />
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-slate-500 text-[13px] font-bold uppercase tracking-widest"
+          >
+            Trusted by 850+ major regional operations
+          </motion.p>
+          <div className="h-px bg-slate-300 w-12" />
+        </div>
 
-        <div className="flex flex-wrap justify-center gap-x-12 lg:gap-x-20 gap-y-10 opacity-60">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
           {logos.map((logo, idx) => (
-             <div key={idx} className="flex flex-col items-center group cursor-default mix-blend-multiply hover:opacity-100 transition-opacity">
-               <span className="text-[24px] font-[800] text-slate-800 tracking-[-1px] group-hover:text-[#0066FF] transition-colors">{logo.name}</span>
-             </div>
+             <motion.div 
+               key={idx}
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+               className="flex flex-col items-center group cursor-default"
+             >
+               <span className="text-xl md:text-2xl font-bold text-slate-400 group-hover:text-slate-900 transition-colors duration-500 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
+                 {logo.name}
+               </span>
+               <span className="text-[11px] font-bold text-slate-400/70 tracking-widest mt-1 group-hover:text-blue-600 transition-colors duration-500 uppercase">
+                 {logo.label}
+               </span>
+             </motion.div>
           ))}
         </div>
 

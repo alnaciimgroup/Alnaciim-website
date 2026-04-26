@@ -1,70 +1,89 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 const competencies = [
   {
     number: "01",
     title: "Utility-Scale Solar",
-    desc: "Solar PV Systems From small commercial rooftop installations to large industrial ground-mount arrays, Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.",
+    desc: "From small commercial rooftop installations to large industrial ground-mount arrays, we design, supply, and install solar PV systems sized for exact load profiles.",
   },
   {
     number: "02",
-    title: "Inverters",
-    desc: "Alnaciim Energy supplies string inverters for grid-connected commercial arrays, hybrid inverters for systems combining solar with battery storage and generator backup, and off-grid inverters for remote sites with no grid connection.",
+    title: "Advanced Inverters",
+    desc: "We supply string inverters for grid-connected arrays, hybrid inverters for battery storage combinations, and off-grid inverters for remote sites without grid access.",
   },
   {
     number: "03",
     title: "System Controllers",
-    desc: "Alnaciim Energy supplies and programmes controllers, solar MPPT charge controllers, automatic mains failure controllers that start and transfer the generator when solar drops, and hybrid energy management systems.",
+    desc: "We deploy and program intelligent MPPT charge controllers, automatic mains failure controllers, and comprehensive hybrid energy management systems.",
   },
   {
     number: "04",
     title: "Generator Sets",
-    desc: "Alnaciim Energy supplies Reliable backup and prime power diesel generator sets and integrates them into the wider power system with in-house automatic transfer switch panels and programmed controllers.",
+    desc: "We supply reliable backup and prime power diesel generators, seamlessly integrating them with solar systems via automatic transfer switch panels.",
   }
 ];
 
 export default function EnergyCompetencies() {
   return (
-    <section className="w-full py-32 bg-slate-50/50" id="capabilities">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+    <section className="w-full py-32 bg-white relative overflow-hidden" id="capabilities">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-orange-50 border border-orange-100 text-[#FF5A00] text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
-              Industrial Engineering
-            </div>
-            <h2 className="text-[28px] md:text-[42px] font-[900] tracking-[0.12em] text-slate-900 leading-[1.05] uppercase">
-              Infrastructure Divisions.
-            </h2>
+          <div className="max-w-4xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-50 border border-slate-200/60 text-blue-600 text-xs font-bold tracking-widest uppercase mb-8 shadow-sm"
+            >
+              Infrastructure Divisions
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]"
+            >
+              Integrated <span className="text-blue-600 font-light italic pr-2">Power Units.</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-3xl"
+            >
+              We design, procure, and install end-to-end power delivery systems. By unifying generation and storage, we drastically reduce operating expenses for the region's industrials.
+            </motion.p>
           </div>
-          <p className="max-w-md text-slate-500 text-[16px] leading-relaxed font-[450]">
-            We design, procure, and install end-to-end power delivery systems. By unifying generation and storage, we drastically reduce operating expenses for the region's industrials.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {competencies.map((comp, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="flex flex-col group relative p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-slate-50 border border-slate-200/60 rounded-[2.5rem] p-10 flex flex-col group hover:shadow-2xl hover:shadow-blue-900/5 hover:bg-white transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
             >
-              <div className="text-[56px] lg:text-[72px] font-[900] text-slate-100 leading-none mb-8 group-hover:text-[#FF5A00]/10 transition-colors duration-500">
+              <div className="absolute top-0 right-0 p-8 text-[120px] font-black text-slate-100/50 leading-none pointer-events-none group-hover:text-blue-50 transition-colors duration-500 -mt-10 -mr-6">
                 {comp.number}
               </div>
-              <h3 className="text-[22px] font-[900] text-slate-900 mb-6 tracking-tight group-hover:text-[#FF5A00] transition-colors uppercase leading-tight">
-                {comp.title}
-              </h3>
-              <p className="text-slate-600 leading-[1.7] text-[16px] font-[450]">
-                {comp.desc}
-              </p>
               
-              <div className="mt-auto pt-8">
-                 <div className="w-12 h-1.5 bg-slate-100 group-hover:bg-[#FF5A00] group-hover:w-full transition-all duration-500" />
+              <div className="relative z-10 flex-1 flex flex-col">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-blue-600 font-bold text-sm tracking-widest mb-10 shadow-sm border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  {comp.number}
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-blue-600 transition-colors">
+                  {comp.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed font-medium">
+                  {comp.desc}
+                </p>
               </div>
             </motion.div>
           ))}

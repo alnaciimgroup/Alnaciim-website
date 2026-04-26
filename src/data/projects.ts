@@ -68,7 +68,7 @@ export const projects: Project[] = [
     service: "System design, supply and installation",
     description: "Standardised 100 kWp solar arrays for commercial and industrial clients. Optimized for peak performance in high-irradiance regional conditions with Tier-1 components.",
     tags: ["Energy", "Engineering"],
-    image: "/images/solar_power_.png"
+    image: "/images/energy_intelligent_controller.png"
   },
   {
     id: "07",

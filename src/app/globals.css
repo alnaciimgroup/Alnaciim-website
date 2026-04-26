@@ -1,40 +1,24 @@
 @import "tailwindcss";
-
+@source "../components";
+@source "../../src";
 @theme {
-  /* Premium Palette */
   --color-primary: #0066FF;
-  --color-primary-dark: #0052CC;
-  --color-primary-light: #F0F7FF;
+  --color-primary-hover: #0052CC;
   
-  --color-accent-orange: #FF6B00;
-  --color-accent-teal: #00D2FF;
-  
-  --color-background: #FFFFFF;
-  --color-background-soft: #F8FAFC;
-  --color-background-muted: #F1F5F9;
-  
-  --color-footer: #0A1128;
-  --color-ink: #0F172A;
-  --color-slate-muted: #64748B;
-
-  /* Typography */
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-outfit);
-  --font-serif: var(--font-playfair);
-  
-  /* Modern Effects */
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-3xl: 2.5rem;
-  
-  --shadow-premium: 0 20px 50px -12px rgba(0, 102, 255, 0.12);
-  --shadow-glass: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), system-ui, sans-serif;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
 }
+
+::selection {
+  background-color: rgba(0, 102, 255, 0.1);
+  color: #0066FF;
+}
+
 
 body {
   background: var(--background);
@@ -44,21 +28,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
-}
-
-/* Glassmorphism Utilities */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

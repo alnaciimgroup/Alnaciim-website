@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { Sun, Zap, Battery, Fuel, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { CONTENT } from "@/data/content";
 export default function EnergyMethodology() {
   const { pillars } = CONTENT.energy;
   
-  const icons = [<Sun size={20} />, <Zap size={20} />, <Battery size={20} />, <Fuel size={20} />];
+  const icons = [<Sun size={24} />, <Zap size={24} />, <Battery size={24} />, <Fuel size={24} />];
   const images = [
     "/images/solar_power_system.png",
     "/images/energy_intelligent_controller.png",
@@ -18,81 +19,75 @@ export default function EnergyMethodology() {
   const methods = pillars.map((pillar, idx) => ({
     ...pillar,
     icon: icons[idx],
-    image: images[idx]
+    image: images[idx],
+    id: `TECH-0${idx + 1}`
   }));
 
   return (
-    <section className="w-full bg-white py-24 md:py-32" id="methodologies">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+    <section className="w-full bg-white py-32 border-b border-slate-200" id="methodologies">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center mb-24 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-orange-50 border border-orange-100 text-[#FF5A00] text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-            System Excellence
-          </div>
+        <div className="flex flex-col mb-24 max-w-3xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-8"
+          >
+            <div className="w-8 h-px bg-blue-600" />
+            <span className="text-xs font-bold text-blue-600 tracking-widest uppercase">System Excellence</span>
+          </motion.div>
           
-          <div className="relative w-full flex items-center justify-center gap-10 mb-8 text-center">
-             {/* Left Structural Line */}
-             <div className="hidden lg:block h-[1px] flex-grow bg-[#FF5A00]/20 max-w-[400px]" />
-             
-             <h2 className="text-[28px] md:text-[42px] font-[900] text-slate-900 leading-[1] tracking-[0.12em] uppercase">
-               Technological Precision.
-             </h2>
-             
-             {/* Right Structural Line */}
-             <div className="hidden lg:block h-[1px] flex-grow bg-[#FF5A00]/20 max-w-[400px]" />
-          </div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1] font-serif"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Technological <span className="text-blue-600 italic">Precision.</span>
+          </motion.h2>
           
-          <p className="text-[16px] text-slate-500 font-[450] leading-relaxed max-w-2xl mx-auto text-center">
-            Our energy systems are engineered for the regional climate, utilizing industrial-grade hardware and intelligent smart-sync software.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-xl text-slate-600 leading-relaxed font-light max-w-2xl"
+          >
+            Our energy systems are engineered for the regional climate, utilizing industrial-grade hardware and intelligent smart-sync software architectures.
+          </motion.p>
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-l border-t border-slate-100">
           {methods.map((method, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group bg-white rounded-[2rem] border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-[#FF5A00]/5 transition-all duration-500"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="bg-white border-r border-b border-slate-100 p-8 flex flex-col group cursor-pointer hover:bg-slate-50 transition-all duration-300"
             >
-              {/* Image Section */}
-              <div className="relative aspect-[4/3] p-3">
-                <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                  <img 
-                    src={method.image} 
-                    alt={method.title} 
-                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${idx === 0 ? 'object-bottom' : ''}`}
-                  />
-                  <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500" />
-                  
-                  {/* Icon Badge */}
-                  <div className="absolute -bottom-1 -left-1 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center p-2 z-20">
-                    <div className="w-full h-full rounded-full bg-white border border-[#FF5A00]/20 flex items-center justify-center text-[#FF5A00]">
-                      {method.icon}
-                    </div>
-                  </div>
-                </div>
+              <div className="text-[10px] font-bold text-blue-600 mb-6 tracking-widest uppercase">{method.id}</div>
+              
+              <div className="mb-8 text-slate-400 group-hover:text-blue-600 transition-colors">
+                {method.icon}
               </div>
 
-              {/* Content Section */}
-              <div className="p-8 pt-4">
-                <h3 className="text-[20px] font-[800] text-slate-900 mb-4 tracking-tight">
-                  {method.title}
-                </h3>
-                <p className="text-slate-500 text-[14px] leading-relaxed mb-8">
-                  {method.description}
-                </p>
-                <Link 
-                  href="/contact" 
-                  className="inline-flex items-center gap-2 text-[#FF5A00] font-[700] text-[13px] hover:gap-3 transition-all"
-                >
-                  Request Detail
-                  <ArrowRight size={16} />
-                </Link>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
+                {method.title}
+              </h3>
+              <p className="text-[15px] text-slate-500 font-light leading-relaxed mb-10 flex-1">
+                {method.description}
+              </p>
+
+              <div className="flex items-center justify-between pt-6 border-t border-slate-100 group">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-blue-600 transition-colors">Dossier</span>
+                <ArrowRight size={16} className="text-slate-300 group-hover:translate-x-2 group-hover:text-blue-600 transition-all" />
               </div>
             </motion.div>
           ))}

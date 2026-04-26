@@ -1,6 +1,7 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare, Briefcase } from "lucide-react";
 import Link from "next/link";
 
 const projectLinks = [
@@ -11,61 +12,68 @@ const projectLinks = [
 
 export default function TechnicalArchive() {
   return (
-    <section className="w-full py-24 md:py-32 bg-slate-50">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+    <section className="w-full py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Side: Soft CTA / Enquiry Prompt */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-[3rem] p-12 md:p-20 shadow-xl border border-slate-100 flex flex-col items-center text-center lg:items-start lg:text-left"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-slate-50 border border-slate-200/60 rounded-[3rem] p-12 md:p-16 flex flex-col items-center text-center lg:items-start lg:text-left shadow-xl relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
           >
-            <div className="w-20 h-20 rounded-[2rem] bg-blue-600 flex items-center justify-center text-white mb-10 shadow-lg shadow-blue-500/25">
-              <MessageSquare size={36} />
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3 group-hover:bg-blue-600/10 transition-colors duration-700" />
+            <div className="relative z-10">
+              <div className="w-20 h-20 rounded-[2rem] bg-white flex items-center justify-center text-blue-600 mb-10 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <MessageSquare size={32} />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                Start a <span className="text-blue-600 font-light italic pr-2">conversation.</span>
+              </h2>
+              <p className="text-xl text-slate-600 font-light leading-relaxed mb-12 max-w-md">
+                Our engineering team is ready to discuss your project requirements from first principles. Tell us what you need to build.
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-[2rem] font-bold transition-all shadow-xl shadow-blue-600/20 hover:-translate-y-1 text-lg group/btn"
+              >
+                Enquire Now <ArrowRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
             </div>
-            <h2 className="text-[36px] md:text-[52px] font-[900] tracking-tighter text-[#0F172A] leading-[1] mb-8">
-              Start a<br />conversation.
-            </h2>
-            <p className="text-slate-500 text-[18px] md:text-[20px] leading-[1.6] font-[450] mb-12 max-w-md">
-              Our engineering team is ready to discuss your project requirements from first principles. Tell us what you need to build.
-            </p>
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center gap-4 px-10 py-5 bg-[#0F172A] text-white rounded-2xl font-[800] text-[13px] uppercase tracking-[0.2em] hover:bg-blue-600 transition-all shadow-xl shadow-slate-900/10"
-            >
-              Enquire Now <ArrowRight size={18} />
-            </Link>
           </motion.div>
 
           {/* Right Side: Project Type Links */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-[36px] md:text-[44px] font-[900] tracking-tighter text-[#0F172A] mb-12">
-              Access the Technical Archive.
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-slate-50 border border-slate-200/60 text-blue-600 text-xs font-bold tracking-widest uppercase mb-8 shadow-sm">
+              <Briefcase size={14} /> Project History
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-12">
+              Access the <span className="text-blue-600 italic font-light pr-2">Technical Archive.</span>
             </h2>
-            <div className="flex flex-col gap-0 border-t border-slate-200">
+            <div className="flex flex-col border-t border-slate-200/60">
               {projectLinks.map((link, idx) => (
                 <Link 
                   key={idx} 
                   href={link.href}
-                  className="group flex items-center justify-between py-10 border-b border-slate-200 hover:px-8 transition-all duration-500 outline-none"
+                  className="group flex items-center justify-between py-8 border-b border-slate-200/60 hover:bg-slate-50 transition-colors px-6 -mx-6 rounded-2xl"
                 >
-                  <span className="text-[20px] md:text-[26px] font-[900] text-slate-400 group-hover:text-[#0F172A] transition-colors tracking-tight">
+                  <span className="text-xl md:text-2xl font-semibold text-slate-600 group-hover:text-slate-900 transition-colors tracking-tight">
                     {link.title}
                   </span>
-                  <div className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-all duration-300">
-                    <ArrowRight size={28} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-colors shadow-sm bg-white">
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               ))}
             </div>
-            <p className="mt-12 text-slate-400 text-[14px] font-[600] uppercase tracking-widest">
+            <p className="mt-10 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
               Filtered Records by Infrastructure Division
             </p>
           </motion.div>

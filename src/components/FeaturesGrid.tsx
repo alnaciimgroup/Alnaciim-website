@@ -1,82 +1,117 @@
 "use client";
-import { CheckCircle2 } from "lucide-react";
+import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FeaturesGrid() {
   const features = [
     {
-      title: "10,000 UPH Bottling Capacity",
-      desc: "Our automated assembly line is capable of processing and bottling 10,000 units every single hour, running 24/7 without fail. Backed by rigorous SLA uptime metrics.",
-      bullets: ["10,000 UPH Production Speed", "Fully Automated Filtration", "Zero-Downtime Architecture"],
+      title: "10,000 UPH Bottling System",
+      desc: "Our high-velocity automated facility processes 10,000 units every hour, delivering consistent industrial-grade output for regional demand.",
+      bullets: ["Industrial Speed Production", "Multi-Stage Sterilization", "Autonomous Uptime Management"],
       img: "/images/aqua_safi_bottling_facility.png",
       align: "left"
     },
     {
-      title: "Commercial Ice Production",
-      desc: "We supply massive quantities of commercial-grade crystal clear tube and block ice engineered specifically for the highest-tier hospitality and event supply chains.",
-      bullets: ["Crystal Clear Hospitality Ice", "High-Density Block Yield", "Temperature Verified Distribution"],
+      title: "Industrial Ice Infrastructure",
+      desc: "We supply heavy-duty crystal ice engineered for the region's hospitality and supply chain sectors, ensuring thermal precision and clarity.",
+      bullets: ["High-Density Block Supply", "Ultra-Clear Hospitality Ice", "Temperature Monitored Logistics"],
       img: "/images/commercial_ice_cubes_1769372486661.png",
       align: "right"
     }
   ];
 
   return (
-    <section className="w-full bg-[#f8fafc] py-32 relative overflow-hidden">
-      
-      {/* Background soft mesh for depth */}
-      <div className="absolute bottom-[20%] right-[-10%] w-[30%] h-[500px] bg-[#00D2FF]/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+    <section className="py-32 bg-white relative">
 
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 flex flex-col gap-32">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col gap-40 relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="w-8 h-px bg-blue-600" />
+            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">Operational Excellence</span>
+            <div className="w-8 h-px bg-blue-600" />
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 mb-8 leading-[1.1] font-serif" style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Water. Energy. <span className="text-blue-600 italic">Engineering.</span> Delivered.
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg md:text-xl text-slate-600 leading-relaxed font-light"
+          >
+            Somalia's leading integrated infrastructure group. We combine technical precision with local expertise to deliver large-scale water treatment, renewable energy, and precision engineering projects that build a sustainable future.
+          </motion.p>
+        </div>
         
         {features.map((feature, idx) => (
           <div key={idx} className={`flex flex-col lg:flex-row gap-16 lg:gap-24 items-center ${feature.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
             
-            {/* Soft Shadow Image Side */}
+            {/* Image Container */}
             <motion.div 
-              initial={{ opacity: 0, x: feature.align === 'left' ? -50 : 50 }}
+              initial={{ opacity: 0, x: feature.align === 'left' ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="w-full lg:w-1/2 relative"
             >
-               <div className="bg-white p-4 pb-12 rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,102,255,0.15)] border border-slate-100 transform rotate-1 group hover:rotate-0 transition-transform duration-700">
-                 <div className="aspect-[4/3] rounded-[1.5rem] overflow-hidden bg-slate-100 relative">
-                   <img src={feature.img} alt={feature.title} className="absolute inset-0 w-full h-full object-cover block filter brightness-[0.95] group-hover:scale-105 transition-transform duration-700" />
-                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-                 </div>
+               <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden shadow-2xl">
+                 <img 
+                  src={feature.img} 
+                  alt={feature.title} 
+                  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-[3s] ease-out" 
+                 />
+                 <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply"></div>
                </div>
                
-               {/* Decorative Abstract Pill */}
-               <div className={`absolute top-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-tr from-[#0066FF] to-[#00D2FF] rounded-full blur-[60px] opacity-30 -z-10 ${feature.align === 'left' ? '-left-8' : '-right-8'}`}></div>
+               {/* Decorative Accent Frame */}
+               <div className={`absolute top-8 ${feature.align === 'left' ? '-left-8' : '-right-8'} w-full h-full border border-slate-200 -z-10`} />
             </motion.div>
 
-            {/* Clean Typography Side */}
+            {/* Content Section */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full lg:w-1/2 flex flex-col justify-center"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="w-full lg:w-1/2 flex flex-col"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-50 text-[#0066FF] rounded-lg font-[700] text-[12px] uppercase tracking-wide mb-6">
-                Feature // {idx + 1}
+              <div className="flex items-center gap-4 mb-8">
+                <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">System Capability</span>
+                <div className="h-px bg-slate-200 flex-1" />
+                <span className="text-xs font-bold tracking-widest text-slate-400">0{idx + 1}</span>
               </div>
               
-              <h2 className="text-[36px] md:text-[48px] font-[800] text-slate-900 leading-[1.1] tracking-tight mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 mb-8 leading-[1.1] font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
                 {feature.title}
               </h2>
               
-              <p className="text-slate-600 text-[18px] leading-[1.8] font-[400] mb-8">
+              <p className="text-lg md:text-xl text-slate-600 mb-12 leading-relaxed font-light">
                 {feature.desc}
               </p>
               
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-6">
                 {feature.bullets.map((bullet, i) => (
-                  <div key={i} className="flex items-center gap-4 text-slate-700 font-[500] text-[16px]">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                      <CheckCircle2 size={16} className="text-[#0066FF]" />
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="mt-1 flex-shrink-0 text-blue-600">
+                      <Check size={20} strokeWidth={2.5} />
                     </div>
-                    {bullet}
+                    <span className="text-[15px] font-medium text-slate-900">{bullet}</span>
                   </div>
                 ))}
               </div>

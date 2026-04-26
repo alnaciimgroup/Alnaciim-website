@@ -22,7 +22,7 @@ export default function SecondaryStats() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="flex flex-col items-center"
             >
-              <div className="text-[48px] md:text-[64px] font-[900] text-slate-900 tracking-tighter leading-none mb-4">
+              <div className="text-[48px] md:text-[64px] font-[900] text-slate-900 tracking-tight leading-none mb-4">
                 {stat.value}
               </div>
               <div className="text-[12px] md:text-[13px] font-[700] text-slate-400 uppercase tracking-[0.2em]">

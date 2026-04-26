@@ -1,10 +1,10 @@
 // Vercel Build Trigger: 2026-03-30
 import type { Metadata } from "next";
-import { Inter, Outfit, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} ${playfair.variable} h-full antialiased scroll-smooth`}>
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${outfit.variable} ${playfair.variable} h-full antialiased scroll-smooth`}>
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <Navbar />
         <main className="flex-1 w-full flex flex-col min-h-screen">
           {children}

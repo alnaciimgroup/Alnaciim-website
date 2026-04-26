@@ -1,47 +1,43 @@
-"use client";
-import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, Settings2, Mail } from "lucide-react";
 
 export default function EngineeringCTA() {
   return (
-    <section className="py-24 bg-slate-900 relative overflow-hidden">
-      {/* Structural Grid Background */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-      
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[3rem] p-12 md:p-20 flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-8 border border-blue-500/20"
-          >
-            Get Started
-          </motion.div>
+    <section className="py-32 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative bg-blue-600 rounded-[3rem] p-8 md:p-16 lg:p-24 overflow-hidden shadow-2xl shadow-blue-600/20 text-center flex flex-col items-center">
           
-          <h2 className="text-[36px] md:text-[56px] font-[900] text-white tracking-tight mb-8 uppercase leading-[1.1] max-w-4xl">
-            Have a project that needs engineering?
+          {/* Background Decorative Lighting */}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500 rounded-full blur-[120px] pointer-events-none z-0 translate-x-1/3 -translate-y-1/3 opacity-50" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500 rounded-full blur-[100px] pointer-events-none z-0 -translate-x-1/3 translate-y-1/3 opacity-30" />
+          
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-10 relative z-10 shadow-sm">
+            <Settings2 size={14} className="text-blue-200" />
+            Get Started
+          </div>
+          
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 relative z-10 leading-[1.1] max-w-4xl">
+            Have a project that <span className="text-blue-200 italic font-light pr-2">needs engineering?</span>
           </h2>
           
-          <p className="text-[16px] md:text-[18px] text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed font-[450]">
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-16 leading-relaxed relative z-10 font-light">
             ALNM Engineering takes the brief from design through to a commissioned, maintained system. Tell us what needs to be built — water, power, automation or custom works — and we will tell you how we deliver it.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10 w-full sm:w-auto">
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-[700] transition-all shadow-xl shadow-blue-900/40 group uppercase tracking-[0.2em] text-[12px]"
+              className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 rounded-[2rem] font-bold text-lg transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group"
             >
               Send a Project Brief
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-2xl font-[700] transition-all uppercase tracking-[0.2em] text-[12px]"
+              className="w-full sm:w-auto px-10 py-5 bg-blue-700/50 hover:bg-blue-700/80 backdrop-blur-md text-white border border-blue-400/30 rounded-[2rem] font-bold text-lg transition-all flex items-center justify-center gap-3 shadow-lg"
             >
               Contact an Engineer
-              <Mail size={20} />
+              <Mail size={20} className="text-blue-200" />
             </Link>
           </div>
         </div>

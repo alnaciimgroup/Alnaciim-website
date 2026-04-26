@@ -8,16 +8,14 @@ import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white font-['Inter'] selection:bg-[#0044FF] selection:text-white text-slate-800 overflow-x-hidden">
+    <main className="flex flex-col min-h-screen bg-white selection:bg-blue-600 selection:text-white overflow-x-hidden">
       <Hero />
       <StatsGrid />
       <FeaturesGrid />
       <Divisions />
-      
-      {/* Retained Modules */}
       <AquaSafi />
       <TrustedLeaders />
       <CTA />
-    </div>
+    </main>
   );
 }

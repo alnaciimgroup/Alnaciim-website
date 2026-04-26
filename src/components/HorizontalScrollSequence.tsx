@@ -149,7 +149,7 @@ export default function HorizontalScrollSequence() {
               </div>
 
               {/* Massive background watermark number */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45vw] font-['Syne'] font-[900] text-[#f5f7fc] pointer-events-none z-[-1] tracking-tighter leading-none select-none">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[45vw] font-['Syne'] font-[900] text-[#f5f7fc] pointer-events-none z-[-1] tracking-tight leading-none select-none">
                  0{index + 1}
               </div>
 
