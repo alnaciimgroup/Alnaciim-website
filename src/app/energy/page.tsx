@@ -1,10 +1,10 @@
 "use client";
 
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus, Sun, Zap, Battery, Settings } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import EnergyStatsGrid from "@/components/energy/EnergyStatsGrid";
-import EnergyCTA from "@/components/energy/EnergyCTA";
+import EnergyCompetencies from "@/components/energy/EnergyCompetencies";
 
 export default function EnergyHome() {
   return (
@@ -99,8 +99,75 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 4. SYSTEMATIC EXCELLENCE - EXACT SCREENSHOT DESIGN (SLIDE 12) */}
-      <section className="py-40 bg-white border-t border-slate-100" id="solutions">
+      {/* 4. CORE SOLUTIONS GRID - RESTORED FROM SLIDE 10 */}
+      <section className="py-24 bg-white border-t border-slate-100" id="solutions">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Utility-Scale Solar",
+                desc: "High-yield commercial solar arrays. We coordinate full EPC services from site assessment to final commissioning and grid integration.",
+                img: "/images/energy_utility_solar.png",
+                icon: <Sun size={20} />
+              },
+              {
+                title: "Hybrid Microgrids",
+                desc: "Intelligent stabilization of unreliable grid infrastructure. Our systems seamlessly route energy between Solar PV, BESS, and Generators.",
+                img: "/images/energy_intelligent_controller.png",
+                icon: <Zap size={20} />
+              },
+              {
+                title: "BESS Storage",
+                desc: "Peak shaving and load shifting utilizing high-cycle life LiFePO4 chemistry. Essential for energy arbitrage and 24/7 continuous operation.",
+                img: "/images/battery_energy_storage_bess.png",
+                icon: <Battery size={20} />
+              },
+              {
+                title: "Prime Generators",
+                desc: "Heavy-duty diesel generation optimized for base load power in remote locations. Engineered with DSE controllers to synchronize with solar.",
+                img: "/images/catalog_generator_1774889998709.png",
+                icon: <Settings size={20} />
+              }
+            ].map((sol, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <img src={sol.img} alt={sol.title} className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110" />
+                  <div className="absolute bottom-6 left-6 w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#FF5C00] shadow-lg">
+                    {sol.icon}
+                  </div>
+                </div>
+                <div className="p-10 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>{sol.title}</h3>
+                  <p className="text-sm text-slate-500 font-light leading-relaxed mb-10 flex-grow">
+                    {sol.desc}
+                  </p>
+                  <Link href="/contact" className="text-[11px] font-bold text-[#FF5C00] uppercase tracking-[0.2em] flex items-center gap-2 group/link">
+                    Request Detail <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Utility-Scale Solar Detailed Text - RESTORED FROM SLIDE 10 */}
+          <div className="mt-32 max-w-4xl mx-auto text-left border-t border-slate-100 pt-20">
+             <h3 className="text-4xl font-bold text-[#001B3D] mb-6 font-serif tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Utility-Scale Solar</h3>
+             <p className="text-xl text-slate-600 font-light leading-relaxed">
+               <strong>Solar PV Systems</strong> From small commercial rooftop installations to large industrial ground-mount arrays, Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.
+             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. SYSTEMATIC EXCELLENCE - SLIDE 12 DESIGN */}
+      <section className="py-40 bg-white border-t border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           
           <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-40">
@@ -114,7 +181,6 @@ export default function EnergyHome() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
-            {/* PILLAR 01: SOLAR ARRAYS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +196,6 @@ export default function EnergyHome() {
               </div>
             </motion.div>
 
-            {/* PILLAR 02: HYBRID MICROGRIDS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +212,6 @@ export default function EnergyHome() {
               </div>
             </motion.div>
 
-            {/* PILLAR 03: GENERATOR SETS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +233,7 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 5. EXTENDED TECHNICAL PILLARS - PRESERVED */}
+      {/* 6. EXTENDED TECHNICAL PILLARS - PRESERVED */}
       <section className="py-40 bg-white border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
@@ -195,7 +259,7 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 6. CUSTOM CONFIGURATION CTA - MOVED TO THE END */}
+      {/* 7. CUSTOM CONFIGURATION CTA - THE ONLY FINAL CTA */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-40">
         <div className="relative bg-[#001B3D] rounded-[2.5rem] overflow-hidden p-12 md:p-24 shadow-2xl">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -228,9 +292,6 @@ export default function EnergyHome() {
           </div>
         </div>
       </section>
-
-      {/* 7. FINAL FOOTER CTA */}
-      <EnergyCTA />
 
     </div>
   );
