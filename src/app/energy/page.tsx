@@ -155,42 +155,56 @@ export default function EnergyHome() {
             ))}
           </div>
 
-          {/* Utility-Scale Solar Detailed Text - RESTORED FROM SLIDE 10 */}
-          <div className="mt-32 max-w-4xl mx-auto text-left border-t border-slate-100 pt-20">
-             <h3 className="text-4xl font-bold text-[#001B3D] mb-6 font-serif tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Utility-Scale Solar</h3>
-             <p className="text-xl text-slate-600 font-light leading-relaxed">
-               <strong>Solar PV Systems</strong> From small commercial rooftop installations to large industrial ground-mount arrays, Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.
-             </p>
+          {/* 4b. UTILITY-SCALE SOLAR DETAIL - DESIGN UPGRADE */}
+          <div className="mt-32 relative rounded-[3rem] overflow-hidden min-h-[500px] flex items-center group">
+            <img 
+              src="/images/energy_utility_solar.png" 
+              alt="Utility Solar Array" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-slate-900/40" />
+            
+            <div className="relative z-10 max-w-2xl ml-12 lg:ml-24 p-12 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] shadow-2xl">
+               <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Utility-Scale Solar</h3>
+               <p className="text-xl text-white/90 font-light leading-relaxed mb-8">
+                 <span className="font-bold text-blue-400">Solar PV Systems</span> — From small commercial rooftop installations to large industrial ground-mount arrays, Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.
+               </p>
+               <div className="flex items-center gap-4 text-blue-400 text-[11px] font-bold uppercase tracking-widest">
+                  <div className="w-8 h-px bg-blue-400" /> Technical Specification
+               </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 5. SYSTEMATIC EXCELLENCE - SLIDE 12 DESIGN */}
+      {/* 5. SYSTEMATIC EXCELLENCE - DESIGN UPGRADE */}
       <section className="py-40 bg-white border-t border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-40">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-40 border-b border-slate-100 pb-20">
             <div className="max-w-2xl">
-              <div className="text-[10px] font-bold text-[#E65200] uppercase tracking-[0.4em] mb-4">CORE COMPETENCIES</div>
-              <h2 className="text-5xl md:text-6xl font-bold text-[#001B3D] font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Systematic Excellence.</h2>
+              <div className="text-[11px] font-bold text-[#FF5C00] uppercase tracking-[0.4em] mb-6 flex items-center gap-3">
+                 <div className="w-1.5 h-1.5 rounded-full bg-[#FF5C00]" /> CORE COMPETENCIES
+              </div>
+              <h2 className="text-6xl md:text-8xl font-bold text-[#001B3D] font-serif tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Systematic <br /><span className="text-blue-600 italic">Excellence.</span></h2>
             </div>
-            <div className="max-w-md text-slate-500 font-light text-lg leading-relaxed pt-10">
+            <div className="max-w-md text-slate-500 font-light text-xl leading-relaxed pt-12 border-l border-slate-200 pl-12">
               We deploy a comprehensive engineering framework across three critical pillars to ensure architectural permanence.
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
             {/* PILLAR 01: SOLAR ARRAYS */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative group"
             >
-              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">01</div>
-              <h3 className="text-xl font-bold mb-6 tracking-widest text-slate-900 uppercase">SOLAR ARRAYS</h3>
-              <div className="bg-slate-100 p-8">
-                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+              <div className="text-[140px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-24 left-0 -z-10 group-hover:text-blue-50 transition-colors duration-500">01</div>
+              <h3 className="text-xl font-bold mb-8 tracking-[0.2em] text-slate-900 uppercase">SOLAR ARRAYS</h3>
+              <div className="bg-slate-50 p-10 rounded-2xl border border-slate-100 shadow-sm group-hover:shadow-xl group-hover:bg-white transition-all duration-500">
+                <p className="text-[14px] text-slate-600 leading-relaxed font-medium">
                   Commercial and industrial solar installations from rooftop arrays to large ground-mount systems. We handle site assessment, system design, supply and full installation.
                 </p>
               </div>
@@ -202,12 +216,12 @@ export default function EnergyHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="relative"
+              className="relative group"
             >
-              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">02</div>
-              <h3 className="text-xl font-bold mb-6 tracking-widest text-[#E65200] uppercase">HYBRID MICROGRIDS</h3>
-              <div className="p-8">
-                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+              <div className="text-[140px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-24 left-0 -z-10 group-hover:text-orange-50 transition-colors duration-500">02</div>
+              <h3 className="text-xl font-bold mb-8 tracking-[0.2em] text-[#E65200] uppercase">HYBRID MICROGRIDS</h3>
+              <div className="p-10 rounded-2xl group-hover:bg-white transition-all duration-500">
+                <p className="text-[14px] text-slate-600 leading-relaxed font-medium">
                   Intelligent coordination of solar, battery storage, and diesel generation for 24/7 reliability and peak fuel efficiency.
                 </p>
               </div>
@@ -219,14 +233,14 @@ export default function EnergyHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative"
+              className="relative group"
             >
-              <div className="text-[120px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-16 left-0 -z-10">03</div>
-              <div className="bg-slate-300 inline-block px-6 py-2 mb-6">
-                <h3 className="text-xl font-bold tracking-widest text-slate-900 uppercase">GENERATOR SETS</h3>
+              <div className="text-[140px] font-bold text-slate-50 mb-4 leading-none select-none absolute -top-24 left-0 -z-10 group-hover:text-slate-100 transition-colors duration-500">03</div>
+              <div className="bg-[#001B3D] inline-block px-8 py-3 mb-8 rounded-full">
+                <h3 className="text-base font-bold tracking-[0.2em] text-white uppercase">GENERATOR SETS</h3>
               </div>
-              <div className="p-8">
-                <p className="text-[13px] text-slate-600 leading-relaxed font-medium">
+              <div className="p-10">
+                <p className="text-[14px] text-slate-600 leading-relaxed font-medium">
                   Heavy-duty diesel generation optimized for base load power, synchronized with solar through advanced DSE controllers.
                 </p>
               </div>
@@ -235,9 +249,9 @@ export default function EnergyHome() {
         </div>
       </section>
 
-      {/* 6. CUSTOM CONFIGURATION CTA - THE ONLY FINAL CTA */}
+      {/* 6. CUSTOM CONFIGURATION CTA - FINAL SECTION */}
       <section className="px-6 lg:px-12 max-w-[1400px] mx-auto mb-40">
-        <div className="relative bg-[#001B3D] rounded-[2.5rem] overflow-hidden p-12 md:p-24 shadow-2xl">
+        <div className="relative bg-[#001B3D] rounded-[3rem] overflow-hidden p-12 md:p-24 shadow-2xl">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
