@@ -160,6 +160,11 @@ export const CONTENT = {
     ]
   },
   engineering_solutions: {
+    hero: {
+      eyebrow: "Engineering Portfolio",
+      headline: "ARCHITECTURAL PRECISION.",
+      description: "Alnaciim Engineering delivers the technical work behind every project the group undertakes. Water infrastructure, power systems, and custom industrial builds."
+    },
     items: [
       {
         id: "ENG-01",
@@ -232,6 +237,11 @@ export const CONTENT = {
     ]
   },
   energy_solutions: {
+    hero: {
+      eyebrow: "System Architecture",
+      headline: "INDUSTRIAL ENERGY SOLUTIONS.",
+      description: "Alnaciim Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of East Africa."
+    },
     items: [
       {
         id: "EN-01",
