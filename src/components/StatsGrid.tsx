@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function StatsGrid() {
   const stats = [
-    { value: 450, suffix: "+", label: "Active Projects" },
-    { value: 12.5, suffix: "MW", label: "Solar Capacity Installed" },
-    { value: 5000000, suffix: "L", label: "Daily Water Purified" },
-    { value: 120, suffix: "+", label: "Technical Engineering Staff" }
+    { value: 28, suffix: "+", label: "Years delivering infrastructure" },
+    { value: 600000, suffix: "+", label: "Litres water purified daily" },
+    { value: 500, suffix: "+ kW", label: "Solar capacity installed" },
+    { value: 60, suffix: "+", label: "Projects commissioned to date" }
   ];
 
   return (

@@ -20,7 +20,7 @@ export default function Hero() {
           >
             <div className="w-8 h-px bg-blue-600" />
             <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
-              Somalia's Integrated Infrastructure Group
+              INFRASTRUCTURE — WATER — ENERGY — ENGINEERING
             </span>
           </motion.div>
           
@@ -41,7 +41,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-slate-600 leading-relaxed font-light mb-12"
           >
-            From water treatment and energy systems to precision engineering — Alnaciim Group delivers the full project lifecycle from design through commissioning and beyond.
+            Somalia's integrated infrastructure group. From water treatment and energy systems to precision engineering, Alnaciim Group delivers water infrastructure, energy and engineering projects from design through commissioning and beyond.
           </motion.p>
 
           <motion.div 
@@ -83,16 +83,6 @@ export default function Hero() {
           />
         </motion.div>
         
-        {/* Metric Overlay */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="absolute bottom-10 right-10 bg-white p-6 shadow-xl max-w-sm hidden md:block"
-        >
-          <div className="text-3xl font-bold text-slate-900 mb-2 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Industrial Scale</div>
-          <p className="text-sm text-slate-500 font-medium">Delivering regional deployment with ISO-certified standards across all operations.</p>
-        </motion.div>
       </div>
 
     </section>

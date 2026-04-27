@@ -55,7 +55,7 @@ export default function FeaturesGrid() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-slate-600 leading-relaxed font-light"
           >
-            Somalia's leading integrated infrastructure group. We combine technical precision with local expertise to deliver large-scale water treatment, renewable energy, and precision engineering projects that build a sustainable future.
+            Somalia's integrated infrastructure group. From water treatment and energy systems to precision engineering, Alnaciim Group delivers water infrastructure, energy and engineering projects from design through commissioning and beyond.
           </motion.p>
         </div>
         

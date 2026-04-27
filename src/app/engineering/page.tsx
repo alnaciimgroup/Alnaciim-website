@@ -1,20 +1,14 @@
 "use client";
 
-import EngineeringHero from "@/components/engineering/EngineeringHero";
-import EngineeringStats from "@/components/engineering/EngineeringStats";
-import EngineeringCoreCompetencies from "@/components/engineering/EngineeringCoreCompetencies";
-import EngineeringIndustries from "@/components/engineering/EngineeringIndustries";
-import TechnicalArchive from "@/components/engineering/TechnicalArchive";
-import EngineeringCTA from "@/components/engineering/EngineeringCTA";
 import { motion } from "framer-motion";
-import { ArrowRight, Settings, ShieldCheck, Activity, Droplets, Zap, Filter } from "lucide-react";
+import { ArrowRight, Plus, Settings, ShieldCheck, Factory, Zap, FileText, MessageSquare, Activity, Box } from "lucide-react";
 import Link from "next/link";
 
 export default function EngineeringPage() {
   return (
     <main className="relative bg-white min-h-screen selection:bg-blue-600 selection:text-white">
       
-      {/* 1. HERO SECTION - 100% CONTENT SYNC */}
+      {/* 1. HERO SECTION - STRICTLY PRESERVED DESIGN & CONTENT */}
       <section className="relative w-full min-h-[90vh] bg-white flex flex-col lg:flex-row border-b border-slate-200">
         <div className="w-full lg:w-1/2 flex items-center justify-center px-6 lg:px-20 pt-32 pb-24 lg:py-0 relative z-10 bg-white">
           <div className="max-w-xl w-full">
@@ -54,7 +48,7 @@ export default function EngineeringPage() {
               <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors flex items-center justify-center gap-3 group text-[15px]">
                 Start a Project <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="#portfolio" className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-slate-50 text-slate-900 border border-slate-300 font-medium transition-colors flex items-center justify-center text-[15px]">
+              <Link href="/work" className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-slate-50 text-slate-900 border border-slate-300 font-medium transition-colors flex items-center justify-center text-[15px]">
                 Technical Archive
               </Link>
             </motion.div>
@@ -62,7 +56,6 @@ export default function EngineeringPage() {
         </div>
 
         <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
-          {/* Hero Image: Massive RO plant with horizontal housings */}
           <img 
             src="/images/nuwaco_ro_plant.png" 
             alt="Engineering Infrastructure" 
@@ -77,119 +70,163 @@ export default function EngineeringPage() {
         </div>
       </section>
 
-      {/* 2. STATS SECTION - SYNCED TO REFERENCE */}
-      <EngineeringStats />
-
-      {/* 3. CORE COMPETENCIES */}
-      <EngineeringCoreCompetencies />
-
-      {/* 4. TECHNICAL PORTFOLIO - 100% CONTENT & IMAGE SYNC */}
-      <section className="py-40 bg-white overflow-hidden" id="portfolio">
+      {/* 2. STATS STRIP - 100% CONTENT SYNC */}
+      <section className="py-24 bg-white border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mb-32">
-            <div className="flex items-center gap-3 mb-10">
-               <div className="w-8 h-px bg-blue-600" />
-               <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">Industrial Specialization</span>
-            </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-slate-900 mb-10 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
-              Technical Expertise. <br /><span className="text-blue-600 italic">Built for Reliability.</span>
-            </h2>
-            <p className="text-xl text-slate-600 font-light leading-relaxed">
-              We provide the calculations, the designs and the direct labor for every major deployment across the Horn of Africa.
-            </p>
-          </div>
-
-          <div className="space-y-48">
-            
-            {/* WATER INFRASTRUCTURE */}
-            <div className="flex flex-col lg:flex-row gap-24 lg:gap-40 items-center">
-              <div className="w-full lg:w-1/2 group relative">
-                <div className="aspect-[4/3] bg-white border border-slate-200 overflow-hidden relative p-4 shadow-2xl">
-                   <img src="/images/water_ro_treatment.png" alt="WATER ENGINEERING" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105" />
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-0 divide-x-0 md:divide-x divide-slate-100">
+            {[
+              { value: "28+", label: "Years of Heritage" },
+              { value: "60+", label: "Global Projects" },
+              { value: "03", label: "Strategic fields" },
+              { value: "100%", label: "Lifecycle Support" }
+            ].map((stat, i) => (
+              <div key={i} className="flex flex-col items-center md:items-start md:px-12 first:pl-0">
+                <span className="text-5xl font-bold text-slate-900 mb-2">{stat.value}</span>
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
               </div>
-              <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Water Infrastructure <br /><span className="text-blue-600 italic">Engineering</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Handles complete water project scope from borehole drilling to operational water treatment. We manage everything from hydrology to automation.</p>
-                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 border-l border-slate-200 pl-10">
-                   {[
-                     "Borehole drilling & steel casing",
-                     "RO system design & treatment train",
-                     "Nuwaco, Martisoor, Garacad Projects",
-                     "MCC panels & VFD motor starters",
-                     "SCADA remote monitoring integration"
-                   ].map((item, i) => (
-                     <li key={i} className="text-[12px] font-bold text-slate-900 uppercase tracking-widest flex items-center gap-4">
-                       <div className="w-1.5 h-1.5 bg-blue-600" /> {item}
-                     </li>
-                   ))}
-                 </ul>
-              </div>
-            </div>
-
-            {/* POWER SYSTEMS */}
-            <div className="flex flex-col lg:flex-row-reverse gap-24 lg:gap-40 items-center">
-              <div className="w-full lg:w-1/2 group relative">
-                <div className="aspect-[4/3] bg-white border border-slate-200 overflow-hidden relative p-4 shadow-2xl">
-                   <img src="/images/energy_inverters.png" alt="POWER SYSTEMS" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>Power Systems <br /><span className="text-blue-600 italic">Engineering</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Precision electrical engineering for industrial and utility-scale energy projects. We deliver from design calculation to commissioned array.</p>
-                 <ul className="grid grid-cols-1 gap-y-6 border-l border-slate-200 pl-10">
-                   {[
-                     "Electrical load analysis & demand calculation",
-                     "Solar PV mounting & DC string wiring",
-                     "Generator set installation",
-                     "ATS design & fabrication",
-                     "Hybrid system integration (Solar/BESS/Genset)",
-                     "Load bank testing to rated capacity"
-                   ].map((item, i) => (
-                     <li key={i} className="text-[12px] font-bold text-slate-900 uppercase tracking-widest flex items-center gap-4">
-                       <div className="w-1.5 h-1.5 bg-blue-600" /> {item}
-                     </li>
-                   ))}
-                 </ul>
-              </div>
-            </div>
-
-            {/* SCADA & AUTOMATION */}
-            <div className="flex flex-col lg:flex-row gap-24 lg:gap-40 items-center">
-              <div className="w-full lg:w-1/2 group relative">
-                <div className="aspect-[4/3] bg-white border border-slate-200 overflow-hidden relative p-4 shadow-2xl">
-                   <img src="/images/energy_intelligent_controller.png" alt="SCADA AUTOMATION" className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105" />
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2">
-                 <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif leading-tight uppercase" style={{ fontFamily: "var(--font-playfair)" }}>SCADA & Industrial <br /><span className="text-blue-600 italic">Automation</span></h3>
-                 <p className="text-xl text-slate-600 font-light leading-relaxed mb-12">Advanced monitoring and control systems for industrial processes. We design logic layers that ensure operational safety and telemetry.</p>
-                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 border-l border-slate-200 pl-10">
-                   {[
-                     "Water treatment plants monitoring",
-                     "Solar and hybrid power system monitoring",
-                     "Industrial process control and automation",
-                     "HMI touchscreen operator interfaces",
-                     "Historian data & alarm management",
-                     "Integration protocols: CAN, Modbus, Profibus"
-                   ].map((item, i) => (
-                     <li key={i} className="text-[12px] font-bold text-slate-900 uppercase tracking-widest flex items-center gap-4">
-                       <div className="w-1.5 h-1.5 bg-blue-600" /> {item}
-                     </li>
-                   ))}
-                 </ul>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 5. INDUSTRIAL ARCHIVE */}
-      <TechnicalArchive />
+      {/* 3. SYSTEMATIC EXCELLENCE - 100% CONTENT SYNC */}
+      <section className="py-40 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-32">
+             <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-px bg-blue-600" />
+                <span className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">Our Framework</span>
+             </div>
+             <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>Systematic Excellence.</h2>
+             <p className="text-xl text-slate-500 font-light leading-relaxed">
+                We deploy a comprehensive engineering framework across three critical pillars to ensure architectural Excellence.
+             </p>
+          </div>
 
-      {/* 6. CTA */}
-      <EngineeringCTA />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {[
+              {
+                id: "01",
+                title: "System Design",
+                desc: "Technical design from first principles. We produce load analyses, equipment specifications, single-line diagrams and installation drawings.",
+                icon: <Settings className="text-blue-600" size={32} />
+              },
+              {
+                id: "02",
+                title: "Procurement",
+                desc: "We source the components. Every project is supplied with equipment that matches the design specification.",
+                icon: <Box className="text-blue-600" size={32} />
+              },
+              {
+                id: "03",
+                title: "Commissioning",
+                desc: "Rigorous field testing and final system validation to guarantee peak operational performance and site safety.",
+                icon: <ShieldCheck className="text-[#FF5C00]" size={32} />,
+                accent: true
+              }
+            ].map((pillar, i) => (
+              <div key={i} className="space-y-8 group">
+                <div className="mb-10">{pillar.icon}</div>
+                <h3 className={`text-3xl font-bold font-serif ${pillar.accent ? 'text-[#FF5C00]' : 'text-slate-900'}`} style={{ fontFamily: "var(--font-playfair)" }}>{pillar.title}</h3>
+                <p className="text-lg text-slate-500 font-light leading-relaxed">
+                   {pillar.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. INDUSTRIAL AUTOMATION - 100% CONTENT SYNC */}
+      <section className="py-40 bg-slate-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+             <div className="relative aspect-[4/3] overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2000" alt="Industrial Automation" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+             </div>
+             <div className="space-y-10">
+                <div className="flex items-center gap-3">
+                   <div className="w-8 h-px bg-blue-600" />
+                   <span className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">Automation</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>Industrial Automation</h2>
+                <p className="text-xl text-slate-600 font-light leading-relaxed">
+                   Modernizing industrial systems with integrated automation solutions for the next generation of smart manufacturing and industrial logistics.
+                </p>
+                <div className="pt-6">
+                   <Link href="/contact" className="px-10 py-5 bg-blue-600 text-white font-bold uppercase tracking-widest text-[12px] hover:bg-blue-700 transition-colors">
+                      Discuss Capability
+                   </Link>
+                </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ENERGY INFRASTRUCTURE - 100% CONTENT SYNC */}
+      <section className="py-40 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+             <div className="order-2 lg:order-1 space-y-10">
+                <div className="flex items-center gap-3">
+                   <div className="w-8 h-px bg-blue-600" />
+                   <span className="text-[11px] font-bold text-blue-600 uppercase tracking-widest">Facility Design</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>Energy Infrastructure & Factory Design</h2>
+                <p className="text-xl text-slate-600 font-light leading-relaxed">
+                   Alnaciim Engineering designs and installs complete power infrastructure for industrial facilities, from the incoming supply and distribution boards through to motor control, automation and SCADA monitoring.
+                </p>
+                <p className="text-xl text-slate-600 font-light leading-relaxed">
+                   We also take on factory design, electrical layout, equipment positioning, power demand planning and full mechanical and electrical installation for new production facilities and industrial builds.
+                </p>
+             </div>
+             <div className="order-1 lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl">
+                <img src="/images/nuwaco_ro_plant.png" alt="Factory Design" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 opacity-80" />
+                <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. TECHNICAL ARCHIVE - 100% CONTENT SYNC */}
+      <section className="py-40 bg-white border-t border-slate-100" id="portfolio">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+            <div className="lg:col-span-4 space-y-10">
+               <h2 className="text-5xl font-bold text-slate-900 font-serif leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>Access the Technical Archive.</h2>
+               <p className="text-xl text-slate-500 font-light leading-relaxed">
+                  Have a technical enquiry or require a specific project dossier?
+               </p>
+               <Link href="/contact" className="inline-flex items-center gap-3 text-blue-600 font-bold uppercase tracking-widest text-[13px] group">
+                  Start a Conversation <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+               </Link>
+            </div>
+            <div className="lg:col-span-8">
+               <div className="divide-y divide-slate-100 border-t border-slate-100">
+                  {[
+                    { label: "Water infrastructure projects", link: "/work?filter=Water" },
+                    { label: "Power and energy projects", link: "/work?filter=Energy" },
+                    { label: "Industrial and custom works", link: "/work?filter=Engineering" }
+                  ].map((item, i) => (
+                    <Link 
+                      key={i} 
+                      href={item.link}
+                      className="flex items-center justify-between py-12 group hover:bg-slate-50 transition-all px-8 -mx-8"
+                    >
+                       <div className="flex items-center gap-10">
+                          <span className="text-slate-200 text-3xl font-serif italic">0{i+1}</span>
+                          <span className="text-2xl md:text-3xl text-slate-900 font-medium group-hover:text-blue-600 transition-colors">
+                             {item.label}
+                          </span>
+                       </div>
+                       <ArrowRight size={28} className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-2 transition-all" />
+                    </Link>
+                  ))}
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </main>
   );

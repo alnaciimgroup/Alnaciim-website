@@ -11,7 +11,7 @@ export default function Divisions() {
       id: "DIV-01",
       icon: <Database size={24} />,
       title: "ALNACIIM Water",
-      desc: "Clean water supply, large-scale reverse osmosis purification and the Aqua Safi bottled water range — Somalia's most recognised water brand.",
+      desc: "Clean water supply, large-scale reverse osmosis purification, Borehole Drilling, Industrial Ice and the Aqua Safi bottled water.",
       img: "/images/nuwaco_ro_plant.png",
       href: "/water"
     },
@@ -19,7 +19,7 @@ export default function Divisions() {
        id: "DIV-02",
        icon: <Zap size={24} />,
        title: "ALNACIIM Energy",
-       desc: "Tier-1 solar supply, hybrid microgrid systems, battery storage and generator integration — from residential to industrial scale.",
+       desc: "Renewable systems, solar supply, hybrid microgrid systems, battery storage and generator integration from residential to industrial scale.",
        img: "/images/solar_power_system.png",
        href: "/energy"
     },
@@ -38,8 +38,8 @@ export default function Divisions() {
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-20 max-w-4xl mx-auto">
+        {/* Section Header - WIDENED to fill space */}
+        <div className="flex flex-col items-center text-center mb-24 max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,8 +81,11 @@ export default function Divisions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.15, ease: "easeOut" }}
-              className="group bg-white border border-slate-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col"
+              className="group bg-white border border-slate-200 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] hover:-translate-y-2 flex flex-col relative overflow-hidden"
             >
+              {/* Hover Border Accent */}
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30" />
+
               <Link href={card.href} className="block h-full flex flex-col relative">
                 
                 {/* Image Section */}

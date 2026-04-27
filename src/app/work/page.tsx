@@ -1,14 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projects } from "@/data/projects";
 import { ArrowRight, MapPin, ArrowUpRight, Activity, Archive } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function OurWorkPage() {
-  const [filter, setFilter] = useState("All");
+  const searchParams = useSearchParams();
+  const initialFilter = searchParams.get("filter") || "All";
+  const [filter, setFilter] = useState(initialFilter);
   const tags = ["All", "Water", "Energy", "Engineering"];
+
+  useEffect(() => {
+    const filterParam = searchParams.get("filter");
+    if (filterParam && tags.includes(filterParam)) {
+      setFilter(filterParam);
+    }
+  }, [searchParams]);
 
   const filteredProjects = filter === "All" 
     ? projects 
@@ -36,7 +46,7 @@ export default function OurWorkPage() {
               className="text-6xl md:text-8xl lg:text-[90px] font-bold text-slate-900 leading-[1] mb-12 font-serif"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              PROJECT <br /><span className="text-blue-600 italic">PORTFOLIO.</span>
+              Projects across <br /><span className="text-blue-600 italic">water, energy and engineering.</span>
             </motion.h1>
             
             <motion.p 
@@ -45,7 +55,7 @@ export default function OurWorkPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl mb-16"
             >
-              Delivering industrial-scale technical foundations across Somalia since 1998.
+              A record of infrastructure delivered by Alnaciim Group across the region. From community water wells to large-scale RO plants, solar power systems and industrial facilities.
             </motion.p>
 
             {/* Filter Bar */}
@@ -57,13 +67,13 @@ export default function OurWorkPage() {
             >
               {tags.map((tag) => (
                 <button
-                  key={tag}
-                  onClick={() => setFilter(tag)}
-                  className={`px-8 py-3 text-[13px] font-bold tracking-widest uppercase transition-all duration-300 border ${
-                    filter === tag 
-                    ? "bg-blue-600 border-blue-600 text-white" 
-                    : "bg-white border-slate-200 text-slate-500 hover:border-slate-400"
-                  }`}
+                   key={tag}
+                   onClick={() => setFilter(tag)}
+                   className={`px-8 py-3 text-[13px] font-bold tracking-widest uppercase transition-all duration-300 border ${
+                     filter === tag 
+                     ? "bg-blue-600 border-blue-600 text-white" 
+                     : "bg-white border-slate-200 text-slate-500 hover:border-slate-400"
+                   }`}
                 >
                   {tag}
                 </button>
@@ -73,7 +83,7 @@ export default function OurWorkPage() {
         </div>
       </section>
 
-      {/* Project Grid - Refined Zigzag Layout */}
+      {/* Project Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col gap-32">
@@ -90,7 +100,6 @@ export default function OurWorkPage() {
                     idx % 2 === 1 ? "lg:flex-row-reverse" : ""
                   }`}
                 >
-                  {/* Image Side - Smaller Aspect */}
                   <div className="w-full lg:w-[45%] relative aspect-[16/11] overflow-hidden bg-slate-100 border border-slate-200">
                     <img 
                       src={project.image} 
@@ -102,7 +111,6 @@ export default function OurWorkPage() {
                     </div>
                   </div>
                   
-                  {/* Text Side - Refined Spacing */}
                   <div className="w-full lg:w-[55%] flex flex-col">
                     <div className="flex items-center gap-2 text-blue-600 mb-6">
                       <MapPin size={14} />
@@ -139,20 +147,19 @@ export default function OurWorkPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
           <Archive className="text-blue-500 mx-auto mb-10" size={48} />
           <h2 className="text-4xl md:text-6xl font-bold mb-8 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>
-            Ready to <span className="text-blue-400 italic">Build the future?</span>
+            Ready to build the <span className="text-blue-400 italic">future of Infrastructure?</span>
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-light">
-            Take your infrastructure from concept to reality with our integrated engineering team.
+            Deployment-ready engineering teams for major water and energy projects across East Africa.
           </p>
           <Link 
             href="/contact" 
             className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold uppercase tracking-widest text-[13px] transition-all"
           >
-            Start Project <ArrowRight size={18} />
+            Start Collaboration <ArrowRight size={18} />
           </Link>
         </div>
       </section>
     </div>
   );
 }
-
