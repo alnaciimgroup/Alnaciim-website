@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { projects } from "@/data/projects";
 import { ArrowRight, MapPin, ArrowUpRight, Activity, Archive } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function OurWorkPage() {
+function WorkContent() {
   const searchParams = useSearchParams();
   const initialFilter = searchParams.get("filter") || "All";
   const [filter, setFilter] = useState(initialFilter);
@@ -75,7 +75,7 @@ export default function OurWorkPage() {
                      : "bg-white border-slate-200 text-slate-500 hover:border-slate-400"
                    }`}
                 >
-                  {tag}
+                   {tag}
                 </button>
               ))}
             </motion.div>
@@ -161,5 +161,13 @@ export default function OurWorkPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function OurWorkPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <WorkContent />
+    </Suspense>
   );
 }
