@@ -75,8 +75,7 @@ export default function ProjectHighlights() {
               viewport={{ once: true }}
               transition={{ 
                 duration: 0.5, 
-                delay: i * 0.1,
-                whileHover: { duration: 0.3, ease: "easeOut" } 
+                delay: i * 0.1
               }}
               className="bg-white border border-slate-100 rounded-[40px] overflow-hidden flex flex-col hover:border-blue-600 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] transition-all duration-300 group cursor-pointer"
             >
