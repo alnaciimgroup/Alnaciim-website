@@ -260,61 +260,68 @@ export const CONTENT = {
   },
   energy_solutions: {
     hero: {
-      eyebrow: "System Architecture",
-      headline: "INDUSTRIAL ENERGY SOLUTIONS.",
-      description: "Alnaciim Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of East Africa."
+      eyebrow: "Enterprise Energy Solutions",
+      headline: "Energy solutions for homes,business and industry.",
+      description: "Alnaciim Energy provides the technical infrastructure required for energy independence. We design for the specific environmental and operational challenges of our region."
     },
     items: [
       {
-        id: "EN-01",
+        id: "01",
         title: "Solar PV Systems",
-        subtext: "Alnaciim Energy designs, supplies and installs solar photovoltaic systems sized for the actual load and site conditions.",
+        subtext: "supply and precision design for all scales. Every system is sized against the actual site load profile and measured solar resource.",
         image: "/images/energy_utility_solar.png",
         bullets: [
           "Residential rooftop — 2 kW to 30 kW",
           "Commercial compounds — 30 kW to 500 kW",
-          "Industrial ground-mount — 100 kW+",
-          "In-house technical installation & support",
-          "On-grid, off-grid and solar pumping configurations"
+          "Industrial ground-mount — 100 kW to multi-MW",
+          "On-grid, off-grid and solar configurations"
         ]
       },
       {
-        id: "EN-02",
+        id: "02",
         title: "Hybrid Microgrid Systems",
-        subtext: "Our systems seamlessly route energy between Solar PV, BESS and Generators. Alnaciim Group integrates all three systems into a single-source solution.",
+        subtext: "Intelligent coordination of solar, battery storage, and diesel generation. Our energy management management systems allow for seamless power transitions.",
         image: "/images/battery_energy_storage_bess.png",
         bullets: [
-          "Intelligent stabilization of unreliable grids",
-          "Seamless source selection (Solar/BESS/Grid/Gen)",
-          "Peak shaving and continuous load management",
-          "Independent power for remote infrastructure",
-          "High-cycle life LiFePO4 battery integration"
+          "Hospitals, clinics and healthcare facilities",
+          "Industrial manufacturing and processing",
+          "Automated solar-priority dispatch algorithms",
+          "Seamless integration of Solar, BESS and Gensets"
         ]
       },
       {
-        id: "EN-03",
+        id: "",
+        title: "Battery Energy Storage",
+        subtext: "LFP battery systems for residential. We specify LFP chemistry exclusively for superior cycle life and thermal stability.",
+        image: "/images/energy_inverters.png",
+        bullets: [
+          "Residential LFP — 5 kWh to 20 kWh modules",
+          "Commercial LFP — 20 kWh to 100 kWh scalable racks",
+          "High cycle life and Integrated BMS",
+          "Seamless integration with Solar,"
+        ]
+      },
+      {
+        id: "",
         title: "Generator Sets & Backup",
-        subtext: "Heavy-duty diesel generation optimized for base load power in remote locations. Engineered with DSE controllers to synchronize with solar.",
+        subtext: "Industrial diesel generator sets. We provide full integration with hybrid controllers and in-house ATS panel fabrication.",
         image: "/images/catalog_generator_1774889998709.png",
         bullets: [
           "Standby, prime and continuous ratings",
           "AMF and parallel load-sharing controllers",
-          "Solar-to-generator integration, automatic switching",
-          "Weatherproof and sound-attenuated enclosures",
-          "Full load-bank testing before handover"
+          "solar-to-generator integration, automatic switching"
         ]
       },
       {
-        id: "EN-04",
+        id: "",
         title: "Intelligent System Controllers",
         subtext: "The logic layer of the power system. We specify and program site-specific controllers rather than a one-size-fits-all approach.",
         image: "/images/energy_intelligent_controller.png",
         bullets: [
-          "Programmable logic for complex grids",
-          "DSE and ComAp industrial controller support",
-          "Remote SCADA monitoring and control",
-          "Custom ATS and parallel panel fabrication",
-          "Real-time energy telemetry and reporting"
+          "MPPT solar charge controllers (40A - 150A)",
+          "Advanced multi-generator paralleling units",
+          "Hybrid EMS source selection & management",
+          "Remote SCADA monitoring and alarm notifications"
         ]
       }
     ]
