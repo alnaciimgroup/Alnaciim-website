@@ -44,7 +44,7 @@ export default function EnergyHome() {
 
         <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
           <img 
-            src="/images/energy_intelligent_controller.png" 
+            src="/images/energy_hero_new.png" 
             alt="Energy Infrastructure" 
             className="absolute inset-0 w-full h-full object-cover" 
           />

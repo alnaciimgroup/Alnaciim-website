@@ -192,7 +192,7 @@ export const CONTENT = {
         id: "ENG-01",
         title: "Water Infrastructure Engineering",
         subtext: "From borehole drilling to operational water treatment, Alnaciim Engineering handles the complete water project scope.",
-        image: "/images/supplywater_infrastructure.png",
+        image: "/images/eng_water_infrastructure_new.png",
         bullets: [
           "Borehole drilling & steel casing",
           "RO system design & treatment train",
@@ -219,7 +219,7 @@ export const CONTENT = {
         id: "ENG-03",
         title: "SCADA & Industrial Automation",
         subtext: "Alnaciim Engineering designs and commissions monitoring and control systems for the infrastructure it builds and maintains.",
-        image: "/images/energy_intelligent_controller.png",
+        image: "/images/eng_automation_new.png",
         bullets: [
           "Water treatment plants monitoring",
           "Solar and hybrid power system monitoring",
@@ -281,7 +281,7 @@ export const CONTENT = {
         id: "02",
         title: "Hybrid Microgrid Systems",
         subtext: "Intelligent coordination of solar, battery storage, and diesel generation. Our energy management management systems allow for seamless power transitions.",
-        image: "/images/battery_energy_storage_bess.png",
+        image: "/images/energy_microgrid_new.png",
         bullets: [
           "Hospitals, clinics and healthcare facilities",
           "Industrial manufacturing and processing",
@@ -293,7 +293,7 @@ export const CONTENT = {
         id: "",
         title: "Battery Energy Storage",
         subtext: "LFP battery systems for residential. We specify LFP chemistry exclusively for superior cycle life and thermal stability.",
-        image: "/images/energy_inverters.png",
+        image: "/images/energy_bess_new.png",
         bullets: [
           "Residential LFP — 5 kWh to 20 kWh modules",
           "Commercial LFP — 20 kWh to 100 kWh scalable racks",

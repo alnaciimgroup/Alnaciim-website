@@ -139,7 +139,7 @@ export default function CatalogModal({ product, onClose }: CatalogModalProps) {
 
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Message</label>
-                      <textarea placeholder="Application requirements..." className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all min-h-[100px] resize-none rounded-xl"></textarea>
+                      <textarea defaultValue={`Product Inquiry: [${product.id}] ${product.name}\n\n`} placeholder="Application requirements..." className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all min-h-[100px] resize-none rounded-xl"></textarea>
                     </div>
 
                     <button 

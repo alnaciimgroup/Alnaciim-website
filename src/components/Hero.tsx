@@ -69,17 +69,17 @@ export default function Hero() {
       </div>
 
       {/* Right Image Area */}
-      <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-50 flex items-center justify-center p-12">
+      <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative z-10"
+          className="absolute inset-0 w-full h-full"
         >
           <img 
-            src="/images/alnaciim_logo_final.png?v=3" 
-            alt="Alnaciim Group" 
-            className="w-full h-auto max-w-[450px] object-contain" 
+            src="/images/home_hero_new.png" 
+            alt="Alnaciim Facility" 
+            className="w-full h-full object-cover" 
           />
         </motion.div>
         

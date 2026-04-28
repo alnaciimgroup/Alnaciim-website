@@ -48,7 +48,7 @@ export const projects: Project[] = [
     service: "Installation and commissioning",
     description: "End-to-end rural water infrastructure for the Budunbuto community borehole development, RO water treatment, storage, distribution and a solar-priority power supply with generator backup. The system was designed for straightforward daily operation.",
     tags: ["Water", "Engineering"],
-    image: "/images/budunbuto.png"
+    image: "/images/work_budunbuto_new.png"
   },
   {
     id: "05",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     service: "Full EPC",
     description: "A 300 kWp hybrid power system for an industrial factory in Garowe. Solar panels, inverters and control panels were designed, procured and installed by Alnaciim integrated with new and site's existing diesel generators under an automated coordination controller that prioritises solar and switches to the generator when needed. Remote monitoring commissioned alongside, giving the operator live visibility of the full system.",
     tags: ["Energy", "Engineering"],
-    image: "/images/solar_power_system.png"
+    image: "/images/energy_microgrid_new.png"
   },
   {
     id: "06",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     service: "System design, supply and installation",
     description: "A 200 kW hybrid automation upgrade for an industrial factory. Alnaciim integrated solar-genset coordination controllers and remote monitoring into the site's existing solar and generator installation, converting manual power management into a fully automated, remotely monitored hybrid system.",
     tags: ["Energy", "Engineering"],
-    image: "/images/energy_intelligent_controller.png"
+    image: "/images/work_solar_200kw_new.png"
   },
   {
     id: "07",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     service: "Facility design, procurement and installation",
     description: "Alnaciim Water operates multiple bottled water production facilities in Garowe under the Aqua Safi brand. Alnaciim Engineering designed, procured and installed the production lines covering water pre-treatment, automated filling and capping, compressed air supply, process cooling and electrical distribution. fully automated filling and packaging. Production range from 250 ml to 19 L.",
     tags: ["Water", "Engineering"],
-    image: "/images/aqua_safi_bottling_facility.png"
+    image: "/images/work_aqua_safi_new.png"
   },
   {
     id: "08",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     service: "Design, installation and commissioning",
     description: "Alnaciim Engineering designed and deployed the complete refrigeration plant including block ice and tube ice machines alongside compressor equipment, evaporator tanks, cold room storage and all electrical control panels. The block ice machine alone produces over 10,000 kg per day. The facility serves the food supply chain, fishing industry and commercial distributors across the regiion.",
     tags: ["Water", "Engineering"],
-    image: "/images/block_ice_and_tube_ice_facility.png"
+    image: "/images/work_ice_facility_new.png"
   },
   {
     id: "09",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     service: "Panel design, fabrication, and site installation",
     description: ".Alnaciim engineering does Custom electrical panel design, fabrication and installation. Projects have included motor control panels for production equipment, switching panels and compressor controller panels for industrial machinery, and complete electrical distribution systems, main distribution boards and sub-panels for a factory installation.",
     tags: ["Engineering"],
-    image: "/images/custom_panel_fabrication_and_industrial_electrical_works.png"
+    image: "/images/work_custom_panel_new.png"
   },
   {
     id: "12",
@@ -128,6 +128,6 @@ export const projects: Project[] = [
     service: "Supply, ATS fabrication, AMF installation",
     description: "Diesel generator sets deployed across multiple industrial facilities including Alnaciim Group's own operational sites. Each installation was treated individually: generator sizing against the site load, automatic transfer switch panel fabricated, AMF controller programmed to the site's specific start, transfer and alarm requirements.",
     tags: ["Engineering"],
-    image: "/images/catalog_generator_1774889998709.png"
+    image: "/images/work_generator_new.png"
   }
 ];

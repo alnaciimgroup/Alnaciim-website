@@ -10,7 +10,7 @@ export default function EngineeringSolutionsPage() {
       id: "01",
       title: "Water Infrastructure Engineering",
       subtext: "From borehole drilling to operational water treatment, Alnaciim Engineering handles the complete water project scope.",
-      image: "/images/solutions_water.png",
+      image: "/images/eng_water_infrastructure_new.png",
       bullets: [
         "Borehole drilling & steel casing",
         "RO system design & treatment train",
@@ -23,7 +23,7 @@ export default function EngineeringSolutionsPage() {
       id: "02",
       title: "Power Systems — Full EPC",
       subtext: "Complete electrical and mechanical delivery of solar, hybrid and generator power systems, from the design calculation to the commissioned and tested installation.",
-      image: "/images/solutions_power.png",
+      image: "/images/eng_power_systems_new.png",
       bullets: [
         "Electrical load analysis & demand calculation",
         "Solar PV mounting & DC string wiring",
@@ -37,7 +37,7 @@ export default function EngineeringSolutionsPage() {
       id: "03",
       title: "SCADA & Industrial Automation",
       subtext: "Alnaciim Engineering designs and commissions monitoring and control systems for the infrastructure it builds and maintains.",
-      image: "/images/solutions_scada.png",
+      image: "/images/eng_automation_new.png",
       bullets: [
         "Water treatment plants monitoring",
         "Solar and hybrid power system monitoring",
@@ -65,7 +65,7 @@ export default function EngineeringSolutionsPage() {
       id: "05",
       title: "Maintenance & Repair",
       subtext: "Alnaciim Engineering maintains what it builds. and takes on maintenance contracts for systems installed by others.",
-      image: "/images/solutions_maintenance.png",
+      image: "/images/eng_maintenance_new.png",
       bullets: [
         "RO membrane cleaning & performance test",
         "Pump mechanical seals & impeller service",
@@ -165,7 +165,7 @@ export default function EngineeringSolutionsPage() {
                 <img 
                   src={sol.image} 
                   alt={sol.title} 
-                  className="w-full h-full object-cover transition-all duration-[3s] group-hover:scale-[1.6] scale-[1.45] origin-bottom" 
+                  className="w-full h-full object-cover transition-all duration-[3s] group-hover:scale-105" 
                 />
                   <div className="absolute top-0 left-0 bg-blue-600 text-white text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-2">
                     {sol.id}

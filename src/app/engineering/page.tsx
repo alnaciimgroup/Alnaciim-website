@@ -55,11 +55,11 @@ export default function EngineeringPage() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
+        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-[#0a2e5c]">
           <img 
-            src="/images/nuwaco_ro_plant.png" 
+            src="/images/engineering_hero_new.png" 
             alt="Engineering Infrastructure" 
-            className="absolute inset-0 w-full h-full object-cover" 
+            className="absolute inset-0 w-full h-full object-contain" 
           />
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
           
@@ -142,7 +142,7 @@ export default function EngineeringPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
              <div className="relative aspect-[4/3] overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2000" alt="Industrial Automation" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src="/images/eng_automation_new.png" alt="Industrial Automation" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
              </div>
              <div className="space-y-10">
                 <div className="flex items-center gap-3">
@@ -181,8 +181,7 @@ export default function EngineeringPage() {
                 </p>
              </div>
              <div className="order-1 lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl">
-                <img src="/images/nuwaco_ro_plant.png" alt="Factory Design" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 opacity-80" />
-                <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
+                <img src="/images/eng_factory_design_new.png" alt="Factory Design" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
              </div>
           </div>
         </div>

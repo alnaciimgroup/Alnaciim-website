@@ -75,6 +75,7 @@ export default function EnergyMethodology() {
               <div className="text-[10px] font-bold text-blue-600 mb-6 tracking-widest uppercase">{method.id}</div>
               
               <div className="mb-8 text-slate-400 group-hover:text-blue-600 transition-colors">
+              
                 {method.icon}
               </div>
 

@@ -67,7 +67,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-4">
               <Link href="/about" className="text-[12px] font-bold text-slate-400 hover:text-blue-500 tracking-widest uppercase transition-colors">OUR STORY</Link>
-              <Link href="/privacy" className="text-[12px] font-bold text-slate-400 hover:text-blue-500 tracking-widest uppercase transition-colors">PRIVACY POLICY</Link>
+              <span className="text-[12px] font-bold text-slate-400 tracking-widest uppercase cursor-default">PRIVACY POLICY</span>
               <div className="pt-4 mt-2 border-t border-white/5 space-y-4">
                 <div className="flex items-start gap-4">
                   <MapPin size={14} className="text-blue-500 shrink-0 mt-0.5" />

@@ -57,7 +57,7 @@ export default function WaterHome() {
 
         <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
           <img 
-            src="/images/nuwaco_ro_plant.png" 
+            src="/images/water_hero_new.png" 
             alt="MUNICIPAL SCALE RO FACILITY" 
             className="absolute inset-0 w-full h-full object-cover" 
           />
@@ -197,7 +197,7 @@ export default function WaterHome() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
              <div className="relative aspect-[4/3] overflow-hidden shadow-2xl bg-white p-4">
-                <img src="/images/nuwaco_ro_plant.png" alt="Reverse Osmosis" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src="/images/water_ro_plant_new.png.png" alt="Reverse Osmosis" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
              </div>
              <div className="space-y-10">
                 <div className="flex items-center gap-3">

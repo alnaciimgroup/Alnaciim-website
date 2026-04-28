@@ -8,8 +8,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-full bg-white border-b border-slate-200 sticky top-0 z-[100]">
-      <header className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-24">
+    <div className="w-full sticky top-6 z-[100] px-4 lg:px-8">
+      <header className="max-w-[1400px] mx-auto px-8 lg:px-10 flex items-center justify-between h-20 bg-white border border-slate-200 rounded-full shadow-sm">
         
         {/* Left: Logo */}
         <div className="flex items-center">
@@ -17,7 +17,7 @@ export default function Navbar() {
             <img 
               src="/images/alnaciim_logo_final.png?v=3" 
               alt="Alnaciim Group" 
-              className="h-10 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
           </Link>
         </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
         
         {/* Right: CTA */}
         <div className="flex items-center">
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-[11px] font-bold tracking-widest uppercase transition-all shadow-md hover:shadow-lg">
+          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-[11px] font-bold tracking-widest uppercase transition-all shadow-md hover:shadow-lg rounded-full">
             CONTACT
           </Link>
         </div>
