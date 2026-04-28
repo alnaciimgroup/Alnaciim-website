@@ -64,8 +64,8 @@ export default function WaterHome() {
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
           
           <div className="absolute bottom-10 right-10 bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-2xl max-w-sm hidden md:block">
-            <div className="text-3xl font-bold text-white mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>2.4M Liters</div>
-            <p className="text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">DAILY YIELD AT OUR <br />NUWACO MUNICIPAL FACILITY.</p>
+            <div className="text-3xl font-bold text-white mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>10K BPH</div>
+            <p className="text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">Automated 10k BPH BOTTLE <br />Production Capacity.</p>
           </div>
         </div>
       </section>

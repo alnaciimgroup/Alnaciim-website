@@ -56,7 +56,7 @@ export const CONTENT = {
     },
     stats: [
       { label: "Solar Installed", value: "500kW+" },
-      { label: "BESS Capacity", value: "2MWh+" },
+      { label: "Energy Systems Commission", value: "10+" },
       { label: "Expertise", value: "28Yrs" },
       { label: "Diesel Reduction", value: "78%" }
     ],

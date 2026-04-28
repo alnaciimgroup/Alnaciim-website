@@ -14,11 +14,9 @@ export default function Navbar() {
         {/* Left: Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center shrink-0">
-            <img 
-              src="/images/alnaciim_logo_final.png?v=3" 
-              alt="Alnaciim Group" 
-              className="h-8 w-auto object-contain"
-            />
+            <span className="text-2xl font-black text-blue-600 tracking-tighter uppercase font-serif" style={{ fontFamily: 'var(--font-playfair)' }}>
+              ALNACIIM
+            </span>
           </Link>
         </div>
         
