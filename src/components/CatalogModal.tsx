@@ -1,9 +1,9 @@
 "use client";
 
 import { Product } from "@/data/catalog";
-import { X, Hash, Tag, Info } from "lucide-react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { X, Hash, Tag, Info, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 
 interface CatalogModalProps {
   product: Product;
@@ -11,10 +11,45 @@ interface CatalogModalProps {
 }
 
 export default function CatalogModal({ product, onClose }: CatalogModalProps) {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = "unset"; };
   }, []);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to send");
+      }
+      
+      setStatus("success");
+    } catch (err: any) {
+      console.error(err);
+      setStatus("error");
+      setErrorMessage(err.message || "Something went wrong. Please try again.");
+    }
+  }
 
   return (
     <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 sm:p-10 overflow-hidden">
@@ -125,29 +160,55 @@ export default function CatalogModal({ product, onClose }: CatalogModalProps) {
                     <h3 className="text-xl font-bold text-slate-900 tracking-tight uppercase font-serif">Request Quote</h3>
                   </div>
                   
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Full Name</label>
-                        <input type="text" placeholder="Your name" className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all rounded-xl" />
+                  {status === "success" ? (
+                    <div className="text-center py-6">
+                      <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <CheckCircle2 size={32} />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Email Address</label>
-                        <input type="email" placeholder="email@company.com" className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all rounded-xl" />
+                      <h4 className="text-lg font-bold text-slate-900 mb-2 uppercase tracking-tight">Request Received</h4>
+                      <p className="text-sm text-slate-500 font-medium">Our technical team will review the specifications and contact you shortly.</p>
+                      <button onClick={() => setStatus("idle")} className="mt-6 text-blue-600 font-bold text-[11px] uppercase tracking-widest">Send another request</button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Full Name</label>
+                          <input required name="name" type="text" placeholder="Your name" className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all rounded-xl" />
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Email Address</label>
+                            <input required name="email" type="email" placeholder="email@company.com" className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all rounded-xl" />
+                          </div>
+                          <div className="space-y-2">
+                            <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Phone Number</label>
+                            <input required name="phone" type="tel" placeholder="+252..." className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all rounded-xl" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Message</label>
-                      <textarea defaultValue={`Product Inquiry: [${product.id}] ${product.name}\n\n`} placeholder="Application requirements..." className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all min-h-[100px] resize-none rounded-xl"></textarea>
-                    </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-bold text-slate-400 tracking-widest uppercase ml-1">Message</label>
+                        <textarea required name="message" defaultValue={`Product Inquiry: [${product.id}] ${product.name}\n\n`} placeholder="Application requirements..." className="w-full px-6 py-4 bg-white border border-slate-200 text-[13px] font-medium text-slate-900 outline-none focus:border-blue-600 transition-all min-h-[100px] resize-none rounded-xl"></textarea>
+                      </div>
 
-                    <button 
-                      className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[13px] uppercase tracking-widest transition-all flex items-center justify-center gap-3 group rounded-xl"
-                    >
-                      Send Request
-                    </button>
-                  </div>
+                      {status === "error" && (
+                        <div className="flex items-center gap-2 text-red-600 text-[12px] font-bold uppercase tracking-tight">
+                          <AlertCircle size={16} />
+                          {errorMessage}
+                        </div>
+                      )}
+
+                      <button 
+                        disabled={status === "loading"}
+                        type="submit"
+                        className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[13px] uppercase tracking-widest transition-all flex items-center justify-center gap-3 group rounded-xl disabled:opacity-50"
+                      >
+                        {status === "loading" ? <Loader2 className="animate-spin" size={18} /> : "Send Request"}
+                      </button>
+                    </form>
+                  )}
                 </div>
             </div>
 
