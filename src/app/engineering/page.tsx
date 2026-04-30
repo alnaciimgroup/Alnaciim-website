@@ -26,7 +26,7 @@ export default function EngineeringPage() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               The engineering <br /> behind every <br /><span className="text-blue-600 italic">Alnaciim project.</span>
@@ -55,7 +55,7 @@ export default function EngineeringPage() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-[#0a2e5c]">
+        <div className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-full overflow-hidden bg-[#0a2e5c]">
           <img 
             src="/images/engineering_hero_new.png" 
             alt="Engineering Infrastructure" 
@@ -63,9 +63,9 @@ export default function EngineeringPage() {
           />
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
           
-          <div className="absolute bottom-10 right-10 bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-2xl max-w-sm hidden md:block">
-            <div className="text-3xl font-bold text-white mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Precision Systems</div>
-            <p className="text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">Delivering complex technical <br />solutions and asset management.</p>
+          <div className="absolute bottom-6 right-6 left-6 sm:left-auto bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-8 shadow-2xl max-w-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>Precision Systems</div>
+            <p className="text-[10px] sm:text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">Delivering complex technical <br className="hidden sm:block" />solutions and asset management.</p>
           </div>
         </div>
       </section>

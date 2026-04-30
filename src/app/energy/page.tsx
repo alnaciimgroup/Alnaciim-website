@@ -21,7 +21,7 @@ export default function EnergyHome() {
             </div>
             
             <h1 
-              className="text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Solar. Storage. <br /> Generation. <br /><span className="text-blue-600 italic">Sized for your site.</span>
@@ -42,7 +42,7 @@ export default function EnergyHome() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
+        <div className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-full overflow-hidden bg-slate-100">
           <img 
             src="/images/energy_hero_new.png" 
             alt="Energy Infrastructure" 
@@ -50,9 +50,9 @@ export default function EnergyHome() {
           />
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
           
-          <div className="absolute bottom-10 right-10 bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-2xl max-w-sm hidden md:block">
-            <div className="text-3xl font-bold text-white mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>500+KW</div>
-            <p className="text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">INSTALLED SOLAR CAPACITY <br />ACROSS REGIONAL NODES.</p>
+          <div className="absolute bottom-6 right-6 left-6 sm:left-auto bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-8 shadow-2xl max-w-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>500+KW</div>
+            <p className="text-[10px] sm:text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">INSTALLED SOLAR CAPACITY <br className="hidden sm:block" />ACROSS REGIONAL NODES.</p>
           </div>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function EnergyHome() {
       <section className="py-40 bg-white text-center">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <h2 
-            className="text-5xl md:text-8xl font-bold text-[#001B3D] leading-tight mb-12 font-serif"
+            className="text-4xl sm:text-5xl md:text-8xl font-bold text-[#001B3D] leading-tight mb-12 font-serif"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Engineered for <br /> the long term. <br /> <span className="text-blue-600">Sized for your load.</span>

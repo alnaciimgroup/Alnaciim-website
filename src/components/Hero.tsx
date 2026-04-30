@@ -28,7 +28,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             POWERING <span className="text-blue-600 italic">LIFE.</span><br />
@@ -69,7 +69,7 @@ export default function Hero() {
       </div>
 
       {/* Right Image Area */}
-      <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
+      <div className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-full overflow-hidden bg-slate-100">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}

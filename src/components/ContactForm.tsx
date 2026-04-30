@@ -70,7 +70,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             name="name"
-            placeholder="E.g. Mohamed Abshir"
+            placeholder="Full Name"
             className="w-full h-16 bg-white border border-slate-200 rounded-2xl px-6 outline-none focus:border-blue-600 transition-all text-slate-900 font-medium placeholder:text-slate-300"
           />
         </div>

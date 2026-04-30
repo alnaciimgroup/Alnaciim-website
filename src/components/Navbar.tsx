@@ -1,11 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Prevent scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <div className="w-full sticky top-6 z-[100] px-4 lg:px-8">
@@ -65,12 +81,58 @@ export default function Navbar() {
           </Link>
         </nav>
         
-        {/* Right: CTA */}
-        <div className="flex items-center">
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-[11px] font-bold tracking-widest uppercase transition-all shadow-md hover:shadow-lg rounded-full">
+        {/* Right: CTA & Mobile Toggle */}
+        <div className="flex items-center gap-4">
+          <Link href="/contact" className="hidden sm:block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-[11px] font-bold tracking-widest uppercase transition-all shadow-md hover:shadow-lg rounded-full">
             CONTACT
           </Link>
+          
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden w-12 h-12 flex items-center justify-center text-slate-900 bg-slate-50 border border-slate-200 rounded-full"
+          >
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[110] lg:hidden"
+              />
+              <motion.div 
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white z-[120] lg:hidden flex flex-col p-8"
+              >
+                <div className="flex justify-between items-center mb-12">
+                  <span className="text-xl font-black text-blue-600 tracking-tighter uppercase font-serif">ALNACIIM</span>
+                  <button onClick={() => setIsMobileMenuOpen(false)} className="w-10 h-10 flex items-center justify-center text-slate-400">
+                    <X size={24} />
+                  </button>
+                </div>
+
+                <nav className="flex flex-col gap-8 text-[13px] font-bold text-slate-900 tracking-[0.15em] uppercase overflow-y-auto no-scrollbar">
+                  <Link href="/water" className={pathname === '/water' ? 'text-blue-600' : ''}>ALNACIIM WATER</Link>
+                  <Link href="/energy" className={pathname.startsWith('/energy') ? 'text-blue-600' : ''}>ALNACIIM ENERGY</Link>
+                  <Link href="/engineering" className={pathname.startsWith('/engineering') ? 'text-blue-600' : ''}>ALNACIIM ENGINEERING</Link>
+                  <Link href="/work" className={pathname === '/work' ? 'text-blue-600' : ''}>OUR WORK</Link>
+                  <Link href="/catalog" className={pathname === '/catalog' ? 'text-blue-600' : ''}>CATALOG</Link>
+                  <Link href="/about" className={pathname === '/about' ? 'text-blue-600' : ''}>ABOUT</Link>
+                  <Link href="/contact" className="mt-8 bg-blue-600 text-white p-6 text-center rounded-2xl tracking-widest">GET IN TOUCH</Link>
+                </nav>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </header>
     </div>
   );

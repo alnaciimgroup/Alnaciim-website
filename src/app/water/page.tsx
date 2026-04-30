@@ -26,7 +26,7 @@ export default function WaterHome() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-6xl lg:text-[60px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif uppercase"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[60px] font-bold text-slate-900 leading-[1.1] mb-8 font-serif uppercase"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               CLEAN WATER <br /> INFRASTRUCTURE. <br /><span className="text-blue-600 italic">DESIGNED, BUILT AND MAINTAINED.</span>
@@ -55,7 +55,7 @@ export default function WaterHome() {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full overflow-hidden bg-slate-100">
+        <div className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-full overflow-hidden bg-slate-100">
           <img 
             src="/images/water_hero_new.png" 
             alt="MUNICIPAL SCALE RO FACILITY" 
@@ -63,9 +63,9 @@ export default function WaterHome() {
           />
           <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply" />
           
-          <div className="absolute bottom-10 right-10 bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-2xl max-w-sm hidden md:block">
-            <div className="text-3xl font-bold text-white mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>10K BPH</div>
-            <p className="text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">Automated 10k BPH BOTTLE <br />Production Capacity.</p>
+          <div className="absolute bottom-6 right-6 left-6 sm:left-auto bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-8 shadow-2xl max-w-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3 font-serif" style={{ fontFamily: "var(--font-playfair)" }}>10K BPH</div>
+            <p className="text-[10px] sm:text-sm text-white/70 font-medium uppercase tracking-widest leading-relaxed">Automated 10k BPH BOTTLE <br className="hidden sm:block" />Production Capacity.</p>
           </div>
         </div>
       </section>
