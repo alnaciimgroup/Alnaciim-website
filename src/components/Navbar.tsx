@@ -123,8 +123,17 @@ export default function Navbar() {
 
                 <nav className="flex flex-col gap-8 text-[13px] font-bold text-slate-900 tracking-[0.15em] uppercase overflow-y-auto no-scrollbar">
                   <Link href="/water" className={pathname === '/water' ? 'text-blue-600' : ''}>ALNACIIM WATER</Link>
-                  <Link href="/energy" className={pathname.startsWith('/energy') ? 'text-blue-600' : ''}>ALNACIIM ENERGY</Link>
-                  <Link href="/engineering" className={pathname.startsWith('/engineering') ? 'text-blue-600' : ''}>ALNACIIM ENGINEERING</Link>
+                  
+                  <div className="flex flex-col gap-4">
+                    <Link href="/energy" className={pathname === '/energy' ? 'text-blue-600' : ''}>ALNACIIM ENERGY</Link>
+                    <Link href="/energy/solutions" className="text-[11px] text-slate-400 pl-4 border-l border-slate-100">SOLUTIONS</Link>
+                  </div>
+
+                  <div className="flex flex-col gap-4">
+                    <Link href="/engineering" className={pathname === '/engineering' ? 'text-blue-600' : ''}>ALNACIIM ENGINEERING</Link>
+                    <Link href="/engineering/solutions" className="text-[11px] text-slate-400 pl-4 border-l border-slate-100">SOLUTIONS</Link>
+                  </div>
+
                   <Link href="/work" className={pathname === '/work' ? 'text-blue-600' : ''}>OUR WORK</Link>
                   <Link href="/catalog" className={pathname === '/catalog' ? 'text-blue-600' : ''}>CATALOG</Link>
                   <Link href="/about" className={pathname === '/about' ? 'text-blue-600' : ''}>ABOUT</Link>
