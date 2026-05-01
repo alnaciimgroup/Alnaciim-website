@@ -190,25 +190,24 @@ export default function AboutPage() {
             </div>
             
             <div className="w-full lg:w-1/2 aspect-square relative bg-slate-50 border border-slate-100 flex items-center justify-center p-8 overflow-hidden rounded-2xl">
-               {/* Custom SVG Map representing Somalia/Puntland */}
+               {/* Accurate Geographical SVG Map representing Somalia/Puntland */}
                <svg 
-                 viewBox="0 0 500 500" 
-                 className="w-full h-full max-w-[400px] text-slate-200 fill-slate-100 stroke-slate-200 stroke-[2px]"
+                 viewBox="0 0 800 800" 
+                 className="w-full h-full max-w-[420px] text-slate-200 fill-slate-100/80 stroke-slate-300 stroke-[2.5px]"
                  aria-hidden="true"
                >
-                 {/* Stylized region of Puntland / Somalia */}
-                 <path d="M 120 40 C 200 60, 280 40, 360 80 C 440 120, 480 200, 420 280 C 380 340, 320 380, 260 420 C 200 460, 160 420, 140 380 C 120 340, 80 280, 100 200 C 110 160, 100 120, 120 40 Z" />
-                 {/* Internal region lines */}
-                 <path d="M 120 180 C 160 160, 200 180, 240 170" className="fill-none stroke-slate-200 stroke-1 opacity-60" />
-                 <path d="M 240 170 C 300 160, 360 200, 420 200" className="fill-none stroke-slate-200 stroke-1 opacity-60" />
+                 {/* Map of the Horn of Africa / Somalia */}
+                 <path d="M120 420 L250 480 L320 560 L380 680 L440 760 L460 740 L450 640 L480 560 L510 520 L580 440 L640 340 L710 240 L730 180 L760 140 L740 120 L660 110 L580 120 L510 130 L450 140 L410 180 L380 190 L340 180 L310 190 L260 210 L190 280 L160 330 Z" />
+                 {/* Detail line representing Puntland region boundary */}
+                 <path d="M410 180 C440 240, 480 240, 580 240" className="fill-none stroke-slate-300/40 stroke-2 stroke-dasharray-[4,4] opacity-80" />
                </svg>
                
-               {/* Pulses / Dot exactly placed over Garowe position */}
-               <div className="absolute top-[35%] left-[48%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-                 <span className="absolute w-12 h-12 bg-blue-500/30 rounded-full animate-ping" />
-                 <span className="absolute w-6 h-6 bg-blue-500/60 rounded-full animate-pulse" />
-                 <span className="relative w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow-lg" />
-                 <span className="absolute mt-10 whitespace-nowrap bg-slate-900 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded shadow-md pointer-events-none">
+               {/* Garowe dot placed precisely on upper right tip / Horn region */}
+               <div className="absolute top-[21%] left-[70%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                 <span className="absolute w-14 h-14 bg-blue-500/40 rounded-full animate-ping" />
+                 <span className="absolute w-8 h-8 bg-blue-500/60 rounded-full animate-pulse" />
+                 <span className="relative w-4.5 h-4.5 bg-blue-600 rounded-full border-2 border-white shadow-xl" />
+                 <span className="absolute mt-12 whitespace-nowrap bg-slate-900 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded shadow-lg pointer-events-none">
                    GAROWE HQ
                  </span>
                </div>
