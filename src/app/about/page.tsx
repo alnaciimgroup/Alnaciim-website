@@ -189,9 +189,29 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="w-full lg:w-1/2 aspect-square relative bg-slate-50 border border-slate-100 flex items-center justify-center p-20">
-               <img src="/images/alnaciim_logo_final.png?v=3" alt="Garowe HQ" className="w-full h-auto max-w-[350px] object-contain" />
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.8)] animate-pulse" />
+            <div className="w-full lg:w-1/2 aspect-square relative bg-slate-50 border border-slate-100 flex items-center justify-center p-8 overflow-hidden rounded-2xl">
+               {/* Custom SVG Map representing Somalia/Puntland */}
+               <svg 
+                 viewBox="0 0 500 500" 
+                 className="w-full h-full max-w-[400px] text-slate-200 fill-slate-100 stroke-slate-200 stroke-[2px]"
+                 aria-hidden="true"
+               >
+                 {/* Stylized region of Puntland / Somalia */}
+                 <path d="M 120 40 C 200 60, 280 40, 360 80 C 440 120, 480 200, 420 280 C 380 340, 320 380, 260 420 C 200 460, 160 420, 140 380 C 120 340, 80 280, 100 200 C 110 160, 100 120, 120 40 Z" />
+                 {/* Internal region lines */}
+                 <path d="M 120 180 C 160 160, 200 180, 240 170" className="fill-none stroke-slate-200 stroke-1 opacity-60" />
+                 <path d="M 240 170 C 300 160, 360 200, 420 200" className="fill-none stroke-slate-200 stroke-1 opacity-60" />
+               </svg>
+               
+               {/* Pulses / Dot exactly placed over Garowe position */}
+               <div className="absolute top-[35%] left-[48%] -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                 <span className="absolute w-12 h-12 bg-blue-500/30 rounded-full animate-ping" />
+                 <span className="absolute w-6 h-6 bg-blue-500/60 rounded-full animate-pulse" />
+                 <span className="relative w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow-lg" />
+                 <span className="absolute mt-10 whitespace-nowrap bg-slate-900 text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded shadow-md pointer-events-none">
+                   GAROWE HQ
+                 </span>
+               </div>
             </div>
           </div>
         </div>
