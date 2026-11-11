@@ -48,4 +48,5 @@ mockups/
 !README.md
 !CLAUDE.md
 !AGENTS.md
+!src/app/*.alt.txt
 archive/
